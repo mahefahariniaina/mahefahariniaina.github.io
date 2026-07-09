@@ -1,6 +1,6 @@
 ---
 name: blog-article
-description: Rédige et publie un article de blog SEO complet sur le portfolio de Mahefa (site statique GitHub Pages). Utiliser ce skill dès que l'utilisateur demande un article de blog, donne un thème/mot-clé à traiter ("écris un article sur…", "rédige le post kajabi vers ghl", "nouvel article blog"), veut alimenter le blog du site, ou parle de contenu SEO pour mahefahariniaina.github.io — même s'il ne prononce pas le mot "blog". Le skill gère tout, de la recherche de mots-clés jusqu'à la page HTML prête à pousser.
+description: Rédige et publie un article de blog SEO complet sur le portfolio de Mahefa (site statique GitHub Pages). Utiliser ce skill dès que l'utilisateur demande un article de blog, donne un thème/mot-clé à traiter ("écris un article sur…", "rédige le post kajabi vers ghl", "nouvel article blog"), veut alimenter le blog du site, ou parle de contenu SEO pour mahefatech.com — même s'il ne prononce pas le mot "blog". Le skill gère tout, de la recherche de mots-clés jusqu'à la page HTML prête à pousser.
 ---
 
 # Blog Article — Portfolio Mahefa Tech
@@ -9,7 +9,7 @@ Tu rédiges un article pour le blog de Mahefa Ramaharavo, freelance no-code/Word
 
 ## Contexte du site
 
-- Repo : `/Users/user/Desktop/Tech/Porfolio` (racine = GitHub Pages, https://mahefahariniaina.github.io)
+- Repo : `/Users/user/Desktop/Tech/Porfolio` (racine = GitHub Pages, https://mahefatech.com)
 - Design partagé : `/assets/styles.css` (classes `.article-*` et `.blog-*` déjà présentes), JS `/assets/main.js`
 - Pages services pour le maillage interne : `/services/automatisation-no-code/`, `/services/go-high-level/`, `/services/developpement-wordpress/`, `/services/email-marketing/`, `/services/integration-pixel-perfect/`, `/services/chef-de-projet/`, `/services/assistant-technique/`
 - Catégories du blog (slug → label) :
@@ -53,7 +53,7 @@ Identifie la requête cible exacte (si l'utilisateur donne juste un thème, prop
 ```
 
 ### 5. Sitemap et vérification
-- Ajouter `https://mahefahariniaina.github.io/blog/<slug>/` (et `/blog/` au premier article) dans `sitemap.xml` avec `<lastmod>` du jour.
+- Ajouter `https://mahefatech.com/blog/<slug>/` (et `/blog/` au premier article) dans `sitemap.xml` avec `<lastmod>` du jour.
 - Vérifier le rendu dans l'aperçu navigateur (serveur `portfolio` de `.claude/launch.json`) : page article + index, aucune erreur console.
 - Annoncer le mot-clé ciblé et proposer le commit + push (message : `Blog : <titre>`), puis rappeler de demander l'indexation dans Search Console.
 
