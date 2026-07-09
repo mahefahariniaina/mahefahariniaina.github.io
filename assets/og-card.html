@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>OG Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { width:1200px; height:630px; background:#091420; font-family:'Space Grotesk',sans-serif; color:#F5F0E8; overflow:hidden; position:relative; }
+.grid { position:absolute; inset:0; background-image:linear-gradient(rgba(0,196,154,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,196,154,.03) 1px,transparent 1px); background-size:72px 72px; }
+.glow { position:absolute; top:-120px; right:-80px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle, rgba(0,196,154,.14) 0%, transparent 65%); }
+.wrap { position:relative; padding:70px 80px; height:100%; display:flex; flex-direction:column; justify-content:space-between; }
+.logo { display:flex; align-items:center; gap:18px; }
+.logo-name { font-family:'DM Mono',monospace; font-size:26px; font-weight:500; letter-spacing:.06em; }
+.logo-name span { color:#00C49A; }
+.logo-sub { font-family:'DM Mono',monospace; font-size:12px; color:#6B8BA4; letter-spacing:.14em; text-transform:uppercase; margin-top:4px; }
+h1 { font-size:76px; font-weight:700; line-height:.95; letter-spacing:-.03em; }
+h1 .em { color:#00C49A; }
+.sub { font-size:24px; font-weight:400; color:rgba(245,240,232,.6); margin-top:26px; line-height:1.5; }
+.foot { display:flex; justify-content:space-between; align-items:center; font-family:'DM Mono',monospace; font-size:16px; color:#6B8BA4; letter-spacing:.06em; }
+.badge { display:inline-flex; align-items:center; gap:10px; background:rgba(0,196,154,.08); border:1px solid rgba(0,196,154,.25); color:#00C49A; padding:10px 24px; border-radius:24px; }
+.dot { width:10px; height:10px; background:#00C49A; border-radius:50%; }
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<div class="glow"></div>
+<div class="wrap">
+  <div class="logo">
+    <svg width="64" height="59" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div>
+      <div class="logo-name">MAHEFA <span>TECH</span></div>
+      <div class="logo-sub">Digital Expert · Freelance</div>
+    </div>
+  </div>
+  <div>
+    <h1>JE CONSTRUIS<br>DES <span class="em">SYSTÈMES</span><br>QUI PERFORMENT.</h1>
+    <p class="sub">Automatisation & Agents IA · WordPress · Go High Level · Email Marketing</p>
+  </div>
+  <div class="foot">
+    <span class="badge"><span class="dot"></span>Premier rendez-vous gratuit</span>
+    <span>mahefahariniaina.github.io</span>
+  </div>
+</div>
+</body>
+</html>

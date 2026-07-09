@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZXF0QJC58"></script>
+<title>{{TITLE}} | Mahefa Tech</title>
+<meta name="description" content="{{META_DESC}}">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Mahefa Ramaharavo">
+<link rel="canonical" href="https://mahefahariniaina.github.io/blog/{{SLUG}}/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mahefahariniaina.github.io/blog/{{SLUG}}/">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{META_DESC}}">
+<meta property="og:image" content="https://mahefahariniaina.github.io/assets/img/og-image.jpg">
+<meta property="og:locale" content="fr_FR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": {{TITLE_JSON}},
+      "description": {{META_DESC_JSON}},
+      "datePublished": "{{DATE_ISO}}",
+      "dateModified": "{{DATE_ISO}}",
+      "inLanguage": "fr",
+      "mainEntityOfPage": "https://mahefahariniaina.github.io/blog/{{SLUG}}/",
+      "image": "https://mahefahariniaina.github.io/assets/img/og-image.jpg",
+      "author": {"@type": "Person", "name": "Mahefa Ramaharavo", "url": "https://mahefahariniaina.github.io/"},
+      "publisher": {"@type": "Person", "name": "Mahefa Ramaharavo"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://mahefahariniaina.github.io/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mahefahariniaina.github.io/blog/"},
+        {"@type": "ListItem", "position": 3, "name": {{TITLE_JSON}}, "item": "https://mahefahariniaina.github.io/blog/{{SLUG}}/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+{{FAQ_JSON}}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="none" stroke="#A8EDCF" stroke-width="0.5" opacity="0.35"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="132" y1="111" x2="142" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+      <line x1="228" y1="111" x2="218" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">MAHEFA <span style="color:var(--em)">TECH</span></span>
+      <span class="nav-logo-sub">Digital Expert</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Accueil</a></li>
+    <li class="nav-drop">
+      <a href="/#services">Services</a>
+      <div class="nav-drop-menu"><div class="ndm-box">
+        <a href="/services/automatisation-no-code/">Automatisation & Agents IA</a>
+        <a href="/services/go-high-level/">Go High Level & CRM</a>
+        <a href="/services/developpement-wordpress/">Développement WordPress</a>
+        <a href="/services/email-marketing/">Marketing &amp; Campagnes</a>
+        <a href="/services/integration-pixel-perfect/">Intégration Pixel-Perfect</a>
+        <a href="/services/chef-de-projet/">Chef de Projet</a>
+        <a href="/services/assistant-technique/">Assistant Technique</a>
+      </div></div>
+    </li>
+    <li><a href="/#about">À propos</a></li>
+    <li><a href="/#testimonials">Témoignages</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/#contact" class="nav-cta">Parlons-en ↗</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="breadcrumb"><a href="/">Accueil</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span style="color:var(--em);">{{CATEGORY_LABEL}}</span></div>
+  <div class="article-meta"><span class="cat">{{CATEGORY_LABEL}}</span><span>{{DATE_FR}}</span><span>{{READING_TIME}} min de lecture</span></div>
+  <h1 class="article-title">{{H1}}</h1>
+</section>
+
+<article class="article-body">
+{{CONTENT}}
+
+  <div class="article-cta">
+    <div class="t">{{CTA_TITLE}}</div>
+    <p>{{CTA_TEXT}} Le premier rendez-vous est gratuit — on étudie votre besoin ensemble.</p>
+    <a href="{{CTA_LINK}}" class="btn-p">Démarrons votre projet ↗</a>
+  </div>
+
+  <div class="author-box">
+    <img src="/assets/img/mahefa.jpg" alt="Mahefa Ramaharavo">
+    <div>
+      <div class="n">Mahefa Ramaharavo</div>
+      <p>Freelance expert No-Code, WordPress et Go High Level — 6 ans d'expérience, 50+ projets livrés pour des clients en France, au Canada et en Espagne.</p>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-logo">
+    <svg width="28" height="26" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="foot-logo-name">MAHEFA <span>TECH</span></span>
+  </div>
+  <span class="foot-copy">© 2026 Mahefa Tech</span>
+  <span class="foot-avail"><span class="dot-blink"></span><span>Disponible · Remote</span></span>
+</footer>
+
+<script src="/assets/main.js"></script>
+</body>
+</html>
