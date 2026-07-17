@@ -281,7 +281,7 @@ footer { padding:24px 52px; border-top:1px solid var(--border); display:flex; ju
 }
 
 /* ── TESTIMONIALS EXTRA ── */
-  .testi-grid-4 { display:grid; grid-template-columns:1fr; gap:14px; max-width:640px; }
+  .testi-grid-4 { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:1100px; margin:0 auto; }
   @media(max-width:700px){.testi-grid-4{grid-template-columns:1fr;}}
   .testi-card-real { border-color:var(--border-em) !important; }
   .testi-card-real .testi-q-icon { opacity:.8; }
