@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZXF0QJC58"></script>
+<title>Migration Kajabi vers GoHighLevel : le guide complet | Mahefa Tech</title>
+<meta name="description" content="Étapes concrètes, pièges à éviter et retour d'expérience pour migrer vos cours, contacts et automatisations de Kajabi vers GoHighLevel sans rien perdre.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Mahefa Ramaharavo">
+<link rel="canonical" href="https://mahefatech.com/blog/migrer-kajabi-vers-gohighlevel/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mahefatech.com/blog/migrer-kajabi-vers-gohighlevel/">
+<meta property="og:title" content="Migration Kajabi vers GoHighLevel : le guide complet">
+<meta property="og:description" content="Étapes concrètes, pièges à éviter et retour d'expérience pour migrer vos cours, contacts et automatisations de Kajabi vers GoHighLevel sans rien perdre.">
+<meta property="og:image" content="https://mahefatech.com/assets/img/og-image.jpg">
+<meta property="og:locale" content="fr_FR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Migration Kajabi vers GoHighLevel : le guide complet",
+      "description": "Étapes concrètes, pièges à éviter et retour d'expérience pour migrer vos cours, contacts et automatisations de Kajabi vers GoHighLevel sans rien perdre.",
+      "datePublished": "2026-07-16",
+      "dateModified": "2026-07-16",
+      "inLanguage": "fr",
+      "mainEntityOfPage": "https://mahefatech.com/blog/migrer-kajabi-vers-gohighlevel/",
+      "image": "https://mahefatech.com/assets/img/og-image.jpg",
+      "author": {"@type": "Person", "name": "Mahefa Ramaharavo", "url": "https://mahefatech.com/"},
+      "publisher": {"@type": "Person", "name": "Mahefa Ramaharavo"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://mahefatech.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mahefatech.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Migration Kajabi vers GoHighLevel : le guide complet", "item": "https://mahefatech.com/blog/migrer-kajabi-vers-gohighlevel/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Combien de temps prend une migration Kajabi vers GoHighLevel ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend entièrement du volume à transférer : un cours unique sans automatisations ne se compare pas à une académie complète avec quiz, abonnements et séquences email. Plutôt qu'un délai standard, retenez la règle qui sécurise tout : les deux plateformes tournent en parallèle et Kajabi n'est résilié qu'une fois la bascule entièrement validée, élèves reconnectés inclus."}},
+        {"@type": "Question", "name": "Mes élèves perdent-ils leur accès pendant la migration ?", "acceptedAnswer": {"@type": "Answer", "text": "Non, à condition de garder Kajabi actif pendant la transition. Les élèves conservent leur accès Kajabi pendant que les cours sont reconstruits sur GoHighLevel, puis reçoivent leurs nouveaux identifiants. On ne coupe l'ancienne plateforme qu'après confirmation que chacun s'est bien connecté côté GHL."}},
+        {"@type": "Question", "name": "Peut-on migrer les abonnements Stripe en cours ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui dans la plupart des cas : si Kajabi utilisait votre propre compte Stripe, les clients et leurs moyens de paiement y restent stockés. Il faut reconnecter ce même compte Stripe à GoHighLevel puis recréer les abonnements avec précaution pour ne pas facturer deux fois ni interrompre les prélèvements en cours. C'est l'étape la plus délicate, à tester sur un petit groupe avant de généraliser."}}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="none" stroke="#A8EDCF" stroke-width="0.5" opacity="0.35"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="132" y1="111" x2="142" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+      <line x1="228" y1="111" x2="218" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">MAHEFA <span style="color:var(--em)">TECH</span></span>
+      <span class="nav-logo-sub">Digital Expert</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Accueil</a></li>
+    <li class="nav-drop">
+      <a href="/#services">Services</a>
+      <div class="nav-drop-menu"><div class="ndm-box">
+        <a href="/services/automatisation-no-code/">Automatisation & Agents IA</a>
+        <a href="/services/go-high-level/">Go High Level & CRM</a>
+        <a href="/services/developpement-wordpress/">Développement WordPress</a>
+        <a href="/services/email-marketing/">Marketing &amp; Campagnes</a>
+        <a href="/services/integration-pixel-perfect/">Intégration Pixel-Perfect</a>
+        <a href="/services/chef-de-projet/">Chef de Projet</a>
+        <a href="/services/assistant-technique/">Assistant Technique &amp; Annotation IA</a>
+      </div></div>
+    </li>
+    <li><a href="/#about">À propos</a></li>
+    <li><a href="/#testimonials">Témoignages</a></li>
+    <li><a href="/blog/">Blog</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/#contact" class="nav-cta">Parlons-en ↗</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="breadcrumb"><a href="/">Accueil</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span style="color:var(--em);">GoHighLevel</span></div>
+  <div class="article-meta"><span class="cat">GoHighLevel</span><span>16 juillet 2026</span><span>6 min de lecture</span></div>
+  <h1 class="article-title">Migration Kajabi vers GoHighLevel : le guide complet</h1>
+</section>
+
+<article class="article-body">
+  <p>Migrer de Kajabi vers GoHighLevel se déroule en cinq étapes : exporter vos contacts et vos données d'achat depuis Kajabi, importer vos cours avec l'outil de migration natif de GoHighLevel, recréer vos tunnels de vente, reconstruire vos automatisations et séquences email, puis rebrancher les paiements avant de basculer votre domaine. La règle d'or : garder Kajabi actif pendant toute la transition, et ne le résilier qu'une fois vos élèves reconnectés côté GoHighLevel.</p>
+
+  <p>J'ai mené ce type de migration pour de vrais clients sur les comptes agence GoHighLevel que je pilote au quotidien — 3 comptes agence, plus de 10 sous-comptes, et jusqu'à 250 000 contacts gérés sur la plateforme. Dans ce guide, je vous partage la méthode que j'applique réellement, dans l'ordre, avec les pièges que je rencontre presque à chaque fois.</p>
+
+  <h2>Pourquoi migrer de Kajabi vers GoHighLevel ?</h2>
+  <p>Kajabi est une excellente plateforme pour héberger des formations. Mais dès que votre activité dépasse le simple cours en ligne, ses limites apparaissent : un CRM léger, des automatisations centrées sur l'email uniquement, et une facturation par paliers de contacts qui grimpe vite. GoHighLevel regroupe au même endroit ce que Kajabi fait — et tout ce qu'il ne fait pas.</p>
+  <table>
+    <thead><tr><th>Besoin</th><th>Kajabi</th><th>GoHighLevel</th></tr></thead>
+    <tbody>
+      <tr><td>Espaces membres &amp; formations</td><td>Excellent</td><td>Complet (Memberships)</td></tr>
+      <tr><td>CRM &amp; pipeline de vente</td><td>Basique</td><td>Opportunités, pipelines, scoring</td></tr>
+      <tr><td>Automatisations</td><td>Essentiellement email</td><td>Workflows email, SMS, IA, webhooks</td></tr>
+      <tr><td>Tunnels &amp; pages</td><td>Oui</td><td>Oui, + sites complets</td></tr>
+      <tr><td>Réservation de rendez-vous</td><td>Via intégrations</td><td>Calendriers natifs</td></tr>
+      <tr><td>Coût à volume élevé de contacts</td><td>Paliers vite dépassés</td><td>Contacts illimités selon le plan</td></tr>
+    </tbody>
+  </table>
+  <p>En clair : si vous vendez des formations <em>et</em> que vous voulez un vrai moteur d'acquisition (prospection, nurturing, rendez-vous, relances), la migration a du sens. Si Kajabi couvre 100&nbsp;% de votre besoin actuel, restez-y — une migration n'est jamais gratuite en énergie.</p>
+
+  <h2>Ce qui se migre tout seul… et ce qui se reconstruit</h2>
+  <p>Le point que tout le monde sous-estime : l'outil d'importation natif de GoHighLevel copie vos cours Kajabi — contenus, vidéos, images — à condition que vos cours utilisent le thème Premier de Kajabi. Tout le reste doit être rebâti proprement côté GHL.</p>
+  <table>
+    <thead><tr><th>Se migre facilement</th><th>À reconstruire à la main</th></tr></thead>
+    <tbody>
+      <tr><td>Cours et leçons (importeur natif GHL)</td><td>Quiz, devoirs et certificats</td></tr>
+      <tr><td>Vidéos et images des leçons</td><td>Séquences et campagnes email</td></tr>
+      <tr><td>Contacts (export CSV)</td><td>Automatisations et déclencheurs</td></tr>
+      <tr><td>Tags (via l'import CSV)</td><td>Tunnels de paiement et checkout</td></tr>
+      <tr><td>Historique d'achats (export séparé)</td><td>Abonnements récurrents actifs</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Les 5 étapes de la migration, dans l'ordre</h2>
+
+  <h3>1. Exportez tout depuis Kajabi</h3>
+  <p>Avant de toucher à quoi que ce soit : dans Kajabi, allez dans <strong>People</strong> et exportez votre liste de contacts complète en CSV, tags inclus. Exportez séparément vos données d'élèves et d'achats. Prenez aussi des captures d'écran de chaque automatisation existante — vous les reconstruirez à l'identique, et de mémoire, on oublie toujours un déclencheur.</p>
+
+  <h3>2. Importez vos cours avec l'outil natif de GoHighLevel</h3>
+  <p>Dans GHL, l'importeur Kajabi (Memberships → Courses → Import) crée une copie de vos cours : structure des modules, leçons, vidéos, images. Vérifiez ensuite chaque leçon une par une — les mises en page complexes demandent parfois des retouches, et les quiz ne suivent pas : il faut les recréer avec les outils d'évaluation de GHL.</p>
+
+  <h3>3. Recréez vos tunnels et pages de vente</h3>
+  <p>Les pages Kajabi ne s'exportent pas. Reconstruisez vos pages de capture, de vente et de remerciement avec le builder de GHL — c'est aussi l'occasion de les améliorer. Redirigez ensuite les anciennes URLs Kajabi vers les nouvelles pour ne pas perdre le trafic existant (publicités, emails passés, liens en bio).</p>
+
+  <h3>4. Reconstruisez vos automatisations et vos emails</h3>
+  <p>Importez d'abord votre CSV de contacts dans GHL en vérifiant le mappage des tags — c'est eux qui pilotent vos segments. Puis rebâtissez vos séquences : bienvenue, panier abandonné, relances. Point critique trop souvent oublié : la <strong>délivrabilité</strong>. Votre domaine d'envoi est nouveau côté GHL, il faut configurer SPF/DKIM et monter en volume progressivement, sinon vos emails partent en spam. C'est exactement le genre de sujet que je traite en <a href="/services/email-marketing/">marketing &amp; campagnes email</a> sur des bases qui vont jusqu'à 250 000 contacts.</p>
+
+  <h3>5. Paiements, domaine et bascule finale</h3>
+  <p>Reconnectez votre compte Stripe (ou PayPal) à GoHighLevel et recréez vos produits et offres. Faites un achat test réel de chaque offre. Basculez ensuite votre domaine vers GHL, envoyez leurs nouveaux accès aux élèves… et gardez Kajabi actif encore deux à quatre semaines, le temps que tous les élèves aient confirmé leur connexion. On ne résilie l'abonnement Kajabi qu'en tout dernier.</p>
+
+  <h2>Les pièges que je rencontre à chaque migration</h2>
+  <ul>
+    <li><strong>Les tags mal remappés à l'import.</strong> Un tag manquant et c'est tout un segment qui ne reçoit plus vos campagnes. Vérifiez sur un échantillon avant d'importer les milliers de contacts restants.</li>
+    <li><strong>Les quiz et certificats oubliés.</strong> L'importeur ne les migre pas : sans inventaire préalable, on s'en aperçoit quand un élève se plaint.</li>
+    <li><strong>La délivrabilité email négligée.</strong> Envoyer d'un coup 10 000 emails depuis un domaine fraîchement configuré est le meilleur moyen de finir en spam.</li>
+    <li><strong>Les abonnements récurrents cassés.</strong> Les prélèvements en cours sur Stripe doivent être recréés avec précaution pour ne pas facturer deux fois — ni arrêter de facturer du tout.</li>
+    <li><strong>Les liens morts.</strong> Vos anciens liens Kajabi vivent partout : publicités, signatures, PDF, biographies Instagram. Listez-les et redirigez-les avant la bascule.</li>
+  </ul>
+
+  <h2>Comment je sécurise une migration, concrètement</h2>
+  <p>Sur les migrations que je réalise, je travaille toujours dans le même ordre, et il m'évite les mauvaises surprises :</p>
+  <ul>
+    <li><strong>Un inventaire écrit avant de commencer.</strong> Liste des cours, des offres, des automatisations, des tags et des intégrations tierces (Zapier, webhooks, outils de prise de rendez-vous). Ce document sert de checklist de recette à la fin : rien n'est « fini » tant que chaque ligne n'est pas cochée côté GHL.</li>
+    <li><strong>Un sous-compte GHL de travail.</strong> L'avantage d'un compte agence, c'est de pouvoir construire toute la nouvelle infrastructure dans un sous-compte propre, la tester avec quelques utilisateurs réels, puis ouvrir les vannes — sans jamais toucher à l'existant Kajabi.</li>
+    <li><strong>Un import de contacts en deux temps.</strong> D'abord un échantillon de 50 à 100 contacts pour valider le mappage des champs et des tags, ensuite seulement le fichier complet. Corriger un mappage sur 100 lignes prend cinq minutes ; sur 20 000, c'est une journée.</li>
+    <li><strong>Une bascule par étapes, jamais tout le même jour.</strong> Contacts, puis cours, puis tunnels, puis paiements, puis domaine. À chaque étape, un point de contrôle : si quelque chose casse, on sait exactement où.</li>
+  </ul>
+  <p>Ce n'est pas la méthode la plus rapide sur le papier, mais c'est celle qui évite l'écueil classique : une audience en pleine confusion entre deux plateformes, des emails en spam et des élèves qui demandent un remboursement parce qu'ils n'accèdent plus à leur formation.</p>
+
+  <h2>FAQ</h2>
+
+  <h3>Combien de temps prend une migration Kajabi vers GoHighLevel ?</h3>
+  <p>Cela dépend entièrement du volume à transférer : un cours unique sans automatisations ne se compare pas à une académie complète avec quiz, abonnements et séquences email. Plutôt qu'un délai standard, retenez la règle qui sécurise tout : les deux plateformes tournent en parallèle et Kajabi n'est résilié qu'une fois la bascule entièrement validée, élèves reconnectés inclus.</p>
+
+  <h3>Mes élèves perdent-ils leur accès pendant la migration ?</h3>
+  <p>Non, à condition de garder Kajabi actif pendant la transition. Les élèves conservent leur accès Kajabi pendant que les cours sont reconstruits sur GoHighLevel, puis reçoivent leurs nouveaux identifiants. On ne coupe l'ancienne plateforme qu'après confirmation que chacun s'est bien connecté côté GHL.</p>
+
+  <h3>Peut-on migrer les abonnements Stripe en cours ?</h3>
+  <p>Oui dans la plupart des cas : si Kajabi utilisait votre propre compte Stripe, les clients et leurs moyens de paiement y restent stockés. Il faut reconnecter ce même compte Stripe à GoHighLevel puis recréer les abonnements avec précaution pour ne pas facturer deux fois ni interrompre les prélèvements en cours. C'est l'étape la plus délicate, à tester sur un petit groupe avant de généraliser.</p>
+
+  <p>Envie d'aller plus loin sur la plateforme elle-même ? Je détaille tout ce que je mets en place (CRM, workflows, snapshots, sous-comptes) sur ma page <a href="/services/go-high-level/">Go High Level &amp; CRM</a>.</p>
+
+  <div class="article-cta">
+    <div class="t">Votre migration Kajabi → GoHighLevel, sans stress</div>
+    <p>Je migre vos cours, vos contacts et vos automatisations vers GoHighLevel en gardant vos élèves connectés du premier au dernier jour. Le premier rendez-vous est gratuit — on étudie votre besoin ensemble.</p>
+    <a href="/?service=ghl#contact" class="btn-p">Démarrons votre projet ↗</a>
+  </div>
+
+  <div class="author-box">
+    <img src="/assets/img/mahefa.jpg" alt="Mahefa Ramaharavo">
+    <div>
+      <div class="n">Mahefa Ramaharavo</div>
+      <p>Freelance expert No-Code, WordPress et Go High Level — 6 ans d'expérience, 50+ projets livrés pour des clients en France, au Canada et en Espagne.</p>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-logo">
+    <svg width="28" height="26" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="foot-logo-name">MAHEFA <span>TECH</span></span>
+  </div>
+  <span class="foot-copy">© 2026 Mahefa Tech</span>
+  <span class="foot-avail"><span class="dot-blink"></span><span>Disponible · Remote</span></span>
+</footer>
+
+<script src="/assets/main.js"></script>
+</body>
+</html>
