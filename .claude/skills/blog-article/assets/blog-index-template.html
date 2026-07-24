@@ -70,6 +70,7 @@
 </section>
 
 <section class="svc-page-section" style="background:var(--bg-1);">
+  <div class="blog-filters" id="blog-filters"></div>
   <div class="blog-grid">
 <!-- ARTICLES -->
   </div>
@@ -88,5 +89,38 @@
 </footer>
 
 <script src="/assets/main.js"></script>
+<script>
+// Filtres par catégorie du blog — chips générées à partir des articles présents
+(function(){
+  var bar = document.getElementById('blog-filters');
+  var grid = document.querySelector('.blog-grid');
+  if(!bar || !grid) return;
+  var cards = [].slice.call(grid.querySelectorAll('.blog-card'));
+  var cats = {};
+  cards.forEach(function(c){
+    var slug = c.getAttribute('data-cat');
+    if(!slug) return;
+    var lblEl = c.querySelector('.cat');
+    cats[slug] = lblEl ? lblEl.textContent.trim() : slug;
+  });
+  var slugs = Object.keys(cats);
+  if(slugs.length === 0){ bar.style.display = 'none'; return; }
+  function makeChip(slug, label){
+    var b = document.createElement('button');
+    b.className = 'blog-filter' + (slug === 'all' ? ' active' : '');
+    b.textContent = label;
+    b.addEventListener('click', function(){
+      bar.querySelectorAll('.blog-filter').forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      cards.forEach(function(c){
+        c.style.display = (slug === 'all' || c.getAttribute('data-cat') === slug) ? '' : 'none';
+      });
+    });
+    return b;
+  }
+  bar.appendChild(makeChip('all', 'Tous'));
+  slugs.forEach(function(s){ bar.appendChild(makeChip(s, cats[s])); });
+})();
+</script>
 </body>
 </html>

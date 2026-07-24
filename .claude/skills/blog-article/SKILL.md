@@ -42,13 +42,13 @@ Identifie la requête cible exacte (si l'utilisateur donne juste un thème, prop
 
 ### 4. Index du blog et navigation
 - Si `/blog/index.html` n'existe pas : le créer depuis `assets/blog-index-template.html` (dans ce dossier de skill), **et activer le lien Blog dans la nav de toutes les pages** : remplacer le lien mort `Blog · Bientôt` de `index.html` par `<li><a href="/blog/" data-fr="Blog" data-en="Blog">Blog</a></li>`, et vérifier que les pages services ont un lien Blog (sinon l'ajouter après Témoignages).
-- Ajouter la carte de l'article dans la grille (marqueur `<!-- ARTICLES -->`), la plus récente en premier :
+- Ajouter la carte de l'article dans la grille (marqueur `<!-- ARTICLES -->`), la plus récente en premier. L'attribut `data-cat` (= slug de catégorie) est OBLIGATOIRE : il alimente les filtres par catégorie de la page blog (chips générées automatiquement à partir des `data-cat` présents). Le temps de lecture s'écrit « X min de lecture » :
 ```html
-    <a class="blog-card" href="/blog/<slug>/">
+    <a class="blog-card" href="/blog/<slug>/" data-cat="CATEGORY_SLUG">
       <div class="cat">CATEGORY_LABEL</div>
       <h2>Titre de l'article</h2>
       <p>Meta description ou accroche.</p>
-      <div class="meta">DATE_FR · X min</div>
+      <div class="meta">DATE_FR · X min de lecture</div>
     </a>
 ```
 

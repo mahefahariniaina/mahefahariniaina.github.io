@@ -71,19 +71,20 @@
 </section>
 
 <section class="svc-page-section" style="background:var(--bg-1);">
+  <div class="blog-filters" id="blog-filters"></div>
   <div class="blog-grid">
 <!-- ARTICLES -->
-    <a class="blog-card" href="/blog/pourquoi-choisir-gohighlevel/">
+    <a class="blog-card" href="/blog/pourquoi-choisir-gohighlevel/" data-cat="gohighlevel">
       <div class="cat">GoHighLevel</div>
       <h2>Pourquoi choisir GoHighLevel plutôt qu'un autre outil ?</h2>
       <p>CRM, tunnels, emails, SMS, formations : ce que GHL remplace vraiment, ses limites honnêtes, et pour qui il vaut le coup.</p>
-      <div class="meta">16 juillet 2026 · 6 min</div>
+      <div class="meta">16 juillet 2026 · 6 min de lecture</div>
     </a>
-    <a class="blog-card" href="/blog/migrer-kajabi-vers-gohighlevel/">
+    <a class="blog-card" href="/blog/migrer-kajabi-vers-gohighlevel/" data-cat="gohighlevel">
       <div class="cat">GoHighLevel</div>
       <h2>Migration Kajabi vers GoHighLevel : le guide complet</h2>
       <p>Étapes concrètes, pièges à éviter et retour d'expérience pour migrer vos cours, contacts et automatisations sans rien perdre.</p>
-      <div class="meta">16 juillet 2026 · 6 min</div>
+      <div class="meta">16 juillet 2026 · 6 min de lecture</div>
     </a>
   </div>
 </section>
@@ -101,5 +102,38 @@
 </footer>
 
 <script src="/assets/main.js"></script>
+<script>
+// Filtres par catégorie du blog — chips générées à partir des articles présents
+(function(){
+  var bar = document.getElementById('blog-filters');
+  var grid = document.querySelector('.blog-grid');
+  if(!bar || !grid) return;
+  var cards = [].slice.call(grid.querySelectorAll('.blog-card'));
+  var cats = {};
+  cards.forEach(function(c){
+    var slug = c.getAttribute('data-cat');
+    if(!slug) return;
+    var lblEl = c.querySelector('.cat');
+    cats[slug] = lblEl ? lblEl.textContent.trim() : slug;
+  });
+  var slugs = Object.keys(cats);
+  if(slugs.length === 0){ bar.style.display = 'none'; return; }
+  function makeChip(slug, label){
+    var b = document.createElement('button');
+    b.className = 'blog-filter' + (slug === 'all' ? ' active' : '');
+    b.textContent = label;
+    b.addEventListener('click', function(){
+      bar.querySelectorAll('.blog-filter').forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      cards.forEach(function(c){
+        c.style.display = (slug === 'all' || c.getAttribute('data-cat') === slug) ? '' : 'none';
+      });
+    });
+    return b;
+  }
+  bar.appendChild(makeChip('all', 'Tous'));
+  slugs.forEach(function(s){ bar.appendChild(makeChip(s, cats[s])); });
+})();
+</script>
 </body>
 </html>
