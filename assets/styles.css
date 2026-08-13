@@ -387,6 +387,15 @@ footer { padding:24px 52px; border-top:1px solid var(--border); display:flex; ju
 .blog-filter { font-family:var(--mono); font-size:11px; letter-spacing:.06em; color:var(--slate); background:transparent; border:1px solid var(--border); padding:8px 16px; border-radius:20px; cursor:none; transition:color .2s, background .2s, border-color .2s; }
 .blog-filter:hover { color:var(--cream); border-color:var(--border-em); }
 .blog-filter.active { color:var(--bg-0); background:var(--em); border-color:var(--em); }
+/* Formation & Ateliers — teaser coming soon */
+.formation-teaser { position:relative; overflow:hidden; background:linear-gradient(150deg,var(--bg-2),var(--bg-1)); border:1px solid var(--border-em); border-radius:var(--r-lg); padding:44px 48px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:32px; }
+.formation-teaser .ft-glow { position:absolute; top:-80px; right:-60px; width:280px; height:280px; background:radial-gradient(circle, rgba(0,196,154,.14) 0%, rgba(0,196,154,0) 70%); pointer-events:none; }
+.ft-badge { display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); background:rgba(232,168,56,.1); border:1px solid rgba(232,168,56,.3); padding:5px 12px; border-radius:20px; margin-bottom:18px; }
+.ft-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 0 rgba(232,168,56,.5); animation:ftpulse 2s infinite; }
+@keyframes ftpulse { 0%{box-shadow:0 0 0 0 rgba(232,168,56,.5);} 70%{box-shadow:0 0 0 7px rgba(232,168,56,0);} 100%{box-shadow:0 0 0 0 rgba(232,168,56,0);} }
+.ft-title { font-size:clamp(24px,4vw,32px); font-weight:700; color:var(--cream); letter-spacing:-.02em; line-height:1.1; margin-bottom:12px; }
+.ft-text { font-size:15px; color:rgba(245,240,232,.6); line-height:1.7; }
+@media(max-width:640px){ .formation-teaser { padding:32px 26px; } }
 .article-hero { padding:150px 52px 48px; background:var(--bg-0); }
 .article-meta { font-family:var(--mono); font-size:11px; color:var(--slate); letter-spacing:.06em; display:flex; gap:14px; flex-wrap:wrap; margin-bottom:20px; }
 .article-meta .cat { color:var(--em); }
