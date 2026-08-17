@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZXF0QJC58"></script>
+<!-- Mesure d'audience chargée uniquement après consentement (RGPD) -->
+<script src="/assets/consent.js" defer></script>
 <title>Créer un agent IA de support client avec n8n | Mahefa Tech</title>
 <meta name="description" content="J'en ai construit un et je l'exploite : l'architecture réelle, les pièges qui font échouer 9 projets sur 10, et pour qui ça vaut vraiment le coup.">
 <meta name="robots" content="index, follow">
@@ -53,9 +53,6 @@
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
@@ -179,7 +176,7 @@
   </div>
 
   <div class="author-box">
-    <img src="/assets/img/mahefa.jpg" alt="Mahefa Ramaharavo">
+    <picture><source srcset="/assets/img/mahefa.webp" type="image/webp"><img src="/assets/img/mahefa.jpg" alt="Mahefa Ramaharavo"></picture>
     <div>
       <div class="n">Mahefa Ramaharavo</div>
       <p>Freelance expert No-Code, WordPress et Go High Level — 6 ans d'expérience, 50+ projets livrés pour des clients en France, au Canada et en Espagne.</p>
@@ -194,6 +191,11 @@
       <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <span class="foot-logo-name">MAHEFA <span>TECH</span></span>
+  </div>
+  <div class="foot-legal">
+    <a href="/mentions-legales/" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+    <a href="/politique-confidentialite/" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+    <button type="button" onclick="mtOpenConsent()" data-fr="Cookies" data-en="Cookies">Cookies</button>
   </div>
   <span class="foot-copy">© 2026 Mahefa Tech</span>
   <span class="foot-avail"><span class="dot-blink"></span><span>Disponible · Remote</span></span>
