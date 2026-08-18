@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Mesure d'audience chargée uniquement après consentement (RGPD) -->
+<script src="/assets/consent.js" defer></script>
+<title>RGPD : les 5 corrections que tout site doit avoir | Mahefa Tech</title>
+<meta name="description" content="Mentions légales, consentement cookies, Google Fonts : les 5 corrections RGPD à faire sur un site WordPress, testées sur mon propre site.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Mahefa Ramaharavo">
+<link rel="canonical" href="https://mahefatech.com/blog/mise-en-conformite-rgpd-site-wordpress/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mahefatech.com/blog/mise-en-conformite-rgpd-site-wordpress/">
+<meta property="og:title" content="RGPD : les 5 corrections que tout site doit avoir">
+<meta property="og:description" content="Mentions légales, consentement cookies, Google Fonts : les 5 corrections RGPD à faire sur un site WordPress, testées sur mon propre site.">
+<meta property="og:image" content="https://mahefatech.com/assets/img/og-image.jpg">
+<meta property="og:locale" content="fr_FR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "RGPD : les 5 corrections que tout site doit avoir",
+      "description": "Mentions légales, consentement cookies, Google Fonts : les 5 corrections RGPD à faire sur un site WordPress, testées sur mon propre site.",
+      "datePublished": "2026-08-17",
+      "dateModified": "2026-08-17",
+      "inLanguage": "fr",
+      "mainEntityOfPage": "https://mahefatech.com/blog/mise-en-conformite-rgpd-site-wordpress/",
+      "image": "https://mahefatech.com/assets/img/og-image.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Mahefa Ramaharavo",
+        "url": "https://mahefatech.com/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Mahefa Ramaharavo"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://mahefatech.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://mahefatech.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "RGPD : les 5 corrections que tout site doit avoir",
+          "item": "https://mahefatech.com/blog/mise-en-conformite-rgpd-site-wordpress/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Un site vitrine sans formulaire est-il concerné par le RGPD ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, dès qu'il dépose un cookie de mesure d'audience ou charge une ressource depuis un serveur tiers — une police Google suffit à transmettre l'adresse IP du visiteur. Un site réellement sans traceur ni formulaire reste soumis à l'obligation de mentions légales, qui relève de la LCEN et non du RGPD."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Une extension de bandeau cookies suffit-elle à être conforme ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non, pas si elle est mal configurée. La plupart affichent le bandeau sans bloquer les scripts en amont, ce qui ne protège de rien. Testez toujours en navigation privée : aucune requête ne doit partir vers un service tiers avant votre clic sur « Accepter »."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que risque concrètement un petit site non conforme ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le risque principal n'est pas un contrôle spontané de la CNIL, rare pour un petit site, mais la plainte d'un visiteur ou d'un concurrent — et la perte de crédibilité auprès de clients qui vérifient. Les corrections décrites ici étant peu coûteuses, le calcul est vite fait."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="none" stroke="#A8EDCF" stroke-width="0.5" opacity="0.35"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="132" y1="111" x2="142" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+      <line x1="228" y1="111" x2="218" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">MAHEFA <span style="color:var(--em)">TECH</span></span>
+      <span class="nav-logo-sub">Digital Expert</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Accueil</a></li>
+    <li class="nav-drop">
+      <a href="/#services">Services</a>
+      <div class="nav-drop-menu"><div class="ndm-box">
+        <a href="/services/automatisation-no-code/">Automatisation & Agents IA</a>
+        <a href="/services/go-high-level/">Go High Level & CRM</a>
+        <a href="/services/developpement-wordpress/">Développement WordPress</a>
+        <a href="/services/email-marketing/">Marketing &amp; Campagnes</a>
+        <a href="/services/integration-pixel-perfect/">Intégration Pixel-Perfect</a>
+        <a href="/services/chef-de-projet/">Chef de Projet</a>
+        <a href="/services/assistant-technique/">Assistant Technique &amp; Annotation IA</a>
+      </div></div>
+    </li>
+    <li><a href="/#about">À propos</a></li>
+    <li><a href="/#testimonials">Témoignages</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/formation/">Formation</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/#contact" class="nav-cta">Parlons-en ↗</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="breadcrumb"><a href="/">Accueil</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span style="color:var(--em);">WordPress</span></div>
+  <div class="article-meta"><span class="cat">WordPress</span><span>17 août 2026</span><span>7 min de lecture</span></div>
+  <h1 class="article-title">Mise en conformité RGPD d'un site WordPress : les 5 corrections essentielles</h1>
+</section>
+
+<article class="article-body">
+  <p>Cinq corrections suffisent à mettre la grande majorité des sites en règle : publier les pages légales, bloquer les traceurs tant que le visiteur n'a pas accepté, héberger les polices en local, encadrer le formulaire de contact, et permettre de retirer son consentement à tout moment. Aucune ne demande de refonte, et je les ai toutes appliquées sur mon propre site en une matinée.</p>
+
+  <p>Le déclencheur : un confrère m'a envoyé le rapport d'audit de ce site généré par <a href="https://orilyt.com" target="_blank" rel="noopener">Orilyt</a>. Score global honorable, mais deux lignes en rouge — et les deux étaient des manquements réglementaires. C'est l'inconvénient du métier : on soigne les sites des clients et on laisse traîner le sien. Voici ce que j'ai corrigé, et surtout comment faire l'équivalent sur WordPress.</p>
+
+  <p>Précision utile : je suis développeur, pas juriste. Ce qui suit est ce que je mets en place techniquement sur les sites que je livre, pas un avis juridique.</p>
+
+  <h2>1. Les pages légales : l'oubli le plus fréquent</h2>
+
+  <p>Mon site n'avait ni mentions légales ni politique de confidentialité. C'est le manquement le plus banal et le plus facile à corriger — et pourtant il expose directement, parce qu'il est visible par n'importe qui en trois secondes.</p>
+
+  <p>Deux documents distincts sont attendus :</p>
+
+  <ul>
+    <li><strong>Les mentions légales</strong> : qui édite le site, comment le joindre, qui l'héberge. Obligation issue de la LCEN, indépendante du RGPD.</li>
+    <li><strong>La politique de confidentialité</strong> : quelles données vous collectez, pourquoi, combien de temps vous les gardez, et comment le visiteur exerce ses droits.</li>
+  </ul>
+
+  <p><strong>Sur WordPress :</strong> créez deux pages, puis ajoutez-les au menu de pied de page (Apparence → Menus). WordPress génère même un brouillon de politique de confidentialité dans Réglages → Confidentialité — un point de départ à personnaliser, jamais à publier tel quel. Le piège classique : la page existe mais n'est liée depuis nulle part. Elle doit être accessible <strong>depuis toutes les pages</strong>, pied de page compris.</p>
+
+  <h2>2. Le consentement aux cookies : le bandeau qui ne bloque rien</h2>
+
+  <p>Voilà le point le plus mal traité du web francophone, et celui où mon site était le plus en tort : Google Analytics se chargeait dès l'arrivée du visiteur, sans lui demander quoi que ce soit.</p>
+
+  <p>C'est aussi l'erreur que je vois le plus souvent chez les clients — sauf qu'elle est déguisée. Le site affiche un joli bandeau cookies, tout le monde se croit couvert, mais <strong>le bandeau ne bloque rien du tout</strong> : le script Analytics est déjà parti avant même que le visiteur ait cliqué. Le bandeau ne sert alors qu'à décorer une infraction.</p>
+
+  <p>Ce qu'il faut réellement :</p>
+
+  <ul>
+    <li>Aucun traceur de mesure d'audience ne se charge <strong>avant</strong> l'acceptation.</li>
+    <li>Refuser doit être aussi simple qu'accepter — un bouton « Refuser » au même niveau que « Accepter ».</li>
+    <li>Le choix est conservé un temps limité, six mois étant la durée recommandée par la CNIL, puis la question est reposée.</li>
+  </ul>
+
+  <p><strong>Sur WordPress :</strong> une extension de gestion du consentement (Complianz, tarteaucitron, Axeptio) fait le travail, à condition de la configurer en mode blocage, pas en mode information. <strong>Le test qui ne ment pas</strong> : ouvrez votre site en navigation privée, sans rien cliquer, puis regardez les requêtes réseau de votre navigateur (onglet Réseau, filtre « google »). Si vous voyez partir une requête vers Google avant votre clic, votre bandeau est cosmétique.</p>
+
+  <p>Sur mon site, qui n'est pas sous WordPress, j'ai écrit le script moi-même : Analytics n'existe tout simplement pas dans la page tant que le consentement n'est pas donné.</p>
+
+  <h2>3. Les polices Google : le transfert de données que personne ne voit</h2>
+
+  <p>Celui-là surprend presque tous les clients à qui j'en parle. Si votre thème charge ses polices depuis les serveurs de Google, alors <strong>l'adresse IP de chacun de vos visiteurs est transmise à Google</strong>, sans consentement et sans que personne ne l'ait décidé. Un tribunal allemand a condamné un éditeur de site sur ce motif précis en 2022, et l'affaire a fait jurisprudence en Europe.</p>
+
+  <p>La correction prend dix minutes : télécharger les fichiers de police et les servir depuis votre propre serveur. J'ai rapatrié les quatorze fichiers de mes deux polices en local ; plus aucune requête ne sort vers Google.</p>
+
+  <p><strong>Sur WordPress :</strong> l'extension OMGF automatise le rapatriement des polices en local. Vérifiez ensuite le reste de la page : une carte Google Maps, une vidéo YouTube intégrée ou un widget de réseau social posent exactement le même problème. Les intégrations YouTube ont un mode de confidentialité avancée à activer ; les cartes se chargent idéalement après un clic du visiteur.</p>
+
+  <h2>4. Le formulaire de contact : dire ce que deviennent les données</h2>
+
+  <p>Un formulaire de contact collecte des données personnelles. Le visiteur doit savoir, au moment où il l'envoie, ce que vous en faites et combien de temps vous les gardez.</p>
+
+  <p>En pratique, trois choses :</p>
+
+  <ul>
+    <li>Une phrase sous le formulaire indiquant la finalité (répondre à votre demande) et renvoyant vers la politique de confidentialité.</li>
+    <li>Une case de consentement <strong>jamais pré-cochée</strong> si vous inscrivez la personne à une newsletter au passage — et l'inscription ne doit pas être la condition de l'envoi du message.</li>
+    <li>Une durée de conservation, et son application réelle.</li>
+  </ul>
+
+  <p><strong>Sur WordPress, l'angle mort est ici :</strong> Contact Form 7, WPForms et consorts enregistrent souvent une copie de chaque message <strong>dans la base de données du site</strong>, en plus de l'e-mail envoyé. Beaucoup de sites que je reprends stockent ainsi plusieurs années de messages, avec noms, e-mails et numéros, dans une base que personne ne surveille. Décidez si vous en avez besoin ; sinon, désactivez l'enregistrement et purgez l'historique.</p>
+
+  <h2>5. Le droit de changer d'avis</h2>
+
+  <p>Un consentement se retire aussi facilement qu'il se donne. Concrètement, cela veut dire un lien ou un bouton <strong>« Cookies » accessible en permanence</strong>, dans le pied de page, qui rouvre le panneau de choix.</p>
+
+  <p>C'est trois lignes de code ou une simple case à cocher dans votre extension, et c'est le détail que la plupart des sites oublient. Sur le mien, le bouton est dans le pied de page de chacune des vingt pages, à côté des mentions légales.</p>
+
+  <h2>Les 3 corrections que je n'ai pas pu faire (et pourquoi ça vous concerne)</h2>
+
+  <p>L'audit signalait trois autres points, que je préfère assumer publiquement plutôt que de les passer sous silence :</p>
+
+  <table>
+    <thead>
+      <tr><th>Point signalé</th><th>Ce que ça demande</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Mise en cache navigateur</td><td>Des en-têtes HTTP personnalisés</td></tr>
+      <tr><td>En-têtes de sécurité (CSP, Referrer-Policy)</td><td>Des en-têtes HTTP personnalisés</td></tr>
+      <tr><td>HSTS (HTTPS strict)</td><td>Des en-têtes HTTP personnalisés</td></tr>
+    </tbody>
+  </table>
+
+  <p>Ce site est un site statique, et son hébergement <strong>ne permet pas de définir d'en-têtes HTTP personnalisés</strong>. Ce n'est pas une négligence, c'est une limite de la plateforme. Je vais faire passer le domaine derrière un service qui les ajoute, ce qui réglera les trois d'un coup.</p>
+
+  <p>Et c'est là que WordPress reprend l'avantage : sur un hébergement classique, ces trois points se règlent en quelques lignes dans le fichier <code>.htaccess</code> ou la configuration Nginx. Le <code>Referrer-Policy</code> en particulier a un intérêt directement lié à la vie privée : sans lui, l'URL complète de la page que consulte votre visiteur est transmise aux sites tiers vers lesquels il clique.</p>
+
+  <h2>Combien de temps ça prend réellement</h2>
+
+  <p>Pour un site WordPress standard, ces cinq corrections tiennent dans une demi-journée : deux heures pour les pages légales et leur rédaction, une heure pour configurer et <strong>vérifier</strong> le consentement, une demi-heure pour les polices et les intégrations, le reste pour le formulaire.</p>
+
+  <p>Ce qui prend du temps, ce n'est jamais la correction : c'est de découvrir ce qui ne va pas. C'est pour cette raison que je fais désormais passer chaque site dont je m'occupe dans un outil d'audit automatisé avant d'ouvrir le code — quelques secondes pour obtenir la liste, au lieu d'une inspection manuelle page par page. Sur des lots de plusieurs sites, j'automatise même le déclenchement des audits et la remontée des résultats, avec les mêmes outils que ceux que je compare dans <a href="/blog/zapier-vs-make-vs-n8n/">Zapier vs Make vs n8n</a>.</p>
+
+  <p>Si vous préférez déléguer, c'est typiquement le genre d'intervention que je prends en charge dans le cadre du <a href="/services/developpement-wordpress/">développement WordPress</a> ou d'un suivi régulier en <a href="/services/assistant-technique/">assistance technique</a>.</p>
+
+  <h2>FAQ</h2>
+
+  <h3>Un site vitrine sans formulaire est-il concerné par le RGPD ?</h3>
+
+  <p>Oui, dès qu'il dépose un cookie de mesure d'audience ou charge une ressource depuis un serveur tiers — une police Google suffit à transmettre l'adresse IP du visiteur. Un site réellement sans traceur ni formulaire reste soumis à l'obligation de mentions légales, qui relève de la LCEN et non du RGPD.</p>
+
+  <h3>Une extension de bandeau cookies suffit-elle à être conforme ?</h3>
+
+  <p>Non, pas si elle est mal configurée. La plupart affichent le bandeau sans bloquer les scripts en amont, ce qui ne protège de rien. Testez toujours en navigation privée : aucune requête ne doit partir vers un service tiers avant votre clic sur « Accepter ».</p>
+
+  <h3>Que risque concrètement un petit site non conforme ?</h3>
+
+  <p>Le risque principal n'est pas un contrôle spontané de la CNIL, rare pour un petit site, mais la plainte d'un visiteur ou d'un concurrent — et la perte de crédibilité auprès de clients qui vérifient. Les corrections décrites ici étant peu coûteuses, le calcul est vite fait.</p>
+
+  <div class="article-cta">
+    <div class="t">Votre site WordPress est-il en règle ?</div>
+    <p>Je fais le tour des cinq points ci-dessus sur votre site et je vous dis ce qui manque, sans jargon. Le premier rendez-vous est gratuit — on étudie votre besoin ensemble.</p>
+    <a href="/?service=wordpress#contact" class="btn-p">Démarrons votre projet ↗</a>
+  </div>
+
+  <div class="author-box">
+    <picture><source srcset="/assets/img/mahefa.webp" type="image/webp"><img src="/assets/img/mahefa.jpg" alt="Mahefa Ramaharavo"></picture>
+    <div>
+      <div class="n">Mahefa Ramaharavo</div>
+      <p>Freelance expert No-Code, WordPress et Go High Level — 6 ans d'expérience, 50+ projets livrés pour des clients en France, au Canada et en Espagne.</p>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-logo">
+    <svg width="28" height="26" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="foot-logo-name">MAHEFA <span>TECH</span></span>
+  </div>
+  <div class="foot-legal">
+    <a href="/mentions-legales/" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+    <a href="/politique-confidentialite/" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+    <button type="button" onclick="mtOpenConsent()" data-fr="Cookies" data-en="Cookies">Cookies</button>
+  </div>
+  <span class="foot-copy">© 2026 Mahefa Tech</span>
+  <span class="foot-avail"><span class="dot-blink"></span><span>Disponible · Remote</span></span>
+</footer>
+
+<script src="/assets/main.js"></script>
+</body>
+</html>
