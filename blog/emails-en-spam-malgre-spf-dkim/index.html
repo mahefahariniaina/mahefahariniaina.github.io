@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Mesure d'audience chargée uniquement après consentement (RGPD) -->
+<script src="/assets/consent.js" defer></script>
+<title>Emails en spam malgré SPF et DKIM : les vraies causes | Mahefa Tech</title>
+<meta name="description" content="SPF, DKIM et DMARC sont bien configurés et vos emails partent quand même en spam ? Les 5 causes réelles, vues sur des bases de plusieurs centaines de milliers de contacts.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Mahefa Ramaharavo">
+<link rel="canonical" href="https://mahefatech.com/blog/emails-en-spam-malgre-spf-dkim/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mahefatech.com/blog/emails-en-spam-malgre-spf-dkim/">
+<meta property="og:title" content="Emails en spam malgré SPF et DKIM : les vraies causes">
+<meta property="og:description" content="SPF, DKIM et DMARC sont bien configurés et vos emails partent quand même en spam ? Les 5 causes réelles, vues sur des bases de plusieurs centaines de milliers de contacts.">
+<meta property="og:image" content="https://mahefatech.com/assets/img/og-image.jpg">
+<meta property="og:locale" content="fr_FR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Emails en spam malgré SPF et DKIM : les vraies causes",
+      "description": "SPF, DKIM et DMARC sont bien configurés et vos emails partent quand même en spam ? Les 5 causes réelles, vues sur des bases de plusieurs centaines de milliers de contacts.",
+      "datePublished": "2026-08-25",
+      "dateModified": "2026-08-25",
+      "inLanguage": "fr",
+      "mainEntityOfPage": "https://mahefatech.com/blog/emails-en-spam-malgre-spf-dkim/",
+      "image": "https://mahefatech.com/assets/img/og-image.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Mahefa Ramaharavo",
+        "url": "https://mahefatech.com/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Mahefa Ramaharavo"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://mahefatech.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://mahefatech.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Emails en spam malgré SPF et DKIM : les vraies causes",
+          "item": "https://mahefatech.com/blog/emails-en-spam-malgre-spf-dkim/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment savoir si mes emails arrivent vraiment en spam ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ne vous fiez pas à votre propre boîte : votre adresse interagit avec vos envois, donc elle les reçoit toujours. Utilisez un outil de test de placement, qui envoie votre message vers des boîtes réelles chez les principaux fournisseurs et vous dit où il atterrit. Regardez aussi le taux d'ouverture par domaine dans votre outil d'emailing : si Gmail ouvre à 30 % et Outlook à 2 %, le problème est un filtrage, pas votre objet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il envoyer ses campagnes depuis un sous-domaine dédié ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, dès que vous envoyez en volume. Un sous-domaine d'envoi isole la réputation de vos campagnes marketing de celle de vos emails professionnels quotidiens. Si une campagne se fait sanctionner, vos échanges commerciaux continuent d'arriver. C'est la première chose que je mets en place lors d'une migration vers un nouvel outil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps faut-il pour réparer une mauvaise réputation ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cela se compte en semaines, pas en jours, et je ne promets jamais de délai : la réputation se reconstruit en envoyant peu, à des personnes qui ouvrent, régulièrement. Il n'existe aucun bouton pour l'accélérer. C'est précisément pour cette raison qu'il vaut mieux ne pas l'abîmer : une seule campagne envoyée à une liste achetée ou trop ancienne peut coûter des mois de patience."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="none" stroke="#A8EDCF" stroke-width="0.5" opacity="0.35"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="132" y1="111" x2="142" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+      <line x1="228" y1="111" x2="218" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">MAHEFA <span style="color:var(--em)">TECH</span></span>
+      <span class="nav-logo-sub">Digital Expert</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Accueil</a></li>
+    <li class="nav-drop">
+      <a href="/#services">Services</a>
+      <div class="nav-drop-menu"><div class="ndm-box">
+        <a href="/services/automatisation-no-code/">Automatisation & Agents IA</a>
+        <a href="/services/go-high-level/">Go High Level & CRM</a>
+        <a href="/services/developpement-wordpress/">Développement WordPress</a>
+        <a href="/services/email-marketing/">Marketing &amp; Campagnes</a>
+        <a href="/services/integration-pixel-perfect/">Intégration Pixel-Perfect</a>
+        <a href="/services/chef-de-projet/">Chef de Projet</a>
+        <a href="/services/assistant-technique/">Assistant Technique &amp; Annotation IA</a>
+      </div></div>
+    </li>
+    <li><a href="/#about">À propos</a></li>
+    <li><a href="/#testimonials">Témoignages</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/formation/">Formation</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/#contact" class="nav-cta">Parlons-en ↗</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="breadcrumb"><a href="/">Accueil</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span style="color:var(--em);">Automatisation &amp; IA</span></div>
+  <div class="article-meta"><span class="cat">Automatisation &amp; IA</span><span>25 août 2026</span><span>6 min de lecture</span></div>
+  <h1 class="article-title">Vos emails finissent en spam malgré SPF et DKIM : les 5 causes qui restent</h1>
+</section>
+
+<article class="article-body">
+  <p>Si SPF, DKIM et DMARC sont correctement configurés et que vos emails partent quand même en spam, le problème n'est plus technique : il est comportemental. Les fournisseurs de messagerie ont validé votre identité, ils jugent maintenant votre <strong>réputation d'expéditeur</strong> — l'ancienneté de votre domaine, la qualité de votre liste, et surtout ce que vos destinataires font de vos messages.</p>
+
+  <p>C'est la situation la plus frustrante en emailing, et la moins bien documentée en français : on trouve partout comment configurer l'authentification, presque nulle part quoi faire quand elle est en place et que le problème persiste. Voici les cinq causes que je retrouve systématiquement, sur des bases allant de quelques milliers à plus de 250 000 contacts.</p>
+
+  <h2>D'abord : votre authentification est-elle vraiment bonne ?</h2>
+
+  <p>Avant de chercher plus loin, éliminons le faux négatif. « Configuré » ne veut pas dire « valide ». Trois pièges classiques :</p>
+
+  <ul>
+    <li><strong>L'alignement DMARC.</strong> SPF et DKIM peuvent passer tout en échouant l'alignement, parce que le domaine visible dans le champ « De » n'est pas celui qui signe le message. C'est fréquent quand on envoie depuis un outil marketing sans avoir authentifié son propre domaine chez lui.</li>
+    <li><strong>Le DMARC en <code>p=none</code> depuis toujours.</strong> Ce n'est pas une faute, mais ce n'est pas une politique : vous demandez des rapports sans jamais rien décider. Les fournisseurs le voient.</li>
+    <li><strong>Plusieurs enregistrements SPF sur le même domaine.</strong> Un seul est autorisé. Deux, et l'ensemble est invalide — un cas que je rencontre presque à chaque reprise de compte existant, parce que chaque outil ajouté a poussé sa propre ligne.</li>
+  </ul>
+
+  <p>Un outil de vérification en ligne vous répond en quelques secondes. Si tout est vert, passez à la suite : le problème est ailleurs.</p>
+
+  <h2>Cause 1 : votre domaine n'a pas d'historique</h2>
+
+  <p>Un domaine récent, ou un domaine ancien qui n'a jamais servi à envoyer d'emails en volume, part de zéro. Aux yeux de Gmail ou d'Outlook, un expéditeur inconnu qui envoie soudainement des milliers de messages ressemble exactement à ce que fait un spammeur.</p>
+
+  <p>La réponse est la montée en charge progressive : commencer par de petits volumes, vers vos contacts les plus engagés, et augmenter par paliers sur plusieurs semaines. C'est lent, c'est ennuyeux, et c'est l'étape que tout le monde saute. Lors d'une migration d'outil, c'est aussi le moment le plus dangereux : le domaine change d'infrastructure d'envoi et repart, en pratique, avec un historique neuf.</p>
+
+  <h2>Cause 2 : votre liste contient des adresses mortes</h2>
+
+  <p>C'est la cause n°1 des catastrophes que je vois arriver. Une base de contacts constituée il y a trois ans et jamais nettoyée contient forcément des adresses fermées, des boîtes abandonnées, et parfois des <strong>pièges à spam</strong> — d'anciennes adresses réelles recyclées par les fournisseurs précisément pour détecter ceux qui envoient à des listes obsolètes.</p>
+
+  <p>Un taux de rebond élevé sur un envoi, et votre réputation prend un coup dont vous mettrez des semaines à vous remettre. Avant tout import dans un nouvel outil, je fais systématiquement passer la base par une validation, et je sépare les contacts inactifs depuis plus d'un an du reste. On ne les supprime pas forcément, on cesse simplement de leur écrire comme aux autres.</p>
+
+  <p>Et il faut le dire clairement : une liste achetée ou récupérée ne se répare pas. Elle se jette.</p>
+
+  <h2>Cause 3 : personne n'ouvre vos emails</h2>
+
+  <p>Les fournisseurs de messagerie observent ce que font vos destinataires. Ouvrir, répondre, sortir un message des spams : autant de signaux positifs. Ignorer, supprimer sans ouvrir, marquer comme indésirable : autant de signaux négatifs, et le dernier pèse très lourd.</p>
+
+  <p>Le cercle vicieux est bien connu : on envoie à toute la base pour « ne rater personne », l'engagement moyen s'effondre, le placement se dégrade, donc encore moins de gens ouvrent. La sortie tient en une phrase : <strong>écrire moins souvent, à moins de monde, mais aux bonnes personnes</strong>. Sur les comptes que je gère, segmenter par engagement récent améliore le placement plus vite que n'importe quel réglage technique.</p>
+
+  <p>Vérifiez aussi que le désabonnement est visible et fonctionne en un clic. Un lien de désinscription caché ne retient personne : il transforme un désabonnement en signalement pour spam, ce qui est infiniment plus coûteux.</p>
+
+  <h2>Cause 4 : vous envoyez tout depuis le même domaine</h2>
+
+  <p>Vos campagnes marketing et vos emails professionnels quotidiens ne devraient pas partager la même réputation. Une campagne mal reçue, et ce sont vos devis et vos réponses à vos clients qui commencent à disparaître dans les indésirables.</p>
+
+  <p>La séparation se fait avec un sous-domaine d'envoi dédié aux campagnes, authentifié séparément. C'est un des premiers réglages que je mets en place sur un compte, avant même de parler de contenu, parce que c'est ce qui limite les dégâts le jour où quelque chose se passe mal.</p>
+
+  <h2>Cause 5 : l'infrastructure de votre outil</h2>
+
+  <p>Sur la plupart des plateformes d'emailing, en entrée de gamme, vous partagez l'adresse d'envoi avec d'autres clients. Leur comportement affecte le vôtre. Si l'un d'eux envoie n'importe quoi, vous en subissez une partie des conséquences, sans rien avoir fait.</p>
+
+  <p>D'où deux réflexes. D'abord vérifier, avant de choisir un outil, ce qu'il propose en matière d'adresse d'envoi dédiée et à partir de quel volume cela devient pertinent. Ensuite, si vous découvrez le problème après coup, mesurer avant de conclure : un placement médiocre chez un fournisseur mais correct chez les autres pointe généralement vers l'infrastructure, pas vers votre contenu.</p>
+
+  <p>Sur les plateformes tout-en-un comme <a href="/services/go-high-level/">Go High Level</a>, ce point est d'autant plus important que l'outil sert souvent à la fois aux campagnes, aux notifications transactionnelles et aux relances automatiques — trois usages qui n'ont ni le même volume ni la même tolérance à l'échec.</p>
+
+  <h2>Le diagnostic en quinze minutes</h2>
+
+  <p>Dans cet ordre, parce qu'il va du moins coûteux au plus coûteux :</p>
+
+  <table>
+    <thead>
+      <tr><th>Étape</th><th>Ce que vous cherchez</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Vérifier SPF, DKIM, DMARC et leur alignement</td><td>Un enregistrement invalide ou dupliqué</td></tr>
+      <tr><td>Comparer le taux d'ouverture par fournisseur</td><td>Un domaine très en dessous des autres = filtrage</td></tr>
+      <tr><td>Regarder les rebonds du dernier envoi</td><td>Un taux anormal = liste à nettoyer</td></tr>
+      <tr><td>Regarder l'ancienneté de la liste</td><td>Des contacts jamais réengagés depuis des années</td></tr>
+      <tr><td>Regarder le domaine d'envoi</td><td>Campagnes et emails professionnels mélangés</td></tr>
+    </tbody>
+  </table>
+
+  <p>Ce diagnostic ne demande aucun outil payant. Ce qu'il demande, c'est de résister à la tentation de tout reconfigurer avant d'avoir mesuré : la plupart des interventions « au cas où » sur les enregistrements DNS aggravent la situation.</p>
+
+  <h2>Ce que ça donne en pratique</h2>
+
+  <p>La délivrabilité n'est pas un réglage, c'est une hygiène. Les comptes qui n'ont jamais de problème sont ceux qui envoient régulièrement, à des listes tenues à jour, depuis un domaine dédié, avec un désabonnement facile. Les comptes en difficulté sont presque toujours ceux qui ont envoyé beaucoup, d'un coup, à une base ancienne, après une migration.</p>
+
+  <p>C'est aussi pour cette raison que je traite toujours la délivrabilité <em>avant</em> une migration d'outil et non après — le sujet est au cœur de ce que je décris dans <a href="/blog/migrer-kajabi-vers-gohighlevel/">le guide de migration vers GoHighLevel</a>.</p>
+
+  <p>Si vos campagnes n'arrivent plus et que vous ne savez pas par où commencer, c'est typiquement ce que je démêle dans le cadre de mes missions <a href="/services/email-marketing/">marketing et campagnes</a>.</p>
+
+  <h2>FAQ</h2>
+
+  <h3>Comment savoir si mes emails arrivent vraiment en spam ?</h3>
+
+  <p>Ne vous fiez pas à votre propre boîte : votre adresse interagit avec vos envois, donc elle les reçoit toujours. Utilisez un outil de test de placement, qui envoie votre message vers des boîtes réelles chez les principaux fournisseurs et vous dit où il atterrit. Regardez aussi le taux d'ouverture par domaine dans votre outil d'emailing : si Gmail ouvre à 30 % et Outlook à 2 %, le problème est un filtrage, pas votre objet.</p>
+
+  <h3>Faut-il envoyer ses campagnes depuis un sous-domaine dédié ?</h3>
+
+  <p>Oui, dès que vous envoyez en volume. Un sous-domaine d'envoi isole la réputation de vos campagnes marketing de celle de vos emails professionnels quotidiens. Si une campagne se fait sanctionner, vos échanges commerciaux continuent d'arriver. C'est la première chose que je mets en place lors d'une migration vers un nouvel outil.</p>
+
+  <h3>Combien de temps faut-il pour réparer une mauvaise réputation ?</h3>
+
+  <p>Cela se compte en semaines, pas en jours, et je ne promets jamais de délai : la réputation se reconstruit en envoyant peu, à des personnes qui ouvrent, régulièrement. Il n'existe aucun bouton pour l'accélérer. C'est précisément pour cette raison qu'il vaut mieux ne pas l'abîmer : une seule campagne envoyée à une liste achetée ou trop ancienne peut coûter des mois de patience.</p>
+
+  <div class="article-cta">
+    <div class="t">Vos emails n'arrivent plus ?</div>
+    <p>On regarde ensemble où ça bloque — authentification, liste ou réputation — et ce qu'il faut faire dans quel ordre. Le premier rendez-vous est gratuit — on étudie votre besoin ensemble.</p>
+    <a href="/?service=email#contact" class="btn-p">Démarrons votre projet ↗</a>
+  </div>
+
+  <div class="author-box">
+    <picture><source srcset="/assets/img/mahefa.webp" type="image/webp"><img src="/assets/img/mahefa.jpg" alt="Mahefa Ramaharavo"></picture>
+    <div>
+      <div class="n">Mahefa Ramaharavo</div>
+      <p>Freelance expert No-Code, WordPress et Go High Level — 6 ans d'expérience, 50+ projets livrés pour des clients en France, au Canada et en Espagne.</p>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-logo">
+    <svg width="28" height="26" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="foot-logo-name">MAHEFA <span>TECH</span></span>
+  </div>
+  <div class="foot-legal">
+    <a href="/mentions-legales/" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+    <a href="/politique-confidentialite/" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+    <button type="button" onclick="mtOpenConsent()" data-fr="Cookies" data-en="Cookies">Cookies</button>
+  </div>
+  <span class="foot-copy">© 2026 Mahefa Tech</span>
+  <span class="foot-avail"><span class="dot-blink"></span><span>Disponible · Remote</span></span>
+</footer>
+
+<script src="/assets/main.js"></script>
+</body>
+</html>
