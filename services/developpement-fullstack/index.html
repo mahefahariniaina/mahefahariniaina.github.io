@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Mesure d'audience chargée uniquement après consentement (RGPD) -->
+<script src="/assets/consent.js" defer></script>
+<title>Développement Full Stack Sur Mesure — Laravel, API & IA</title>
+<meta name="description" content="Plateformes web et applications métier sur mesure : Laravel, Vue/React, API, IA et sécurité. Pilotage par un chef de projet IT, sprints validés, documentation continue. RDV gratuit.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Mahefa Ramaharavo">
+<link rel="canonical" href="https://mahefatech.com/services/developpement-fullstack/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mahefatech.com/services/developpement-fullstack/">
+<meta property="og:title" content="Développement Full Stack Sur Mesure — Laravel, API & IA">
+<meta property="og:description" content="Plateformes web et applications métier sur mesure : Laravel, Vue/React, API, IA et sécurité. Pilotage par un chef de projet IT, sprints validés, documentation continue. RDV gratuit.">
+<meta property="og:image" content="https://mahefatech.com/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mahefatech.com/assets/img/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://mahefatech.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://mahefatech.com/#services"},
+        {"@type": "ListItem", "position": 3, "name": "Développement Full Stack", "item": "https://mahefatech.com/services/developpement-fullstack/"}
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Développement Full Stack",
+      "description": "Conception et développement de plateformes web et d'applications métier sur mesure — Laravel, Vue/React, API, IA et sécurité — pilotés par un chef de projet IT, livrés en sprints validés avec architecture documentée, revue de code, tests automatisés et CI/CD.",
+      "url": "https://mahefatech.com/services/developpement-fullstack/",
+      "serviceType": "Développement full stack",
+      "provider": {
+        "@type": "Person",
+        "name": "Mahefa Ramaharavo",
+        "url": "https://mahefatech.com/",
+        "email": "contact@mahefatech.com"
+      },
+      "areaServed": ["France", "Canada", "Espagne", "Madagascar", "Remote"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+      {"@type": "Question", "name": "Mon projet n'est pas encore complètement défini. Pouvez-vous m'aider ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, c'est le cas le plus fréquent. Quand l'architecture, les maquettes ou les règles métier sont encore en définition, je recommande de commencer par une phase de cadrage et d'architecture. Vous obtenez un backlog priorisé, une estimation et un registre des risques avant d'engager le développement."}},
+      {"@type": "Question", "name": "Comment le projet est-il facturé ?", "acceptedAnswer": {"@type": "Answer", "text": "Au sprint : chaque sprint ou lot est estimé avant démarrage, avec un plafond d'heures que vous approuvez. Vous recevez un relevé mensuel des heures réellement travaillées, et aucun dépassement n'a lieu sans votre accord. Le chiffrage se fait au premier rendez-vous, qui est gratuit."}},
+      {"@type": "Question", "name": "Qui est mon interlocuteur pendant le projet ?", "acceptedAnswer": {"@type": "Answer", "text": "Moi. Je centralise les communications, je pilote les sprints et je vous rends compte de l'avancement. La direction technique — architecture, standards, revue de code — est assurée par un lead developer de plus de dix ans d'expérience, et chaque lot a un responsable, un périmètre et des critères d'acceptation."}},
+      {"@type": "Question", "name": "Que se passe-t-il si un développeur est absent ?", "acceptedAnswer": {"@type": "Answer", "text": "Le projet continue. La documentation est tenue à jour pendant le développement, le code est relu par plusieurs personnes et chaque composante principale peut être reprise par plus d'un développeur. Des ressources de relève sont mobilisables après validation."}},
+      {"@type": "Question", "name": "Pouvez-vous reprendre une application existante ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. On commence par un audit du code et de l'architecture, puis on décide ensemble : faire évoluer l'existant, le sécuriser, ou reconstruire proprement un prototype devenu difficile à maintenir."}}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="none" stroke="#A8EDCF" stroke-width="0.5" opacity="0.35"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="132" y1="111" x2="142" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+      <line x1="228" y1="111" x2="218" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">MAHEFA <span style="color:var(--em)">TECH</span></span>
+      <span class="nav-logo-sub">Digital Expert</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Accueil</a></li>
+    <li class="nav-drop">
+      <a href="/#services">Services</a>
+      <div class="nav-drop-menu"><div class="ndm-box">
+        <a href="/services/automatisation-no-code/">Automatisation & Agents IA</a>
+        <a href="/services/go-high-level/">Go High Level & CRM</a>
+        <a href="/services/developpement-wordpress/">Développement WordPress</a>
+        <a href="/services/email-marketing/">Marketing &amp; Campagnes</a>
+        <a href="/services/integration-pixel-perfect/">Intégration Pixel-Perfect</a>
+        <a href="/services/chef-de-projet/">Chef de Projet</a>
+        <a href="/services/assistant-technique/">Assistant Technique &amp; Annotation IA</a>
+        <a href="/services/developpement-fullstack/">Développement Full Stack</a>
+      </div></div>
+    </li>
+    <li><a href="/#about">À propos</a></li>
+    <li><a href="/#testimonials">Témoignages</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/formation/">Formation</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/#contact" class="nav-cta">Parlons-en ↗</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="svc-page-hero">
+  <div class="hero-grid-bg"></div>
+  <div class="breadcrumb" aria-label="Fil d'ariane"><a href="/">Accueil</a><span class="sep">/</span><a href="/#services">Services</a><span class="sep">/</span><span style="color:var(--em);">Développement Full Stack</span></div>
+  <h1 class="svc-page-title">Développement full stack : <span class="em">de l'architecture à la mise en production.</span></h1>
+  <p class="svc-page-intro">Plateformes grand public, back-offices, portails clients, API et IA intégrée : je conçois et livre des applications web sur mesure. Je pilote le projet comme chef de projet IT et je coordonne une équipe technique dirigée par un lead developer de plus de dix ans d'expérience — backend, frontend, IA, sécurité et DevOps. Un interlocuteur unique, des sprints validés un par un, une documentation produite tout au long du développement.</p>
+  <div style="display:flex;gap:14px;flex-wrap:wrap;">
+    <a href="/?service=fullstack#contact" class="btn-p">Démarrons votre projet ↗</a>
+    <a href="#methode" class="btn-s">Voir la méthode</a>
+  </div>
+  <div class="svc-stats"><div class="svc-stat"><span class="n">10+ ans</span><span class="l">D'expérience pour la direction technique</span></div><div class="svc-stat"><span class="n">Sprints</span><span class="l">Démontrés et validés un par un</span></div><div class="svc-stat"><span class="n">FR/EN</span><span class="l">Plateformes bilingues et accessibles</span></div></div>
+  <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:36px;"><span class="tp hi">Laravel</span><span class="tp hi">PHP</span><span class="tp hi">Vue.js</span><span class="tp hi">React / Next.js</span><span class="tp">API REST / GraphQL</span><span class="tp">MySQL / MariaDB</span><span class="tp">Docker</span><span class="tp">CI/CD</span><span class="tp">SSO · RBAC</span><span class="tp">IA intégrée</span></div>
+</section>
+
+<section class="svc-page-section" style="background:var(--bg-1);">
+  <div class="sec-lbl">Mes trois engagements</div>
+  <div class="pillar-grid rv">
+    <div class="exp-card">
+      <span class="exp-card-num">01</span>
+      <div class="exp-card-title">Une gouvernance claire</div>
+      <p class="exp-card-desc" style="margin-bottom:0;">Je centralise les communications et je pilote le mandat. Le lead technique valide l'architecture et les standards. Chaque lot a un responsable, un périmètre et des critères d'acceptation : personne ne se demande qui décide.</p>
+    </div>
+    <div class="exp-card">
+      <span class="exp-card-num">02</span>
+      <div class="exp-card-title">Une qualité vérifiable</div>
+      <p class="exp-card-desc" style="margin-bottom:0;">Architecture documentée, API décrites en OpenAPI, revue de code systématique, tests automatisés et déploiements en intégration continue. Ce qui est livré est testé, relu et maintenable par d'autres que ceux qui l'ont écrit.</p>
+    </div>
+    <div class="exp-card">
+      <span class="exp-card-num">03</span>
+      <div class="exp-card-title">Un budget maîtrisé</div>
+      <p class="exp-card-desc" style="margin-bottom:0;">Chaque sprint est estimé avant de démarrer, avec un plafond que vous approuvez. Vous suivez les heures réellement travaillées chaque mois, et rien ne dépasse sans votre accord.</p>
+    </div>
+  </div>
+</section>
+
+<section class="svc-page-section" style="background:var(--bg-0);">
+  <div class="sec-lbl">Ce que je construis pour vous</div>
+  <h2 class="rv">Des applications complètes, pas des morceaux de code.</h2>
+  <div class="check-grid rv">
+    <div class="check-item"><span class="ic">✓</span><p><strong>Plateformes et portails grand public</strong>Parcours guidés, comptes utilisateurs, prise de rendez-vous, messagerie, paiements — une expérience claire, même dans un contexte sensible.</p></div>
+    <div class="check-item"><span class="ic">✓</span><p><strong>Back-offices et administration</strong>Rôles et permissions, modération, workflows de validation, tableaux de bord, rapports et analytiques.</p></div>
+    <div class="check-item"><span class="ic">✓</span><p><strong>API et intégrations</strong>API REST ou GraphQL documentées, connecteurs entre applications métier, boutiques, entrepôts, transporteurs et outils de paiement.</p></div>
+    <div class="check-item"><span class="ic">✓</span><p><strong>IA intégrée à vos outils</strong>Assistant conversationnel, extraction structurée de documents par OCR, analyse automatisée — y compris avec des modèles hébergés sur vos serveurs.</p></div>
+    <div class="check-item"><span class="ic">✓</span><p><strong>Sécurité et conformité</strong>SSO, authentification multifacteur, contrôle d'accès par rôles, chiffrement, traçabilité, RGPD et maîtrise de l'hébergement des données.</p></div>
+    <div class="check-item"><span class="ic">✓</span><p><strong>Accessibilité et bilinguisme</strong>Interfaces conformes WCAG 2.1 AA et plateformes en français et en anglais, prévues dès les premiers lots plutôt qu'ajoutées à la fin.</p></div>
+  </div>
+</section>
+
+<section class="svc-page-section" style="background:var(--bg-1);border-top:1px solid var(--border);">
+  <div class="sec-lbl">L'équipe mobilisée</div>
+  <h2 class="rv">Toutes les expertises d'un projet, un seul interlocuteur.</h2>
+  <div class="check-grid rv">
+    <div class="check-item"><span class="ic">✓</span><p><strong>Pilotage de projet</strong>Mon rôle : relation client, planification des sprints, suivi des ressources, arbitrages et comptes rendus.</p></div>
+    <div class="check-item"><span class="ic">✓</span><p><strong>Direction technique</strong>Un lead developer de plus de dix ans d'expérience : architecture, standards, revue de code et encadrement des développeurs.</p></div>
+    <div class="check-item"><span class="ic">✓</span><p><strong>Développement full stack</strong>Laravel, Vue, API, modélisation des données, règles métier et workflows.</p></div>
+    <div class="check-item"><span class="ic">✓</span><p><strong>Frontend</strong>React, Next.js, TypeScript : interfaces soignées, accessibles et multilingues.</p></div>
+    <div class="check-item"><span class="ic">✓</span><p><strong>Sécurité et DevOps</strong>Serveurs Linux, Docker, CI/CD, supervision, contrôle des accès et chiffrement.</p></div>
+    <div class="check-item"><span class="ic">✓</span><p><strong>IA, tests et intégrations</strong>Intégration de modèles d'IA, tests automatisés, gestion des identités et connecteurs tiers.</p></div>
+  </div>
+  <div class="mission-more rv">
+    <p class="svc-page-intro" style="margin:28px 0 0;max-width:820px;">L'équipe se dimensionne selon les lots et les priorités, avec des ressources de relève pour assurer la continuité du projet en cas d'absence ou de pic de charge.</p>
+  </div>
+</section>
+
+<section class="svc-page-section" id="methode" style="background:var(--bg-0);border-top:1px solid var(--border);">
+  <div class="sec-lbl">Ma méthode</div>
+  <h2 class="rv">Cinq phases, chacune avec ses livrables.</h2>
+  <div class="steps rv">
+    <div class="step-row"><span class="step-num">01</span><div><h3>Cadrage</h3><p>Besoins, règles métier, priorités, dépendances et périmètre du MVP. Livrables : backlog priorisé, plan, estimation initiale et registre des risques.</p></div></div>
+    <div class="step-row"><span class="step-num">02</span><div><h3>Architecture</h3><p>Structure applicative, modèle de données, gestion des accès, environnements et stratégie de tests. Livrables : dossier d'architecture, conventions et pipeline de déploiement initial.</p></div></div>
+    <div class="step-row"><span class="step-num">03</span><div><h3>Fondations et MVP</h3><p>Comptes, premiers parcours, règles métier et interfaces essentielles, développés en sprints démontrés et validés selon les critères d'acceptation.</p></div></div>
+    <div class="step-row"><span class="step-num">04</span><div><h3>Extension</h3><p>Nouveaux espaces utilisateurs, administration, documents, IA, messagerie, paiements et rapports, livrés par lots avec leur documentation.</p></div></div>
+    <div class="step-row"><span class="step-num">05</span><div><h3>Mise en production</h3><p>Stabilisation, sécurité, performance, déploiement et transfert de connaissances. Livrables : version en ligne, procédures et dossier technique.</p></div></div>
+  </div>
+</section>
+
+<section class="svc-page-section" style="background:var(--bg-1);border-top:1px solid var(--border);">
+  <div class="sec-lbl">Suivi et transparence</div>
+  <h2 class="rv">Vous savez toujours où en est votre projet.</h2>
+  <div class="check-grid rv">
+    <div class="check-item"><span class="ic">✓</span><p><strong>Chaque semaine</strong>Une rencontre de suivi : avancement, blocages, décisions et priorités.</p></div>
+    <div class="check-item"><span class="ic">✓</span><p><strong>À chaque sprint</strong>Une démonstration et la validation des travaux selon les critères d'acceptation convenus.</p></div>
+    <div class="check-item"><span class="ic">✓</span><p><strong>Chaque mois</strong>Un compte rendu écrit : travaux réalisés, heures, risques, décisions et prévisions.</p></div>
+    <div class="check-item"><span class="ic">✓</span><p><strong>Tous les deux sprints</strong>Un point d'acceptation du lot, les corrections et l'ajustement du périmètre si besoin.</p></div>
+  </div>
+</section>
+
+<section class="svc-page-section" id="realisations" style="background:var(--bg-0);border-top:1px solid var(--border);">
+  <div class="sec-lbl">Réalisations</div>
+  <h2 class="rv">Des projets comparables, déjà en production.</h2>
+  <div class="mission-grid">
+    <div class="mission-card rv">
+      <div class="mission-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <div class="proj-tag-row"><span class="proj-tag">Plateforme grand public</span></div>
+      <div class="mission-name">Rendez-vous et suivi médical</div>
+      <p class="mission-desc">Plateforme de prise de rendez-vous avec des professionnels de santé et de suivi des dossiers : agenda professionnel, centre de documents, utilisateurs multiples et données sensibles sécurisées.</p>
+      <div class="proj-tools"><span class="proj-tool">Laravel</span><span class="proj-tool">Livewire</span><span class="proj-tool">Sécurité des données</span></div>
+    </div>
+    <div class="mission-card rv">
+      <div class="mission-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+      <div class="proj-tag-row"><span class="proj-tag">Back-office & IA</span></div>
+      <div class="mission-name">Médiathèque documentaire multi-format</div>
+      <p class="mission-desc">Dépôt et contrôle de fichiers volumineux, rôles et permissions, workflows de traitement, interface publique et métadonnées générées automatiquement par un agent IA.</p>
+      <div class="proj-tools"><span class="proj-tool">Laravel</span><span class="proj-tool">n8n</span><span class="proj-tool">Agent IA</span></div>
+    </div>
+    <div class="mission-card rv">
+      <div class="mission-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div class="proj-tag-row"><span class="proj-tag">Workflows métier</span></div>
+      <div class="mission-name">Validation de factures en réseau</div>
+      <p class="mission-desc">Dépôt, contrôle et validation des factures et bilans d'un réseau d'agences : plus de 400 utilisateurs, circuits de validation et tableaux de bord pour la direction.</p>
+      <div class="proj-tools"><span class="proj-tool">Laravel</span><span class="proj-tool">Workflows</span><span class="proj-tool">Tableaux de bord</span></div>
+    </div>
+    <div class="mission-card rv">
+      <div class="mission-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <div class="proj-tag-row"><span class="proj-tag">IA & sécurité</span></div>
+      <div class="mission-name">Capture documentaire par OCR</div>
+      <p class="mission-desc">Plateforme multi-tenant : ingestion depuis plusieurs canaux, extraction structurée des données par IA, chiffrement des documents au repos et outils de conformité RGPD.</p>
+      <div class="proj-tools"><span class="proj-tool">Laravel</span><span class="proj-tool">OCR · IA</span><span class="proj-tool">Chiffrement</span></div>
+    </div>
+    <div class="mission-card rv">
+      <div class="mission-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div>
+      <div class="proj-tag-row"><span class="proj-tag">Intégrations</span></div>
+      <div class="mission-name">Connecteur e-commerce vers entrepôt</div>
+      <p class="mission-desc">Récupération automatisée des commandes et des stocks de plusieurs boutiques en ligne, transformation des données pour le logiciel d'entrepôt et flux de suivi transporteurs.</p>
+      <div class="proj-tools"><span class="proj-tool">PHP</span><span class="proj-tool">API</span><span class="proj-tool">Flux de données</span></div>
+    </div>
+    <div class="mission-card rv">
+      <div class="mission-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="proj-tag-row"><span class="proj-tag">API & algorithmes</span></div>
+      <div class="mission-name">Optimisation de planning d'interventions</div>
+      <p class="mission-desc">Web service d'ordonnancement sous contraintes — disponibilités, compétences des équipes, pauses — exposé en API REST authentifiée et documentée.</p>
+      <div class="proj-tools"><span class="proj-tool">API REST</span><span class="proj-tool">OpenAPI</span><span class="proj-tool">Ordonnancement</span></div>
+    </div>
+  </div>
+  <div class="mission-more rv">
+    <a href="/?service=fullstack#contact" class="btn-gc">Vous voulez le détail d'un de ces projets ? Écrivez-moi ↗</a>
+  </div>
+</section>
+
+<section class="svc-page-section" style="background:var(--bg-1);border-top:1px solid var(--border);">
+  <div class="sec-lbl">Compétences mobilisées</div>
+  <div class="exp-card rv" style="max-width:880px;">
+    <div class="exp-card-title">DÉVELOPPEMENT FULL STACK</div>
+    <span class="exp-card-sub">Laravel · Vue · React · API · IA · DevOps</span>
+    <p class="exp-card-desc">Du cadrage à la mise en production, je réunis ce qu'un projet sur mesure demande : pilotage et relation client, direction technique, développement backend et frontend, sécurité, DevOps et intégration d'IA. Mon expérience de coordination — cinq équipes techniques indépendantes, plus de vingt personnes encadrées — garantit un projet suivi, documenté et livré sans surprise.</p>
+    <div class="exp-pills"><span class="ep k">Laravel</span><span class="ep k">Vue.js</span><span class="ep k">React / Next.js</span><span class="ep k">API REST</span><span class="ep">OpenAPI</span><span class="ep">MySQL / MariaDB</span><span class="ep">Docker</span><span class="ep">GitLab CI/CD</span><span class="ep">SSO · MFA · RBAC</span><span class="ep">WCAG 2.1 AA</span><span class="ep">IA · OCR</span><span class="ep">Agile · Scrum</span></div>
+  </div>
+</section>
+
+<section class="svc-page-section" style="background:var(--bg-0);border-top:1px solid var(--border);">
+  <div class="sec-lbl">Questions fréquentes</div>
+  <div style="max-width:760px;display:flex;flex-direction:column;gap:2px;" class="rv">
+    <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;" class="faq-item">
+      <button onclick="toggleFaq(this)" style="width:100%;text-align:left;padding:22px 24px;background:transparent;border:none;cursor:none;display:flex;justify-content:space-between;align-items:center;gap:16px;">
+        <span style="font-size:15px;font-weight:500;color:var(--cream);line-height:1.4;">Mon projet n'est pas encore complètement défini. Pouvez-vous m'aider ?</span>
+        <span style="color:var(--em);font-size:18px;flex-shrink:0;transition:transform .3s;" class="faq-arrow">+</span>
+      </button>
+      <div class="faq-body" style="display:none;padding:0 24px 22px;">
+        <p style="font-size:13px;font-weight:300;color:rgba(245,240,232,.5);line-height:1.8;">Oui, c'est le cas le plus fréquent. Quand l'architecture, les maquettes ou les règles métier sont encore en définition, je recommande de commencer par une phase de cadrage et d'architecture. Vous obtenez un backlog priorisé, une estimation et un registre des risques avant d'engager le développement.</p>
+      </div>
+    </div>
+    <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;" class="faq-item">
+      <button onclick="toggleFaq(this)" style="width:100%;text-align:left;padding:22px 24px;background:transparent;border:none;cursor:none;display:flex;justify-content:space-between;align-items:center;gap:16px;">
+        <span style="font-size:15px;font-weight:500;color:var(--cream);line-height:1.4;">Comment le projet est-il facturé ?</span>
+        <span style="color:var(--em);font-size:18px;flex-shrink:0;transition:transform .3s;" class="faq-arrow">+</span>
+      </button>
+      <div class="faq-body" style="display:none;padding:0 24px 22px;">
+        <p style="font-size:13px;font-weight:300;color:rgba(245,240,232,.5);line-height:1.8;">Au sprint : chaque sprint ou lot est estimé avant démarrage, avec un plafond d'heures que vous approuvez. Vous recevez un relevé mensuel des heures réellement travaillées, et aucun dépassement n'a lieu sans votre accord. Le chiffrage se fait au premier rendez-vous, qui est gratuit.</p>
+      </div>
+    </div>
+    <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;" class="faq-item">
+      <button onclick="toggleFaq(this)" style="width:100%;text-align:left;padding:22px 24px;background:transparent;border:none;cursor:none;display:flex;justify-content:space-between;align-items:center;gap:16px;">
+        <span style="font-size:15px;font-weight:500;color:var(--cream);line-height:1.4;">Qui est mon interlocuteur pendant le projet ?</span>
+        <span style="color:var(--em);font-size:18px;flex-shrink:0;transition:transform .3s;" class="faq-arrow">+</span>
+      </button>
+      <div class="faq-body" style="display:none;padding:0 24px 22px;">
+        <p style="font-size:13px;font-weight:300;color:rgba(245,240,232,.5);line-height:1.8;">Moi. Je centralise les communications, je pilote les sprints et je vous rends compte de l'avancement. La direction technique — architecture, standards, revue de code — est assurée par un lead developer de plus de dix ans d'expérience, et chaque lot a un responsable, un périmètre et des critères d'acceptation.</p>
+      </div>
+    </div>
+    <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;" class="faq-item">
+      <button onclick="toggleFaq(this)" style="width:100%;text-align:left;padding:22px 24px;background:transparent;border:none;cursor:none;display:flex;justify-content:space-between;align-items:center;gap:16px;">
+        <span style="font-size:15px;font-weight:500;color:var(--cream);line-height:1.4;">Que se passe-t-il si un développeur est absent ?</span>
+        <span style="color:var(--em);font-size:18px;flex-shrink:0;transition:transform .3s;" class="faq-arrow">+</span>
+      </button>
+      <div class="faq-body" style="display:none;padding:0 24px 22px;">
+        <p style="font-size:13px;font-weight:300;color:rgba(245,240,232,.5);line-height:1.8;">Le projet continue. La documentation est tenue à jour pendant le développement, le code est relu par plusieurs personnes et chaque composante principale peut être reprise par plus d'un développeur. Des ressources de relève sont mobilisables après validation.</p>
+      </div>
+    </div>
+    <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;" class="faq-item">
+      <button onclick="toggleFaq(this)" style="width:100%;text-align:left;padding:22px 24px;background:transparent;border:none;cursor:none;display:flex;justify-content:space-between;align-items:center;gap:16px;">
+        <span style="font-size:15px;font-weight:500;color:var(--cream);line-height:1.4;">Pouvez-vous reprendre une application existante ?</span>
+        <span style="color:var(--em);font-size:18px;flex-shrink:0;transition:transform .3s;" class="faq-arrow">+</span>
+      </button>
+      <div class="faq-body" style="display:none;padding:0 24px 22px;">
+        <p style="font-size:13px;font-weight:300;color:rgba(245,240,232,.5);line-height:1.8;">Oui. On commence par un audit du code et de l'architecture, puis on décide ensemble : faire évoluer l'existant, le sécuriser, ou reconstruire proprement un prototype devenu difficile à maintenir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc-cta-band">
+  <div class="t rv">PARLONS DE <span class="em">VOTRE PLATEFORME.</span></div>
+  <p class="rv">Premier rendez-vous gratuit, réponse sous 24h — le formulaire arrivera déjà réglé sur « Développement full stack ».</p>
+  <a href="/?service=fullstack#contact" class="btn-p rv">Démarrons votre projet ↗</a>
+</section>
+
+<footer>
+  <div class="foot-logo">
+    <svg width="28" height="26" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="foot-logo-name">MAHEFA <span>TECH</span></span>
+  </div>
+  <div class="foot-legal">
+    <a href="/mentions-legales/" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+    <a href="/politique-confidentialite/" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+    <button type="button" onclick="mtOpenConsent()" data-fr="Cookies" data-en="Cookies">Cookies</button>
+  </div>
+  <span class="foot-copy">© 2026 Mahefa Tech</span>
+  <span class="foot-avail"><span class="dot-blink"></span><span>Disponible · Remote</span></span>
+</footer>
+
+<script src="/assets/main.js"></script>
+</body>
+</html>
