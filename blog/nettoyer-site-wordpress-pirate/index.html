@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Mesure d'audience chargée uniquement après consentement (RGPD) -->
+<script src="/assets/consent.js" defer></script>
+<title>Nettoyer un site WordPress piraté : le guide complet | Mahefa Tech</title>
+<meta name="description" content="Spam casino injecté, pages inaccessibles, site blacklisté ? La méthode complète pour nettoyer un site WordPress piraté et le sécuriser durablement.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Mahefa Ramaharavo">
+<link rel="canonical" href="https://mahefatech.com/blog/nettoyer-site-wordpress-pirate/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mahefatech.com/blog/nettoyer-site-wordpress-pirate/">
+<meta property="og:title" content="Nettoyer un site WordPress piraté : le guide complet">
+<meta property="og:description" content="Spam casino injecté, pages inaccessibles, site blacklisté ? La méthode complète pour nettoyer un site WordPress piraté et le sécuriser durablement.">
+<meta property="og:image" content="https://mahefatech.com/assets/img/og-image.jpg">
+<meta property="og:locale" content="fr_FR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Nettoyer un site WordPress piraté : le guide complet",
+      "description": "Spam casino injecté, pages inaccessibles, site blacklisté ? La méthode complète pour nettoyer un site WordPress piraté et le sécuriser durablement.",
+      "datePublished": "2026-09-10",
+      "dateModified": "2026-09-10",
+      "inLanguage": "fr",
+      "mainEntityOfPage": "https://mahefatech.com/blog/nettoyer-site-wordpress-pirate/",
+      "image": "https://mahefatech.com/assets/img/og-image.jpg",
+      "author": {"@type": "Person", "name": "Mahefa Ramaharavo", "url": "https://mahefatech.com/"},
+      "publisher": {"@type": "Person", "name": "Mahefa Ramaharavo"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://mahefatech.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mahefatech.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Nettoyer un site WordPress piraté : le guide complet", "item": "https://mahefatech.com/blog/nettoyer-site-wordpress-pirate/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+{"@type": "Question", "name": "Combien de temps faut-il pour nettoyer un site WordPress piraté ?", "acceptedAnswer": {"@type": "Answer", "text": "Une fois les accès disponibles, un nettoyage standard se traite généralement en un à deux jours. La vraie variable n'est pas la suppression du spam, qui va vite, mais l'identification de la faille d'origine et la chasse aux portes dérobées : c'est ce travail invisible qui garantit que l'infection ne revient pas."}},
+{"@type": "Question", "name": "Un site WordPress nettoyé peut-il être piraté à nouveau ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, et c'est la cause d'échec la plus fréquente. Si l'on retire le spam sans corriger la porte d'entrée — extension vulnérable, compte compromis, porte dérobée oubliée — le site se refait pirater en quelques jours. C'est pourquoi trouver l'origine et sécuriser WordPress compte autant que le nettoyage lui-même."}},
+{"@type": "Question", "name": "Vaut-il mieux nettoyer le site existant ou tout reconstruire ?", "acceptedAnswer": {"@type": "Answer", "text": "Dans la majorité des cas, nettoyer suffit dès lors qu'on a identifié et supprimé toutes les portes dérobées. La reconstruction complète ne se justifie que si le site est profondément compromis, sans sauvegarde propre, ou si l'infection est trop diffuse pour être isolée avec certitude."}}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="none" stroke="#A8EDCF" stroke-width="0.5" opacity="0.35"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="132" y1="111" x2="142" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+      <line x1="228" y1="111" x2="218" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">MAHEFA <span style="color:var(--em)">TECH</span></span>
+      <span class="nav-logo-sub">Digital Expert</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Accueil</a></li>
+    <li class="nav-drop">
+      <a href="/#services">Services</a>
+      <div class="nav-drop-menu"><div class="ndm-box">
+        <a href="/services/automatisation-no-code/">Automatisation & Agents IA</a>
+        <a href="/services/go-high-level/">Go High Level & CRM</a>
+        <a href="/services/developpement-wordpress/">Développement WordPress</a>
+        <a href="/services/email-marketing/">Marketing &amp; Campagnes</a>
+        <a href="/services/integration-pixel-perfect/">Intégration Pixel-Perfect</a>
+        <a href="/services/chef-de-projet/">Chef de Projet</a>
+        <a href="/services/assistant-technique/">Assistant Technique &amp; Annotation IA</a>
+        <a href="/services/developpeurs-dedies/">Développeurs dédiés</a>
+      </div></div>
+    </li>
+    <li><a href="/#about">À propos</a></li>
+    <li><a href="/#testimonials">Témoignages</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/formation/">Formation</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/#contact" class="nav-cta">Parlons-en ↗</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="breadcrumb"><a href="/">Accueil</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span style="color:var(--em);">WordPress</span></div>
+  <div class="article-meta"><span class="cat">WordPress</span><span>10 septembre 2026</span><span>7 min de lecture</span></div>
+  <h1 class="article-title">Nettoyer un site WordPress piraté : le guide complet</h1>
+</section>
+
+<article class="article-body">
+  <p>Pour nettoyer un site WordPress piraté, procédez toujours dans cet ordre : sauvegardez l'état actuel du site, identifiez la faille d'origine, supprimez les fichiers malveillants et les portes dérobées, restaurez les pages touchées, puis verrouillez WordPress pour empêcher la récidive. L'erreur numéro un, c'est de nettoyer les symptômes en oubliant la porte d'entrée : le site se refait alors pirater en quelques jours.</p>
+
+  <p>Le scénario qu'on me confie est presque toujours le même : des contenus et des liens de casino ou de pharmacie apparaissent dans les pages, une partie du site redirige vers une adresse douteuse, et Google finit par afficher l'avertissement « Ce site peut être piraté » dans les résultats. Le trafic s'effondre du jour au lendemain. Voici la méthode complète que j'applique, du diagnostic jusqu'à la sécurisation durable.</p>
+
+  <p>Un mot avant de commencer : ne cédez pas à la panique et ne supprimez rien au hasard. Chaque fichier effacé sans comprendre son rôle peut casser le site un peu plus — ou détruire une trace qui vous aurait mené à l'origine de l'attaque.</p>
+
+  <h2>1. Reconnaître les signes d'un site WordPress piraté</h2>
+
+  <p>Une compromission ne se voit pas toujours en page d'accueil. Certaines sont bruyantes, d'autres restent invisibles pour le visiteur mais bien réelles pour Google. Voici les signaux les plus fréquents et ce qu'ils révèlent.</p>
+
+  <table>
+    <thead><tr><th>Ce que vous observez</th><th>Ce que ça indique</th></tr></thead>
+    <tbody>
+      <tr><td>Liens ou pages « casino », « viagra », mots-clés japonais</td><td>Injection de spam SEO — la compromission la plus courante</td></tr>
+      <tr><td>Le site redirige les visiteurs vers un autre site</td><td>Redirection malveillante injectée dans les fichiers ou la base</td></tr>
+      <tr><td>« Ce site peut être piraté » dans les résultats Google</td><td>Google a détecté le spam et l'a signalé publiquement</td></tr>
+      <tr><td>Nombre de pages indexées qui explose dans la Search Console</td><td>Hack SEO : des centaines de pages cachées servies à Googlebot</td></tr>
+      <tr><td>Page d'administration inaccessible ou compte inconnu</td><td>Compte administrateur compromis ou créé par l'attaquant</td></tr>
+      <tr><td>Écran blanc ou erreur critique sur une page</td><td>Fichier corrompu par l'injection, souvent un thème ou un plugin</td></tr>
+    </tbody>
+  </table>
+
+  <p>Le cas le plus sournois est le « hack SEO » : des centaines de pages de spam sont générées puis masquées aux visiteurs, mais servies à Googlebot. Vous ne voyez rien en naviguant sur votre site ; vous le découvrez dans la Search Console, où votre nombre de pages indexées grimpe soudain avec des URL que vous n'avez jamais créées.</p>
+
+  <h2>2. Avant tout : sauvegarder le site, même infecté</h2>
+
+  <p>Cela paraît contre-intuitif, mais la première étape est de faire une sauvegarde complète du site dans son état actuel — fichiers <em>et</em> base de données. Deux raisons : garder une trace pour analyser l'origine de l'attaque, et pouvoir revenir en arrière si une manipulation de nettoyage casse quelque chose. Cette copie infectée se range à part, jamais sur le serveur de production.</p>
+
+  <p>Si vous disposez d'une sauvegarde propre antérieure à l'infection, c'est un atout précieux. Mais elle ne dispense pas de trouver la faille : restaurer une vieille version sur un serveur encore vulnérable revient à laisser la porte grande ouverte.</p>
+
+  <h2>3. Trouver l'origine de la faille</h2>
+
+  <p>C'est l'étape que la plupart des nettoyages bâclent, et c'est pourtant la seule qui empêche la récidive. Une compromission WordPress vient presque toujours de l'une de ces portes :</p>
+
+  <ul>
+    <li><strong>Une extension ou un thème obsolète</strong>, avec une faille connue et publiquement documentée — la cause de loin la plus fréquente.</li>
+    <li><strong>Un compte administrateur compromis</strong> : mot de passe faible ou réutilisé, absence de double authentification.</li>
+    <li><strong>Un hébergement mutualisé contaminé</strong> par un autre site du même serveur.</li>
+    <li><strong>Des identifiants FTP ou base de données volés</strong>, souvent via un poste infecté.</li>
+  </ul>
+
+  <p>Pour remonter la piste, je croise plusieurs sources : les journaux d'accès du serveur (quelle adresse IP a modifié quels fichiers, et quand), la date de modification des fichiers (un fichier du cœur de WordPress modifié récemment est suspect), et un scan d'intégrité. Un audit externe aide à objectiver l'état du site : j'utilise souvent <a href="https://orilyt.com" target="_blank" rel="noopener">Orilyt</a> pour une photographie rapide, que je complète par un scan de malware côté serveur.</p>
+
+  <h2>4. Nettoyer : fichiers, base de données et portes dérobées</h2>
+
+  <p>Le nettoyage se joue sur deux fronts à la fois — jamais un seul.</p>
+
+  <h3>Les fichiers</h3>
+  <p>Comparez les fichiers du cœur de WordPress à une version officielle de la même version : réinstaller le core proprement élimine d'un coup toute modification injectée. Les fichiers malveillants se cachent souvent là où ils ne devraient pas exister : un fichier <code>.php</code> dans <code>wp-content/uploads</code>, un faux plugin dans <code>mu-plugins</code>, ou un script déguisé sous un nom d'apparence légitime.</p>
+  <p><strong>Les portes dérobées (<em>backdoors</em>) sont le vrai enjeu.</strong> Ce sont de petits scripts qui permettent à l'attaquant de revenir même après le nettoyage. On les repère souvent à des fonctions comme <code>eval</code>, <code>base64_decode</code> ou <code>gzinflate</code> employées pour masquer du code. En oublier une seule, et tout le travail est à refaire une semaine plus tard.</p>
+
+  <h3>La base de données</h3>
+  <p>Le spam ne vit pas que dans les fichiers : il s'injecte aussi en base. Liens cachés au bas des articles et des pages, scripts glissés dans la table <code>wp_options</code>, comptes administrateurs fantômes créés à votre insu. Il faut passer la base au peigne fin, retirer les contenus injectés et supprimer tout utilisateur que vous n'avez pas créé.</p>
+
+  <h2>5. Restaurer les pages touchées et remettre en ligne</h2>
+
+  <p>Une fois le site propre, on restaure ce qui a été défiguré ou cassé : reconstruire une page devenue inaccessible, retirer les redirections, vérifier que chaque gabarit s'affiche normalement. C'est aussi le moment de tout tester en navigation privée pour confirmer qu'aucun contenu parasite ne subsiste et qu'aucune redirection ne se déclenche.</p>
+
+  <h2>6. Sécuriser pour que ça ne revienne pas</h2>
+
+  <p>Le nettoyage sans sécurisation ne tient pas. Une fois le site sain, je verrouille systématiquement :</p>
+
+  <ul>
+    <li><strong>Mettre à jour</strong> WordPress, tous les thèmes et toutes les extensions — et supprimer ceux qui ne servent plus.</li>
+    <li><strong>Changer tous les mots de passe</strong> (admin, FTP, base de données, hébergement) et régénérer les clés de sécurité (<em>salts</em>) dans <code>wp-config.php</code> pour déconnecter toutes les sessions actives.</li>
+    <li><strong>Activer la double authentification</strong> sur les comptes administrateurs.</li>
+    <li><strong>Limiter les tentatives de connexion</strong> et installer un pare-feu applicatif (WAF).</li>
+    <li><strong>Durcir la configuration</strong> : désactiver l'éditeur de fichiers dans l'administration, corriger les droits des fichiers, masquer la version de WordPress.</li>
+  </ul>
+
+  <p>Beaucoup de ces réflexes rejoignent l'hygiène de base d'un site sérieux, que je détaille dans mon article sur la <a href="/blog/mise-en-conformite-rgpd-site-wordpress/">mise en conformité RGPD d'un site WordPress</a>.</p>
+
+  <h2>7. Nettoyer les traces dans Google</h2>
+
+  <p>Le site est propre, mais Google garde en mémoire les URL de spam et, parfois, l'avertissement de sécurité. Cette dernière étape est indispensable pour récupérer votre référencement :</p>
+
+  <ul>
+    <li>Dans la Search Console, section <strong>Sécurité et actions manuelles</strong>, demander un examen une fois le site nettoyé.</li>
+    <li>Laisser les fausses pages renvoyer une erreur <strong>404 ou 410</strong> pour signaler à Google qu'elles n'existent plus, et utiliser l'outil de suppression d'URL pour les cas urgents.</li>
+    <li><strong>Resoumettre le sitemap</strong> et surveiller la désindexation progressive des URL parasites.</li>
+  </ul>
+
+  <h2>Le faire soi-même ou déléguer ?</h2>
+
+  <p>Si vous êtes à l'aise techniquement et que l'infection est superficielle, le guide ci-dessus vous permet de vous en sortir. Mais dès qu'il y a des portes dérobées, un hack SEO massif ou une boutique en ligne en jeu, l'enjeu n'est plus le nettoyage visible : c'est la <strong>certitude d'avoir tout retiré</strong> et de ne pas se refaire pirater le mois suivant. C'est précisément là que j'interviens — <a href="/services/developpement-wordpress/">diagnostic, nettoyage complet, sécurisation et rapport avant/après</a> — pour remettre le site d'aplomb et le protéger dans la durée.</p>
+
+  <h2>FAQ</h2>
+
+  <h3>Combien de temps faut-il pour nettoyer un site WordPress piraté ?</h3>
+  <p>Une fois les accès disponibles, un nettoyage standard se traite généralement en un à deux jours. La vraie variable n'est pas la suppression du spam, qui va vite, mais l'identification de la faille d'origine et la chasse aux portes dérobées : c'est ce travail invisible qui garantit que l'infection ne revient pas.</p>
+
+  <h3>Un site WordPress nettoyé peut-il être piraté à nouveau ?</h3>
+  <p>Oui, et c'est la cause d'échec la plus fréquente. Si l'on retire le spam sans corriger la porte d'entrée — extension vulnérable, compte compromis, porte dérobée oubliée — le site se refait pirater en quelques jours. C'est pourquoi trouver l'origine et sécuriser WordPress compte autant que le nettoyage lui-même.</p>
+
+  <h3>Vaut-il mieux nettoyer le site existant ou tout reconstruire ?</h3>
+  <p>Dans la majorité des cas, nettoyer suffit dès lors qu'on a identifié et supprimé toutes les portes dérobées. La reconstruction complète ne se justifie que si le site est profondément compromis, sans sauvegarde propre, ou si l'infection est trop diffuse pour être isolée avec certitude.</p>
+
+  <div class="article-cta">
+    <div class="t">Votre site WordPress est compromis ?</div>
+    <p>Spam injecté, pages inaccessibles, alerte Google : je diagnostique l'origine, nettoie en profondeur, sécurise et vous remets un rapport avant/après. Le premier rendez-vous est gratuit — on étudie votre besoin ensemble.</p>
+    <a href="/?service=wordpress#contact" class="btn-p">Démarrons votre projet ↗</a>
+  </div>
+
+  <div class="author-box">
+    <picture><source srcset="/assets/img/mahefa.webp" type="image/webp"><img src="/assets/img/mahefa.jpg" alt="Mahefa Ramaharavo"></picture>
+    <div>
+      <div class="n">Mahefa Ramaharavo</div>
+      <p>Freelance expert No-Code, WordPress et Go High Level — 6 ans d'expérience, 50+ projets livrés pour des clients en France, au Canada et en Espagne.</p>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-logo">
+    <svg width="28" height="26" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="foot-logo-name">MAHEFA <span>TECH</span></span>
+  </div>
+  <div class="foot-legal">
+    <a href="/mentions-legales/" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+    <a href="/politique-confidentialite/" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+    <button type="button" onclick="mtOpenConsent()" data-fr="Cookies" data-en="Cookies">Cookies</button>
+  </div>
+  <span class="foot-copy">© 2026 Mahefa Tech</span>
+  <span class="foot-avail"><span class="dot-blink"></span><span>Disponible · Remote</span></span>
+</footer>
+
+<script src="/assets/main.js"></script>
+</body>
+</html>
