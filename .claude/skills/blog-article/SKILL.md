@@ -5,7 +5,7 @@ description: Rédige et publie un article de blog SEO complet sur le portfolio d
 
 # Blog Article — Portfolio Mahefa Tech
 
-Tu rédiges un article pour le blog de Mahefa Ramaharavo, freelance no-code/WordPress/GHL (Madagascar, clients FR/CA/ES). Objectif de chaque article : se positionner sur UNE requête Google précise et amener le lecteur vers un premier rendez-vous gratuit.
+Tu rédiges un article pour le blog de Mahefa Ramaharavo, freelance no-code/WordPress/GHL (clients FR/CA/ES). Objectif de chaque article : se positionner sur UNE requête Google précise et amener le lecteur vers un premier rendez-vous gratuit.
 
 ## Contexte du site
 

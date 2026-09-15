@@ -622,3 +622,164 @@ footer { flex-wrap:wrap; gap:12px 24px; }
 
 /* <picture> ne doit pas modifier la mise en page : l'<img> se comporte comme avant */
 picture { display:contents; }
+
+/* ═════════════════════════════════════════════════════════════
+   UX MOBILE & ACCESSIBILITÉ (sept. 2026)
+   Placé en fin de feuille pour primer sur les règles précédentes
+   et sur les styles inline des sections de l'accueil.
+   ═════════════════════════════════════════════════════════════ */
+
+/* ── Accessibilité, tous écrans ── */
+button, input, select, textarea { font-family:inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+  outline:2px solid var(--em); outline-offset:3px; border-radius:4px;
+}
+.nav-links a, .hero-desc, .about-text, .exp-card-desc, .contact-sub, .svc-cta-band p { color:rgba(245,240,232,.68); }
+.svc-side, .btn-s { color:rgba(245,240,232,.62); }
+.ep { color:rgba(245,240,232,.6); }
+.proj-desc, .step-row p, .mission-desc, .blog-card p, .shot-body p, .offer-row .d { color:rgba(245,240,232,.66); }
+.nav-lang-m { display:none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
+  *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+  .rv, .rv-l, .rv-r { opacity:1; transform:none; }
+}
+
+/* ── Tablette et mobile ── */
+@media (max-width:900px) {
+  /* En-tête : logo + CTA + menu, langue déplacée dans le menu */
+  nav { padding:12px 20px; }
+  .nav-logo { min-width:0; gap:10px; }
+  .nav-logo-name { white-space:nowrap; font-size:14px; }
+  .nav-right { gap:10px; flex-shrink:0; }
+  .nav-right .nav-lang { display:none; }
+  .nav-cta { white-space:nowrap; }
+  .nav-burger { width:44px; height:44px; flex-shrink:0; }
+  .nav-links { top:70px; max-height:calc(100vh - 90px); overflow-y:auto; }
+  .nav-lang-m { display:flex; gap:8px; padding:14px 16px 8px; margin-top:6px; border-top:1px solid var(--border); }
+  .nav-lang-m .lang-btn { min-width:60px; min-height:42px; font-size:12px; }
+
+  /* Animations d'apparition latérales → verticales : évite tout défilement horizontal parasite */
+  html, body { overflow-x:clip; }
+  .rv-l, .rv-r { transform:translateY(24px); }
+  .nav-cta { min-height:42px; }
+  .about-link { padding:12px 0 8px; }
+
+  /* Gouttières : neutralise les padding 52px des styles inline */
+  body > section[style*="52px"] { padding-left:24px !important; padding-right:24px !important; }
+  body > section[style*="padding:100px"] { padding-top:64px !important; padding-bottom:64px !important; }
+  .sec-lbl { margin-bottom:32px; font-size:11px; }
+
+  /* Hero */
+  .hero { min-height:auto; padding-bottom:44px; }
+  .hero-topbar { padding-top:100px; }
+  .hero-loc { display:none; }
+  .hero-tag { font-size:11px; line-height:1.9; }
+  .hero-display { margin-top:36px; }
+  .hero-bottom { margin-top:36px; gap:26px; }
+  .hero-desc { max-width:none; font-size:15px; }
+
+  /* Services */
+  .svc-header { align-items:flex-start; margin-bottom:36px; }
+  .svc-side { font-size:14px; }
+
+  /* À propos : chiffres dupliqués sous la photo masqués (déjà présents plus bas) */
+  .about-inner { gap:32px; }
+  .about-inner > .rv-l > div:last-child { display:none; }
+  .about-quote { font-size:17px; }
+  .about-text { font-size:15px; }
+  .as-l { font-size:10px; }
+
+  /* Pourquoi me choisir : colonnes empilées */
+  .why-grid { grid-template-columns:1fr !important; gap:28px !important; }
+
+  /* Formulaires : 16px minimum, sinon iOS zoome au focus */
+  input:not([type="hidden"]), select, textarea { font-size:16px !important; }
+  form label { font-size:11px !important; }
+
+  /* Micro-textes : plus rien sous 11px (hors séparateurs du bandeau défilant) */
+  [style*="font-size:8px"], [style*="font-size:9px"], [style*="font-size:10px"] { font-size:11px !important; }
+  .ticker-wrap [style*="font-size:8px"] { font-size:8px !important; }
+  .stat-l, .proj-tag, .ep, .testi-role, .testi-country, .client-country, .clients-lbl, .blog-card .cat, .breadcrumb, .svc-num, .proj-tool, .testi-verified, .shot-note { font-size:11px; }
+  .filt-btn, .blog-filter { font-size:12px; min-height:40px; }
+
+  /* Tableaux larges : défilement horizontal au lieu d'être coupés */
+  .article-body table, .legal-body table { display:block; max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .article-body th, .article-body td { min-width:120px; }
+
+  /* Cibles tactiles */
+  .btn-s { min-height:44px; }
+  .foot-legal { gap:6px 18px; flex-wrap:wrap; justify-content:center; }
+  .foot-legal a, .foot-legal button { padding:12px 2px; font-size:13px; }
+  .foot-copy { font-size:12px; }
+  .contact-info a { display:inline-block; padding:10px 2px; }
+}
+
+/* ── Téléphone ── */
+@media (max-width:560px) {
+  nav { padding:10px 16px; }
+  .nav-logo-sub { display:none; }
+  .nav-logo-svg { width:30px; height:28px; }
+  .nav-cta { padding:10px 14px; font-size:11px; }
+  .nav-links { top:62px; left:12px; right:12px; }
+
+  .hero, .services, .about, .testimonials, .clients, .contact, .projects, .expertise,
+  .svc-page-hero, .svc-page-section, .article-hero, .svc-cta-band { padding-left:20px; padding-right:20px; }
+  .article-body, .legal-body { padding-left:20px; padding-right:20px; }
+  body > section[style*="52px"] { padding-left:20px !important; padding-right:20px !important; }
+  footer { padding-left:20px; padding-right:20px; }
+
+  /* Titre du hero : 3 à 4 lignes au lieu de 6 */
+  .hero-line { font-size:clamp(34px, 10.4vw, 56px); line-height:.96; }
+  .hero-topbar { padding-top:88px; }
+
+  /* Chiffres + drapeaux : grille propre au lieu d'un retour à la ligne orphelin */
+  .hero-stats { display:grid !important; grid-template-columns:repeat(6, 1fr); gap:20px 6px !important; }
+  .hero-stats .stat-item:nth-child(-n+2) { grid-column:span 3; text-align:left; }
+  .hero-stats .stat-item:nth-child(n+3) { grid-column:span 2; }
+  .stat-n { font-size:40px; }
+  .hero-stats .stat-item:nth-child(n+3) .stat-n { font-size:24px !important; }
+  .hero-stats .stat-item:nth-child(n+3) .stat-l { font-size:10px; letter-spacing:.06em; }
+  .hero-cta { width:100%; align-items:stretch; }
+
+  /* Services : numéro au-dessus, flèche ronde, 4 étiquettes max */
+  .svc-title { font-size:clamp(40px, 13vw, 60px); }
+  .svc-main { grid-template-columns:1fr auto; gap:8px 14px; padding:22px 0 14px; }
+  .svc-num { grid-column:1 / -1; }
+  .svc-name { font-size:22px; line-height:1.12; }
+  .svc-btn { font-size:0 !important; width:44px; height:44px; padding:0 !important; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; }
+  .svc-btn::after { content:"→"; font-size:17px; }
+  .svc-tools { padding:0 0 22px; gap:6px; }
+  .svc-tools .tp:nth-child(n+5) { display:none; }
+  .tp { font-size:11px; padding:5px 11px; }
+
+  /* Pays : une rangée compacte de 3 au lieu de grandes cartes empilées */
+  .clients-grid { grid-template-columns:repeat(3, 1fr) !important; gap:8px !important; }
+  .client-card { padding:16px 8px; }
+  .client-card .client-name { font-size:13px; }
+
+  /* Formulaire de contact : champs empilés */
+  form div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+
+  .contact-title { font-size:clamp(38px, 12vw, 56px); }
+  .svc-page-title { font-size:clamp(30px, 8.6vw, 44px); line-height:1.02; }
+  .article-title { font-size:clamp(26px, 7.6vw, 38px); line-height:1.12; }
+  .svc-page-hero, .article-hero { padding-top:108px; }
+  .svc-stat { min-width:0; flex:1 1 140px; }
+  .step-row { grid-template-columns:40px 1fr; gap:14px; padding:18px; }
+  .check-item { padding:16px; }
+  .faq-item button { padding:18px !important; }
+}
+
+/* Burger → croix quand le menu est ouvert (état lisible pour tous) */
+.nav-burger span { transition:transform .25s, opacity .2s; }
+.nav-burger[aria-expanded="true"] span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+.nav-burger[aria-expanded="true"] span:nth-child(2) { opacity:0; }
+.nav-burger[aria-expanded="true"] span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
+
+/* Très petits écrans (≤ 360px) : le CTA d'en-tête laisse la place au logo,
+   le bouton d'action principal reste visible juste en dessous dans le hero */
+@media (max-width:360px) {
+  .nav-cta { display:none; }
+}
