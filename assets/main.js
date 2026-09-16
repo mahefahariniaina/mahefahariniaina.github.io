@@ -56,13 +56,13 @@ function setLang(lang){
   // Hero lines
   if(!document.getElementById('hl1')) return;
   if(lang==='fr'){
-    document.getElementById('hl1').innerHTML=`JE CONSTRUIS`;
-    document.getElementById('hl2').innerHTML=`DES <span class="word-em">SYSTÈMES</span>`;
-    document.getElementById('hl3').innerHTML=`QUI PERFORMENT.`;
+    document.getElementById('hl1').innerHTML=`VOTRE BRAS`;
+    document.getElementById('hl2').innerHTML=`<span class="word-em">TECHNIQUE</span>`;
+    document.getElementById('hl3').innerHTML=`AU QUOTIDIEN.`;
   } else {
-    document.getElementById('hl1').innerHTML=`I BUILD`;
-    document.getElementById('hl2').innerHTML=`HIGH-PERFORMANCE <span class="word-em">SYSTEMS</span>`;
-    document.getElementById('hl3').innerHTML=`THAT SCALE.`;
+    document.getElementById('hl1').innerHTML=`YOUR <span class="word-em">TECH</span>`;
+    document.getElementById('hl2').innerHTML=`RIGHT HAND,`;
+    document.getElementById('hl3').innerHTML=`EVERY DAY.`;
   }
   // Contact title
   const ct=document.getElementById('contact-title');
