@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Mesure d'audience chargée uniquement après consentement (RGPD) -->
+<script src="/assets/consent.js" defer></script>
+<title>Snapshot GoHighLevel : le guide pratique pour agences | Mahefa Tech</title>
+<meta name="description" content="Ce qu'un snapshot GoHighLevel copie (et ne copie pas), comment bâtir un compte maître propre et les vérifications à faire après chaque chargement.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Mahefa Tech">
+<link rel="canonical" href="https://mahefatech.com/blog/snapshot-gohighlevel/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mahefatech.com/blog/snapshot-gohighlevel/">
+<meta property="og:title" content="Snapshot GoHighLevel : le guide pratique pour agences">
+<meta property="og:description" content="Ce qu'un snapshot GoHighLevel copie (et ne copie pas), comment bâtir un compte maître propre et les vérifications à faire après chaque chargement.">
+<meta property="og:image" content="https://mahefatech.com/assets/img/og-image.jpg">
+<meta property="og:locale" content="fr_FR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Snapshot GoHighLevel : le guide pratique pour agences",
+      "description": "Ce qu'un snapshot GoHighLevel copie (et ne copie pas), comment bâtir un compte maître propre et les vérifications à faire après chaque chargement.",
+      "datePublished": "2026-09-22",
+      "dateModified": "2026-09-22",
+      "inLanguage": "fr",
+      "mainEntityOfPage": "https://mahefatech.com/blog/snapshot-gohighlevel/",
+      "image": "https://mahefatech.com/assets/img/og-image.jpg",
+      "author": {"@type": "Organization", "name": "Mahefa Tech", "url": "https://mahefatech.com/"},
+      "publisher": {"@type": "Organization", "name": "Mahefa Tech"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://mahefatech.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mahefatech.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Snapshot GoHighLevel : le guide pratique pour agences", "item": "https://mahefatech.com/blog/snapshot-gohighlevel/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+{"@type": "Question", "name": "Un snapshot GoHighLevel copie-t-il les contacts ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Un snapshot copie la configuration du sous-compte (workflows, funnels, pipelines, calendriers, champs et valeurs personnalisés, modèles), mais jamais les contacts, les conversations ni les opportunités. Pour transférer des contacts, il faut passer par un export et un import CSV, ou par une migration dédiée."}},
+{"@type": "Question", "name": "Peut-on charger un snapshot dans un sous-compte déjà configuré ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. On sélectionne les éléments à importer, et GoHighLevel signale ceux qui existent déjà. Il faut relire cette liste avec attention avant de valider, pour ne pas écraser un workflow ou une page personnalisés chez le client."}},
+{"@type": "Question", "name": "Que faire après avoir chargé un snapshot ?", "acceptedAnswer": {"@type": "Answer", "text": "Renseigner les valeurs personnalisées, réassigner les calendriers et les actions de workflow aux utilisateurs du compte, vérifier que les workflows sont publiés, connecter le domaine, le numéro et les intégrations de paiement, puis tester tout le parcours avec un contact de test avant d'ouvrir le compte au client."}}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="none" stroke="#A8EDCF" stroke-width="0.5" opacity="0.35"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="132" y1="111" x2="142" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+      <line x1="228" y1="111" x2="218" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">MAHEFA <span style="color:var(--em)">TECH</span></span>
+      <span class="nav-logo-sub">Digital Expert</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Accueil</a></li>
+    <li class="nav-drop">
+      <a href="/#services">Services</a>
+      <div class="nav-drop-menu"><div class="ndm-box">
+        <a href="/services/automatisation-no-code/">Automatisation & Agents IA</a>
+        <a href="/services/go-high-level/">Go High Level & CRM</a>
+        <a href="/services/developpement-wordpress/">Développement WordPress</a>
+        <a href="/services/email-marketing/">Marketing &amp; Campagnes</a>
+        <a href="/services/integration-pixel-perfect/">Intégration Pixel-Perfect</a>
+        <a href="/services/chef-de-projet/">Chef de Projet</a>
+        <a href="/services/assistant-technique/">Assistant Technique &amp; Annotation IA</a>
+        <a href="/services/developpement-fullstack/">Développement Full Stack</a>
+      </div></div>
+    </li>
+    <li><a href="/#about">À propos</a></li>
+    <li><a href="/#testimonials">Témoignages</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/formation/">Formation</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/#contact" class="nav-cta">Parlons-en ↗</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="breadcrumb"><a href="/">Accueil</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span style="color:var(--em);">GoHighLevel</span></div>
+  <div class="article-meta"><span class="cat">GoHighLevel</span><span>22 septembre 2026</span><span>7 min de lecture</span></div>
+  <h1 class="article-title">Snapshot GoHighLevel : le guide pratique pour agences</h1>
+</section>
+
+<article class="article-body">
+  <p>Un snapshot GoHighLevel est une copie de la configuration d'un sous-compte : workflows, funnels, sites, pipelines, calendriers, formulaires, champs et valeurs personnalisés, modèles d'emails. On le charge dans un nouveau sous-compte pour y retrouver tout le système en quelques minutes. Il ne copie en revanche ni les contacts, ni les utilisateurs, ni les connexions (Stripe, Google, numéros de téléphone) : c'est là que se jouent la plupart des mauvaises surprises.</p>
+
+  <p>Sur la vingtaine de sous-comptes GHL que j'ai gérés, dont trois comptes agence pilotés de A à Z, le snapshot est l'outil qui fait gagner le plus de temps… et celui qui en fait perdre le plus quand il est mal préparé. Les guides que l'on trouve en ligne expliquent où cliquer. Cet article parle plutôt de ce qui se passe <em>après</em> le clic : comment construire un snapshot qui se charge proprement, et ce qu'il faut vérifier derrière.</p>
+
+  <h2>1. À quoi sert vraiment un snapshot GoHighLevel</h2>
+
+  <p>Dans GoHighLevel, une agence gère plusieurs sous-comptes, un par client. Sans snapshot, chaque nouveau client repart d'une page blanche : recréer les pipelines, reconstruire les workflows de relance, redessiner les pages. Avec un snapshot, on construit le système une seule fois, on le teste, puis on le déploie autant de fois que nécessaire.</p>
+
+  <p>Trois usages reviennent dans les comptes que je pilote :</p>
+
+  <ul>
+    <li><strong>Standardiser l'onboarding d'une agence</strong> : chaque nouveau client reçoit la même base éprouvée (pipeline commercial, prise de rendez-vous, relances), puis on personnalise.</li>
+    <li><strong>Dupliquer un système qui fonctionne</strong> : une séquence de liste d'attente ou un tunnel de vente qui a fait ses preuves chez un client peut servir de modèle pour un autre du même secteur.</li>
+    <li><strong>Sauvegarder une configuration</strong> avant une grosse refonte. Ce n'est pas une sauvegarde des données, mais c'est un filet de sécurité appréciable pour la structure.</li>
+  </ul>
+
+  <h2>2. Ce qu'un snapshot copie… et ce qu'il ne copie pas</h2>
+
+  <p>C'est le point que je fais comprendre en premier à chaque agence, parce qu'il évite la moitié des tickets de support ensuite.</p>
+
+  <table>
+    <thead><tr><th>Copié par le snapshot</th><th>Non copié : à refaire dans chaque sous-compte</th></tr></thead>
+    <tbody>
+      <tr><td>Workflows et leurs déclencheurs</td><td>Contacts, conversations, opportunités en cours</td></tr>
+      <tr><td>Funnels, sites, formulaires, sondages</td><td>Utilisateurs et membres de l'équipe</td></tr>
+      <tr><td>Pipelines et leurs étapes</td><td>Numéros de téléphone et configuration SMS</td></tr>
+      <tr><td>Calendriers (structure et réglages)</td><td>Intégrations connectées : Stripe, Google, Facebook</td></tr>
+      <tr><td>Champs personnalisés et valeurs personnalisées</td><td>Noms de domaine et domaine d'envoi des emails</td></tr>
+      <tr><td>Tags, modèles d'emails et de SMS, liens de suivi</td><td>Historique et statistiques du compte source</td></tr>
+    </tbody>
+  </table>
+
+  <p>Autrement dit, le snapshot transporte la <strong>mécanique</strong>, jamais les <strong>données</strong> ni les <strong>accès</strong>. Un workflow qui envoie un SMS arrivera intact, mais sans numéro de téléphone pour l'envoyer. Un calendrier arrivera avec ses horaires, mais sans personne pour recevoir les rendez-vous. Le périmètre exact évolue régulièrement chez HighLevel : vérifiez la liste des éléments proposés au moment du chargement plutôt que de vous fier à votre mémoire.</p>
+
+  <h2>3. Construire un « compte maître » avant de créer le snapshot</h2>
+
+  <p>L'erreur la plus répandue, c'est de faire un snapshot à partir du sous-compte d'un vrai client. On embarque alors ses textes, son logo, ses tags de test, ses workflows abandonnés en brouillon, et on les propage à tous les clients suivants.</p>
+
+  <p>Ce que je fais à la place : un sous-compte dédié, qui ne sert à personne d'autre, et qui est la seule source des snapshots. Quelques règles pour qu'il reste propre :</p>
+
+  <ul>
+    <li><strong>Aucune donnée client</strong> : pas de nom d'entreprise, d'adresse ou de téléphone réels écrits en dur dans les pages et les emails.</li>
+    <li><strong>Des valeurs personnalisées partout</strong> : le nom de l'entreprise, l'URL de prise de rendez-vous, la signature d'email passent par des valeurs personnalisées (du type <code>{{custom_values.nom_entreprise}}</code>). On les renseigne une fois dans le nouveau sous-compte, et tous les emails et pages s'adaptent.</li>
+    <li><strong>Une convention de nommage</strong> : préfixer les workflows par leur fonction (« RDV – rappel J-1 », « Lead – relance J+3 ») pour que le client s'y retrouve, et pour repérer immédiatement un doublon.</li>
+    <li><strong>Pas de brouillons oubliés</strong> : tout ce qui n'est pas terminé sort du compte maître avant la création du snapshot.</li>
+  </ul>
+
+  <p>Ce compte maître devient la référence documentée de l'agence. C'est aussi lui qu'on améliore quand on corrige un défaut, pour que la correction profite aux clients suivants.</p>
+
+  <h2>4. Créer et charger le snapshot, étape par étape</h2>
+
+  <p>La manipulation elle-même est courte :</p>
+
+  <ol>
+    <li>Depuis la vue agence, ouvrez la section des snapshots de compte et créez un nouveau snapshot en choisissant le compte maître comme source.</li>
+    <li>Donnez-lui un nom daté et versionné (« Base coach – v3 – sept. 2026 »). Dans six mois, vous remercierez ce nom.</li>
+    <li>Pour un nouveau client, choisissez le snapshot à la création du sous-compte. Pour un sous-compte existant, importez-le en sélectionnant uniquement les éléments dont vous avez besoin.</li>
+    <li>À l'import dans un compte existant, GoHighLevel signale les éléments déjà présents. Lisez cette liste avant de valider : c'est là qu'on écrase par erreur un workflow personnalisé.</li>
+  </ol>
+
+  <p>Un snapshot peut aussi se partager par lien avec une autre agence. C'est ainsi que se vendent les snapshots « prêts à l'emploi » par secteur. Si vous en achetez un, traitez-le comme n'importe quel code tiers : chargez-le d'abord dans un sous-compte de test, jamais directement chez un client.</p>
+
+  <h2>5. Les vérifications après chargement</h2>
+
+  <p>C'est la partie absente de la plupart des tutoriels, et celle qui distingue un déploiement propre d'un client qui appelle trois jours plus tard parce que « les rappels ne partent pas ». Ma liste de contrôle après chaque chargement :</p>
+
+  <ul>
+    <li><strong>Renseigner les valeurs personnalisées</strong> : une valeur vide produit un email qui commence par « Bonjour, ici , votre conseiller ».</li>
+    <li><strong>Réassigner les calendriers</strong> aux utilisateurs du nouveau compte, puisque les utilisateurs ne sont pas copiés.</li>
+    <li><strong>Relire chaque action de workflow qui cible une personne</strong> (« assigner à », « notifier l'utilisateur ») : elle pointe souvent dans le vide.</li>
+    <li><strong>Vérifier le statut des workflows</strong> : publiés ou en brouillon. Un workflow en brouillon ne se déclenche jamais, et rien ne vous prévient.</li>
+    <li><strong>Connecter le domaine, le domaine d'envoi, le numéro et Stripe</strong> avant d'activer quoi que ce soit qui envoie un message ou encaisse un paiement.</li>
+    <li><strong>Faire un test de bout en bout</strong> avec un contact de test : formulaire rempli, tag posé, email reçu, rendez-vous pris, rappel envoyé.</li>
+  </ul>
+
+  <p>Le domaine d'envoi mérite une attention particulière : un snapshot parfait qui envoie depuis un domaine mal authentifié finit en spam. J'ai détaillé ce sujet dans l'article <a href="/blog/emails-en-spam-malgre-spf-dkim/">emails en spam malgré SPF et DKIM</a>.</p>
+
+  <h2>6. Mettre à jour un snapshot sans casser les comptes clients</h2>
+
+  <p>Un snapshot est figé au moment de sa création. Si vous améliorez le compte maître, il faut actualiser le snapshot, puis choisir de pousser la mise à jour vers les sous-comptes qui l'utilisent. C'est puissant, et c'est dangereux : si un client a personnalisé un workflow ou une page, une mise à jour mal ciblée peut remplacer son travail par la version standard.</p>
+
+  <p>Ma règle sur les comptes agence : on ne pousse une mise à jour que sur les éléments qu'on a réellement modifiés, jamais « tout le snapshot ». Et on prévient le client avant. Pour les comptes très personnalisés, je préfère souvent reporter la correction à la main : c'est plus lent, mais sans risque.</p>
+
+  <h2>7. Snapshot, migration, setup sur mesure : que choisir ?</h2>
+
+  <p>Le snapshot est idéal quand plusieurs clients partagent le même besoin. Il ne remplace pas une migration : venir de Kajabi ou d'un autre outil implique de transférer des contacts, des contenus et un historique, que le snapshot ne transporte pas (voir <a href="/blog/migrer-kajabi-vers-gohighlevel/">mon guide de migration Kajabi vers GoHighLevel</a>). Il ne remplace pas non plus la réflexion sur le système lui-même. Un snapshot déploie vite un bon système, mais il déploie tout aussi vite un mauvais.</p>
+
+  <p>Si vous hésitez encore sur l'outil, commencez par <a href="/blog/pourquoi-choisir-gohighlevel/">pourquoi choisir GoHighLevel plutôt qu'un autre outil</a>. Si vous êtes une agence qui veut industrialiser ses déploiements, c'est exactement le travail que je fais sur mes <a href="/services/go-high-level/">missions Go High Level</a> : compte maître, snapshots versionnés et procédure de chargement documentée.</p>
+
+  <h2>FAQ</h2>
+
+  <h3>Un snapshot GoHighLevel copie-t-il les contacts ?</h3>
+  <p>Non. Un snapshot copie la configuration du sous-compte (workflows, funnels, pipelines, calendriers, champs et valeurs personnalisés, modèles), mais jamais les contacts, les conversations ni les opportunités. Pour transférer des contacts, il faut passer par un export et un import CSV, ou par une migration dédiée.</p>
+
+  <h3>Peut-on charger un snapshot dans un sous-compte déjà configuré ?</h3>
+  <p>Oui. On sélectionne les éléments à importer, et GoHighLevel signale ceux qui existent déjà. Il faut relire cette liste avec attention avant de valider, pour ne pas écraser un workflow ou une page personnalisés chez le client.</p>
+
+  <h3>Que faire après avoir chargé un snapshot ?</h3>
+  <p>Renseigner les valeurs personnalisées, réassigner les calendriers et les actions de workflow aux utilisateurs du compte, vérifier que les workflows sont publiés, connecter le domaine, le numéro et les intégrations de paiement, puis tester tout le parcours avec un contact de test avant d'ouvrir le compte au client.</p>
+
+  <div class="article-cta">
+    <div class="t">Vous voulez industrialiser vos déploiements GoHighLevel ?</div>
+    <p>Compte maître, snapshots versionnés, procédure de chargement documentée : je mets en place le système qui vous permet de lancer chaque nouveau client sans repartir de zéro. Le premier rendez-vous est gratuit — on étudie votre besoin ensemble.</p>
+    <a href="/?service=ghl#contact" class="btn-p">Démarrons votre projet ↗</a>
+  </div>
+
+  <div class="author-box">
+    <picture><source srcset="/assets/img/signature-logo.png" type="image/webp"><img src="/assets/img/signature-logo.png" alt="Mahefa Tech"></picture>
+    <div>
+      <div class="n">Mahefa Tech</div>
+      <p>Freelance expert No-Code, WordPress et Go High Level — 7 ans d'expérience, 100+ projets livrés pour des clients en France, au Canada et en Espagne.</p>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-logo">
+    <svg width="28" height="26" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="foot-logo-name">MAHEFA <span>TECH</span></span>
+  </div>
+  <div class="foot-legal">
+    <a href="/mentions-legales/" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+    <a href="/politique-confidentialite/" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+    <button type="button" onclick="mtOpenConsent()" data-fr="Cookies" data-en="Cookies">Cookies</button>
+  </div>
+  <span class="foot-copy">© 2026 Mahefa Tech</span>
+  <span class="foot-avail"><span class="dot-blink"></span><span>Disponible · Remote</span></span>
+</footer>
+
+<script src="/assets/main.js"></script>
+</body>
+</html>

@@ -244,6 +244,113 @@
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
 
+  <!-- BRAS ROBOT — illustration décorative animée (SVG original) -->
+  <div class="hero-robot" aria-hidden="true">
+    <svg viewBox="0 0 380 430" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+      <defs>
+        <linearGradient id="raMetal" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#16293C"/><stop offset=".18" stop-color="#2C4C69"/>
+          <stop offset=".42" stop-color="#1A3149"/><stop offset=".72" stop-color="#0D1C2B"/>
+          <stop offset="1" stop-color="#193046"/>
+        </linearGradient>
+        <linearGradient id="raMetal2" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#132536"/><stop offset=".22" stop-color="#274460"/>
+          <stop offset=".55" stop-color="#152C41"/><stop offset="1" stop-color="#0B1826"/>
+        </linearGradient>
+        <linearGradient id="raJoint" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#20384F"/><stop offset="1" stop-color="#091420"/>
+        </linearGradient>
+        <radialGradient id="raHalo" cx=".5" cy=".5" r=".5">
+          <stop offset="0" stop-color="#00C49A" stop-opacity=".14"/>
+          <stop offset="1" stop-color="#00C49A" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <ellipse cx="215" cy="215" rx="180" ry="200" fill="url(#raHalo)"/>
+
+      <g stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(330,22)">
+          <!-- ÉPAULE -->
+          <circle r="36" fill="url(#raJoint)" stroke="rgba(0,196,154,.22)" stroke-width="1.4"/>
+          <circle r="22" fill="#0B1826" stroke="rgba(245,240,232,.10)"/>
+          <circle r="7" fill="#00C49A" opacity=".55">
+            <animate attributeName="opacity" values=".35;.8;.35" dur="4.5s" repeatCount="indefinite"/>
+          </circle>
+
+          <!-- BRAS -->
+          <g transform="rotate(22)">
+            <animateTransform attributeName="transform" type="rotate" additive="sum" values="0 0 0;1.8 0 0;0 0 0" dur="9s" calcMode="spline" keyTimes="0;0.5;1" keySplines=".45 0 .55 1;.45 0 .55 1" repeatCount="indefinite"/>
+            <path d="M-31 -6 C-31 -26 31 -26 31 -6 L27 186 C27 204 -27 204 -27 186 Z" fill="url(#raMetal)" stroke="rgba(245,240,232,.10)"/>
+            <path d="M-23 8 C-26 70 -26 140 -21 182" stroke="rgba(245,240,232,.16)" stroke-width="2.5" fill="none"/>
+            <rect x="-17" y="42" width="34" height="104" rx="13" fill="#0B1826" opacity=".6" stroke="rgba(245,240,232,.07)"/>
+            <g stroke="#00C49A" stroke-width="2.5" opacity=".38">
+              <path d="M-8 62h16"/><path d="M-8 76h16"/><path d="M-8 90h16"/>
+            </g>
+            <g fill="rgba(245,240,232,.18)">
+              <circle cx="-19" cy="18" r="2.3"/><circle cx="19" cy="18" r="2.3"/>
+              <circle cx="-17" cy="172" r="2.3"/><circle cx="17" cy="172" r="2.3"/>
+            </g>
+
+            <!-- COUDE -->
+            <g transform="translate(0,196)">
+              <circle r="27" fill="url(#raJoint)" stroke="rgba(0,196,154,.22)" stroke-width="1.4"/>
+              <circle r="15" fill="#0B1826" stroke="rgba(245,240,232,.10)"/>
+              <circle r="5" fill="#00C49A" opacity=".5">
+                <animate attributeName="opacity" values=".3;.75;.3" dur="3.8s" repeatCount="indefinite"/>
+              </circle>
+
+              <!-- AVANT-BRAS -->
+              <g transform="rotate(30)">
+                <animateTransform attributeName="transform" type="rotate" additive="sum" values="0 0 0;-3.2 0 0;0 0 0" dur="7s" calcMode="spline" keyTimes="0;0.5;1" keySplines=".45 0 .55 1;.45 0 .55 1" repeatCount="indefinite"/>
+                <path d="M-26 -4 C-26 -20 26 -20 26 -4 L19 146 C19 160 -19 160 -19 146 Z" fill="url(#raMetal2)" stroke="rgba(245,240,232,.10)"/>
+                <path d="M-19 8 C-22 62 -21 112 -16 142" stroke="rgba(245,240,232,.15)" stroke-width="2.2" fill="none"/>
+                <rect x="17" y="16" width="8" height="104" rx="4" fill="#0B1826" stroke="rgba(245,240,232,.07)"/>
+                <rect x="-7" y="52" width="14" height="46" rx="7" fill="#00C49A" opacity=".2"/>
+                <g fill="rgba(245,240,232,.16)"><circle cx="-14" cy="26" r="2"/><circle cx="-12" cy="134" r="2"/></g>
+
+                <!-- POIGNET -->
+                <g transform="translate(0,152)">
+                  <circle r="19" fill="url(#raJoint)" stroke="rgba(0,196,154,.22)" stroke-width="1.3"/>
+                  <circle r="10" fill="#0B1826" stroke="rgba(245,240,232,.10)"/>
+
+                  <!-- MAIN — l'index pointe vers le texte -->
+                  <g transform="rotate(38)">
+                    <animateTransform attributeName="transform" type="rotate" additive="sum" values="0 0 0;2.6 0 0;0 0 0" dur="5.5s" calcMode="spline" keyTimes="0;0.5;1" keySplines=".45 0 .55 1;.45 0 .55 1" repeatCount="indefinite"/>
+                    <path d="M-19 0 C-19 -10 19 -10 19 0 L18 30 C18 42 -18 42 -18 30 Z" fill="url(#raMetal2)" stroke="rgba(245,240,232,.10)"/>
+                    <rect x="-19" y="30" width="38" height="15" rx="7.5" fill="#12243A" stroke="rgba(245,240,232,.08)"/>
+                    <!-- pouce -->
+                    <g transform="translate(16,14) rotate(-36)">
+                      <rect x="-6" y="0" width="12" height="26" rx="6" fill="url(#raMetal2)" stroke="rgba(245,240,232,.10)"/>
+                    </g>
+                    <!-- doigts repliés -->
+                    <g fill="url(#raMetal2)" stroke="rgba(245,240,232,.09)">
+                      <g transform="translate(7,42) rotate(-34)"><rect x="-6" y="0" width="12" height="23" rx="6"/></g>
+                      <g transform="translate(16,38) rotate(-52)"><rect x="-5.5" y="0" width="11" height="20" rx="5.5"/></g>
+                      <g transform="translate(-2,44) rotate(-18)"><rect x="-6" y="0" width="12" height="21" rx="6"/></g>
+                    </g>
+                    <!-- index tendu -->
+                    <g transform="translate(-11,42)">
+                      <g>
+                        <animateTransform attributeName="transform" type="rotate" additive="sum" values="0 0 0;-4.5 0 0;0 0 0" dur="3.6s" calcMode="spline" keyTimes="0;0.5;1" keySplines=".45 0 .55 1;.45 0 .55 1" repeatCount="indefinite"/>
+                        <rect x="-7.5" y="-2" width="15" height="34" rx="7.5" fill="url(#raMetal)" stroke="rgba(245,240,232,.10)"/>
+                        <rect x="-6.5" y="28" width="13" height="28" rx="6.5" fill="url(#raMetal2)" stroke="rgba(245,240,232,.10)"/>
+                        <circle cy="56" r="5" fill="#00C49A" opacity=".85"/>
+                        <circle cy="56" r="9" fill="none" stroke="#00C49A" stroke-width="1.6">
+                          <animate attributeName="r" values="7;20;7" dur="3.2s" repeatCount="indefinite"/>
+                          <animate attributeName="opacity" values=".6;0;.6" dur="3.2s" repeatCount="indefinite"/>
+                        </circle>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+
   <div class="hero-topbar">
     <div class="hero-tag" data-fr="Freelance polyvalent<br>Disponible pour de nouveaux projets" data-en="Versatile freelancer<br>Available for new projects">
       Freelance polyvalent<br>Disponible pour de nouveaux projets
