@@ -126,13 +126,3 @@ async function submitForm(e) {
   var sel = document.querySelector('select[name="project_type"]');
   if (p && sel) { sel.value = p; if (sel.value !== p) sel.value = 'other'; }
 })();
-
-/* Bras robot du hero : respect de prefers-reduced-motion (les animations SMIL ignorent le CSS) */
-(function(){
-  var svg=document.querySelector('.hero-robot svg');
-  if(!svg) return;
-  var mq=window.matchMedia('(prefers-reduced-motion: reduce)');
-  var apply=function(){ try{ mq.matches ? svg.pauseAnimations() : svg.unpauseAnimations(); }catch(e){} };
-  apply();
-  mq.addEventListener ? mq.addEventListener('change',apply) : mq.addListener(apply);
-})();
