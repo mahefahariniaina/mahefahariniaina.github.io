@@ -1,0 +1,35 @@
+# Mahefa Tech
+
+> Freelance expert No-Code, WordPress et Go High Level. 7 ans d'expérience, 100+ projets livrés pour des clients en France, au Canada et en Espagne. Bras technique des agences et des petites entreprises : automatisation, CRM, sites et campagnes. Premier rendez-vous gratuit. Contact : contact@mahefatech.com
+
+## Services
+
+- [Automatisation & Agents IA](https://mahefatech.com/services/automatisation-no-code/) : scénarios Make, n8n et Zapier, agents IA de support, suppression des tâches répétitives et de la double saisie.
+- [Go High Level & CRM](https://mahefatech.com/services/go-high-level/) : setup GHL complet, funnels, membership, campagnes email et SMS, comptes agence multi-clients, snapshots, migration Kajabi.
+- [Développement WordPress](https://mahefatech.com/services/developpement-wordpress/) : création et reprise de sites, sécurisation, nettoyage de sites piratés, maintenance.
+- [Marketing & Campagnes](https://mahefatech.com/services/email-marketing/) : délivrabilité, séquences de vente, nurturing, gestion de grandes bases de contacts.
+- [Intégration Pixel-Perfect](https://mahefatech.com/services/integration-pixel-perfect/) : intégration fidèle de maquettes Figma en HTML/CSS ou WordPress.
+- [Chef de Projet](https://mahefatech.com/services/chef-de-projet/) : pilotage de projets web et de prestataires, en français comme en anglais.
+- [Assistant Technique & Annotation IA](https://mahefatech.com/services/assistant-technique/) : support technique récurrent et annotation de données pour l'IA.
+- [Développement Full Stack](https://mahefatech.com/services/developpement-fullstack/) : renfort d'équipe piloté sur des développements PHP/Laravel et full stack.
+
+## Blog
+
+- [Les 7 automatisations que toute petite entreprise devrait avoir](https://mahefatech.com/blog/automatisations-petite-entreprise/)
+- [Snapshot GoHighLevel : le guide pratique pour agences](https://mahefatech.com/blog/snapshot-gohighlevel/)
+- [Nettoyer un site WordPress piraté : le guide complet](https://mahefatech.com/blog/nettoyer-site-wordpress-pirate/)
+- [Emails en spam malgré SPF et DKIM : les vraies causes](https://mahefatech.com/blog/emails-en-spam-malgre-spf-dkim/)
+- [RGPD : les 5 corrections que tout site doit avoir](https://mahefatech.com/blog/mise-en-conformite-rgpd-site-wordpress/)
+- [Créer un agent IA de support client avec n8n](https://mahefatech.com/blog/agent-ia-support-client-n8n/)
+- [Automatiser la prise de rendez-vous : le système complet](https://mahefatech.com/blog/automatiser-prise-de-rendez-vous/)
+- [Zapier vs Make vs n8n : lequel choisir en 2026 ?](https://mahefatech.com/blog/zapier-vs-make-vs-n8n/)
+- [Pourquoi choisir GoHighLevel plutôt qu'un autre outil ?](https://mahefatech.com/blog/pourquoi-choisir-gohighlevel/)
+- [Migration Kajabi vers GoHighLevel : le guide complet](https://mahefatech.com/blog/migrer-kajabi-vers-gohighlevel/)
+
+## Autres pages
+
+- [Accueil](https://mahefatech.com/) : présentation, réalisations, témoignages, formulaire de contact.
+- [Formation](https://mahefatech.com/formation/) : liste d'attente des formations No-Code et GoHighLevel.
+- [Index du blog](https://mahefatech.com/blog/)
+- [Mentions légales](https://mahefatech.com/mentions-legales/)
+- [Politique de confidentialité](https://mahefatech.com/politique-confidentialite/)
