@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site web refait avec l'IA pour PME — dès 200 € | Mahefa Tech</title>
+<meta name="description" content="On modernise votre site vitrine avec l'IA et on gère votre présence en ligne (Google, réseaux sociaux, blog) en abonnement. Démo gratuite et sans engagement. France, Belgique, Québec.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mahefatech.com/offres/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23059669'/%3E%3Cpath d='M8 23V10l4 6 4-6 4 6 4-6v13' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mahefatech.com/offres/">
+<meta property="og:title" content="Votre site refait avec l'IA. Moderne, rapide, à votre image.">
+<meta property="og:description" content="On modernise votre site vitrine avec l'IA et on gère votre présence en ligne en abonnement. Démo gratuite. Dès 200 €.">
+<meta property="og:image" content="https://mahefatech.com/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Données structurées : Service + Offres à prix fixe -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Création de site web avec l'IA et gestion de présence en ligne",
+  "serviceType": "Création de site vitrine et marketing digital local",
+  "provider": { "@type": "Organization", "name": "Mahefa Tech", "url": "https://mahefatech.com" },
+  "areaServed": [
+    { "@type": "Country", "name": "France" },
+    { "@type": "Country", "name": "Belgique" },
+    { "@type": "AdministrativeArea", "name": "Québec, Canada" }
+  ],
+  "description": "Refonte de site vitrine assistée par IA, hébergement, et gestion mensuelle de la présence en ligne (fiche Google, réseaux sociaux, blog).",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Formules Site IA + Présence en ligne",
+    "itemListElement": [
+      { "@type": "Offer", "name": "Site seul", "priceCurrency": "EUR", "price": "30", "description": "Mise en place 200 €, puis 30 €/mois. Site vitrine refait avec l'IA, sur votre nom de domaine, hébergement, mises à jour, avis Google.", "eligibleRegion": ["France", "Belgique"] },
+      { "@type": "Offer", "name": "Présence locale", "priceCurrency": "EUR", "price": "99", "description": "0 € de mise en place avec engagement 12 mois (sinon 200 €), puis 99 €/mois. Site seul + 2 articles de blog, 2 publications Google Business Profile et 2 publications réseaux sociaux par mois, calendrier éditorial validé chaque mois.", "eligibleRegion": ["France", "Belgique"] },
+      { "@type": "Offer", "name": "Présence locale (Québec)", "priceCurrency": "CAD", "price": "150", "description": "300 $ CA de mise en place, puis 150 $ CA/mois.", "eligibleRegion": "Québec, Canada" }
+    ]
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#0F172A',
+          muted: '#475569',
+          line: '#E2E8F0',
+          brand: { DEFAULT: '#059669', dark: '#047857', darker: '#065F46', soft: '#ECFDF5' }
+        },
+        fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'] }
+      }
+    }
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+  .ph { background-image: repeating-linear-gradient(45deg, #f1f5f9, #f1f5f9 12px, #e9eef4 12px, #e9eef4 24px); }
+  details[open] .faq-plus { transform: rotate(45deg); }
+  :focus-visible { outline: 3px solid #059669; outline-offset: 2px; border-radius: 4px; }
+</style>
+</head>
+<body class="bg-white text-ink antialiased">
+
+<!-- ===== NAV ===== -->
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-line">
+  <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between" aria-label="Navigation principale">
+    <a href="/" class="flex items-center gap-2.5 font-extrabold text-ink">
+      <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand">
+        <svg viewBox="0 0 32 32" class="h-5 w-5" aria-hidden="true"><path d="M8 23V10l4 6 4-6 4 6 4-6v13" fill="none" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Mahefa Tech
+    </a>
+    <div class="hidden md:flex items-center gap-7 text-sm font-medium text-muted">
+      <a href="#offres" class="hover:text-ink">Offres</a>
+      <a href="#process" class="hover:text-ink">Comment ça marche</a>
+      <a href="#faq" class="hover:text-ink">FAQ</a>
+    </div>
+    <a href="#contact" class="inline-flex items-center rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark transition-colors">Démo gratuite</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-brand-soft/70 to-white"></div>
+  <div class="max-w-6xl mx-auto px-5 pt-16 pb-14 md:pt-24 md:pb-20">
+    <p class="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-white px-3.5 py-1.5 text-xs font-semibold text-brand-dark">
+      <span class="h-1.5 w-1.5 rounded-full bg-brand"></span> Sites web + présence en ligne pour PME
+    </p>
+    <h1 class="mt-5 max-w-3xl text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight">
+      Votre site refait avec l'IA. <span class="text-brand-dark">Moderne, rapide, à votre image.</span>
+    </h1>
+    <p class="mt-6 max-w-2xl text-lg md:text-xl text-muted leading-relaxed">
+      Dès 200 €. On repart de votre site actuel, on le modernise, et on s'occupe de votre visibilité locale mois après mois.
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-3">
+      <a href="#contact" class="inline-flex items-center justify-center rounded-full bg-brand px-7 py-4 text-base font-semibold text-white shadow-sm hover:bg-brand-dark transition-colors">
+        Voir ce que ça donnerait pour mon entreprise
+      </a>
+      <a href="#offres" class="inline-flex items-center justify-center rounded-full border border-line bg-white px-7 py-4 text-base font-semibold text-ink hover:border-brand hover:text-brand-dark transition-colors">
+        Voir les offres
+      </a>
+    </div>
+    <p class="mt-6 text-sm text-muted">Démo gratuite · sans engagement · votre nom de domaine reste à vous.</p>
+  </div>
+</section>
+
+<!-- ===== PROBLÈME ===== -->
+<section id="probleme" class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+  <div class="max-w-2xl">
+    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Un site daté vous coûte des clients.</h2>
+    <p class="mt-4 text-lg text-muted">Souvent sans que vous le voyiez. Voici ce qui fait fuir vos visiteurs&nbsp;:</p>
+  </div>
+  <div class="mt-10 grid gap-5 md:grid-cols-3">
+    <div class="rounded-2xl border border-line p-7">
+      <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-brand-dark text-xl font-bold">1</div>
+      <h3 class="mt-5 text-lg font-bold">Trop lent</h3>
+      <p class="mt-2 text-muted">Les visiteurs partent avant même d'avoir vu votre offre. Chaque seconde d'attente fait perdre des clients.</p>
+    </div>
+    <div class="rounded-2xl border border-line p-7">
+      <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-brand-dark text-xl font-bold">2</div>
+      <h3 class="mt-5 text-lg font-bold">Pas adapté au mobile</h3>
+      <p class="mt-2 text-muted">La majorité de vos clients vous cherchent depuis leur téléphone. Un site illisible sur mobile, c'est une porte fermée.</p>
+    </div>
+    <div class="rounded-2xl border border-line p-7">
+      <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-brand-dark text-xl font-bold">3</div>
+      <h3 class="mt-5 text-lg font-bold">Introuvable sur Google</h3>
+      <p class="mt-2 text-muted">Si on ne vous trouve pas en cherchant votre métier dans votre ville, ce sont vos concurrents qui récupèrent l'appel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AVANT / APRÈS ===== -->
+<section id="avant-apres" class="bg-slate-50 border-y border-line">
+  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Avant / Après</h2>
+      <p class="mt-4 text-lg text-muted">Le même métier, la même entreprise. Juste un site qui inspire enfin confiance.</p>
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      <figure>
+        <div class="relative aspect-[16/10] overflow-hidden rounded-2xl border border-line ph flex items-center justify-center">
+          <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-slate-500 border border-line">AVANT</span>
+          <span class="text-sm font-semibold text-slate-400">[À REMPLACER — capture du site actuel]</span>
+        </div>
+        <figcaption class="mt-3 text-sm text-muted">Le site existant, daté et peu convaincant.</figcaption>
+      </figure>
+      <figure>
+        <div class="relative aspect-[16/10] overflow-hidden rounded-2xl border-2 border-brand ph flex items-center justify-center">
+          <span class="absolute left-4 top-4 rounded-full bg-brand px-3 py-1 text-xs font-bold text-white">APRÈS</span>
+          <span class="text-sm font-semibold text-slate-400">[À REMPLACER — démo du nouveau site]</span>
+        </div>
+        <figcaption class="mt-3 text-sm text-muted">La démo refaite avec l'IA, moderne et rapide.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section id="process" class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+  <div class="max-w-2xl">
+    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Comment ça marche</h2>
+    <p class="mt-4 text-lg text-muted">Simple, sans jargon, et vous ne payez rien pour voir le résultat.</p>
+  </div>
+  <ol class="mt-10 grid gap-5 md:grid-cols-4">
+    <li class="rounded-2xl border border-line p-6">
+      <div class="text-sm font-bold text-brand-dark">Étape 1</div>
+      <h3 class="mt-2 text-lg font-bold">On analyse votre site actuel</h3>
+      <p class="mt-2 text-muted">On regarde ce qui marche, ce qui freine, et ce qu'on peut améliorer.</p>
+    </li>
+    <li class="rounded-2xl border border-line p-6">
+      <div class="text-sm font-bold text-brand-dark">Étape 2</div>
+      <h3 class="mt-2 text-lg font-bold">On vous envoie une démo gratuite</h3>
+      <p class="mt-2 text-muted">Vous voyez concrètement votre nouveau site, sans rien avoir payé.</p>
+    </li>
+    <li class="rounded-2xl border border-line p-6">
+      <div class="text-sm font-bold text-brand-dark">Étape 3</div>
+      <h3 class="mt-2 text-lg font-bold">Vous validez</h3>
+      <p class="mt-2 text-muted">On ajuste jusqu'à ce que ça vous ressemble vraiment.</p>
+    </li>
+    <li class="rounded-2xl border border-line p-6">
+      <div class="text-sm font-bold text-brand-dark">Étape 4</div>
+      <h3 class="mt-2 text-lg font-bold">On met en ligne sur votre domaine</h3>
+      <p class="mt-2 text-muted">Votre site part en ligne, et on s'occupe de la suite.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ===== OFFRES ===== -->
+<section id="offres" class="bg-slate-50 border-y border-line">
+  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <div class="flex flex-col items-center text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Des offres claires, sans surprise</h2>
+      <p class="mt-4 max-w-2xl text-lg text-muted">Choisissez votre formule. On s'occupe de tout le reste.</p>
+
+      <!-- Sélecteur de devise -->
+      <div class="mt-8 inline-flex rounded-full border border-line bg-white p-1" role="group" aria-label="Choisir la devise">
+        <button type="button" data-cur="eur" class="cur-btn rounded-full px-5 py-2 text-sm font-semibold transition-colors" aria-pressed="true">France / Belgique (€)</button>
+        <button type="button" data-cur="cad" class="cur-btn rounded-full px-5 py-2 text-sm font-semibold transition-colors text-muted" aria-pressed="false">Québec ($ CA)</button>
+      </div>
+    </div>
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-3 items-start">
+
+      <!-- Site seul -->
+      <article class="rounded-3xl border border-line bg-white p-8">
+        <h3 class="text-xl font-extrabold">Site seul</h3>
+        <p class="mt-1 text-muted">Un site vitrine moderne, à vous.</p>
+        <div class="mt-6">
+          <div class="text-sm font-semibold text-muted">Mise en place</div>
+          <div class="text-2xl font-extrabold" data-price="site-setup">200 €</div>
+          <div class="mt-3 text-sm font-semibold text-muted">Puis</div>
+          <div class="text-3xl font-extrabold" data-price="site-monthly">30 €<span class="text-base font-semibold text-muted">/mois</span></div>
+        </div>
+        <a href="#contact" class="mt-7 block rounded-full border border-brand px-5 py-3 text-center text-sm font-semibold text-brand-dark hover:bg-brand-soft transition-colors">Demander ma démo</a>
+        <ul class="mt-7 space-y-3 text-sm">
+          <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> Site vitrine refait avec l'IA</li>
+          <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> Sur votre nom de domaine</li>
+          <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> Hébergement inclus</li>
+          <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> Mises à jour</li>
+          <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> Intégration des avis Google</li>
+        </ul>
+      </article>
+
+      <!-- Présence locale (mise en avant) -->
+      <article class="relative rounded-3xl border-2 border-brand bg-white p-8 shadow-xl shadow-brand/5 lg:-mt-4">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand px-4 py-1 text-xs font-bold text-white shadow">Le plus choisi</span>
+        <h3 class="text-xl font-extrabold">Présence locale</h3>
+        <p class="mt-1 text-muted">Votre site + votre visibilité, tous les mois.</p>
+        <div class="mt-6">
+          <div class="text-sm font-semibold text-muted">Mise en place</div>
+          <div class="text-2xl font-extrabold leading-tight" data-price="presence-setup">0 € avec engagement 12 mois</div>
+          <div class="text-sm text-muted" data-price="presence-setup-note">sinon 200 €</div>
+          <div class="mt-3 text-sm font-semibold text-muted">Puis</div>
+          <div class="text-3xl font-extrabold" data-price="presence-monthly">99 €<span class="text-base font-semibold text-muted">/mois</span></div>
+        </div>
+        <a href="#contact" class="mt-7 block rounded-full bg-brand px-5 py-3 text-center text-sm font-semibold text-white hover:bg-brand-dark transition-colors">Demander ma démo</a>
+        <ul class="mt-7 space-y-3 text-sm">
+          <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> <span><strong>Tout le « Site seul »</strong>, plus&nbsp;:</span></li>
+          <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> 2 articles de blog / mois</li>
+          <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> 2 publications Google Business Profile / mois</li>
+          <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> 2 publications réseaux sociaux / mois (Facebook, Instagram, LinkedIn)</li>
+          <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> Calendrier éditorial validé chaque mois</li>
+        </ul>
+      </article>
+
+      <!-- Croissance -->
+      <article class="rounded-3xl border border-line bg-white p-8">
+        <h3 class="text-xl font-extrabold">Croissance</h3>
+        <p class="mt-1 text-muted">Pour aller chercher plus de clients.</p>
+        <div class="mt-6">
+          <div class="text-sm font-semibold text-muted">Tarif</div>
+          <div class="text-3xl font-extrabold" data-price="croissance-monthly">Sur devis</div>
+        </div>
+        <a href="#contact" class="mt-7 block rounded-full border border-brand px-5 py-3 text-center text-sm font-semibold text-brand-dark hover:bg-brand-soft transition-colors">En parler</a>
+        <ul class="mt-7 space-y-3 text-sm">
+          <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> <span><strong>Tout « Présence locale »</strong>, plus&nbsp;:</span></li>
+          <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> Campagnes Facebook Ads <span class="text-muted">(budget publicitaire en plus)</span></li>
+          <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> Rapport mensuel</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="mt-10 text-center text-base font-semibold text-ink">Démo gratuite et sans engagement de votre nouveau site.</p>
+
+    <!-- Options sur devis -->
+    <div class="mt-8 mx-auto max-w-3xl rounded-2xl border border-line bg-white p-6 text-center">
+      <div class="text-sm font-bold uppercase tracking-wide text-brand-dark">Options sur devis</div>
+      <p class="mt-2 text-muted">Boutique e-commerce Shopify · Vidéos · Création de logo</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INCLUS CHAQUE MOIS ===== -->
+<section id="inclus" class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+  <div class="grid gap-10 lg:grid-cols-2 items-center">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Ce qui est inclus chaque mois</h2>
+      <p class="mt-4 text-lg text-muted">Avec la formule <strong>Présence locale</strong>, vous n'avez rien à gérer. On tient votre présence en ligne vivante, et vous validez le programme du mois en quelques minutes.</p>
+      <p class="mt-4 text-muted">Chaque mois, on vous envoie un <strong>calendrier éditorial</strong> : les sujets d'articles, les publications prévues et les dates. Vous validez, on publie.</p>
+    </div>
+    <ul class="grid gap-4 sm:grid-cols-2">
+      <li class="rounded-2xl border border-line p-5"><div class="text-2xl font-extrabold text-brand-dark">2</div><div class="mt-1 font-semibold">Articles de blog</div><div class="text-sm text-muted">pour être trouvé sur Google</div></li>
+      <li class="rounded-2xl border border-line p-5"><div class="text-2xl font-extrabold text-brand-dark">2</div><div class="mt-1 font-semibold">Publications Google Business</div><div class="text-sm text-muted">pour votre fiche locale</div></li>
+      <li class="rounded-2xl border border-line p-5"><div class="text-2xl font-extrabold text-brand-dark">2</div><div class="mt-1 font-semibold">Publications réseaux</div><div class="text-sm text-muted">Facebook, Instagram, LinkedIn</div></li>
+      <li class="rounded-2xl border border-line p-5"><div class="text-2xl font-extrabold text-brand-dark">1</div><div class="mt-1 font-semibold">Calendrier éditorial</div><div class="text-sm text-muted">validé avec vous chaque mois</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="bg-slate-50 border-y border-line">
+  <div class="max-w-3xl mx-auto px-5 py-16 md:py-24">
+    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-center">Questions fréquentes</h2>
+    <div class="mt-10 space-y-3">
+      <details class="group rounded-2xl border border-line bg-white p-5 [&_summary]:cursor-pointer">
+        <summary class="flex items-center justify-between gap-4 font-semibold list-none">Le site m'appartient-il ?<span class="faq-plus text-brand-dark text-xl transition-transform">+</span></summary>
+        <p class="mt-3 text-muted">Oui. Le nom de domaine reste à vous, à votre nom. Vous n'êtes jamais prisonnier.</p>
+      </details>
+      <details class="group rounded-2xl border border-line bg-white p-5 [&_summary]:cursor-pointer">
+        <summary class="flex items-center justify-between gap-4 font-semibold list-none">Est-ce que vous garantissez la 1re place sur Google ?<span class="faq-plus text-brand-dark text-xl transition-transform">+</span></summary>
+        <p class="mt-3 text-muted">Non — et personne ne peut le garantir honnêtement. On travaille votre visibilité locale : fiche Google, contenus réguliers, avis clients. C'est ça qui fait venir des appels dans la durée.</p>
+      </details>
+      <details class="group rounded-2xl border border-line bg-white p-5 [&_summary]:cursor-pointer">
+        <summary class="flex items-center justify-between gap-4 font-semibold list-none">Que se passe-t-il après 12 mois d'engagement ?<span class="faq-plus text-brand-dark text-xl transition-transform">+</span></summary>
+        <p class="mt-3 text-muted">L'abonnement continue au mois, et devient résiliable à tout moment. Pas de reconduction piège.</p>
+      </details>
+      <details class="group rounded-2xl border border-line bg-white p-5 [&_summary]:cursor-pointer">
+        <summary class="flex items-center justify-between gap-4 font-semibold list-none">Je n'ai pas de textes ni de photos<span class="faq-plus text-brand-dark text-xl transition-transform">+</span></summary>
+        <p class="mt-3 text-muted">Ce n'est pas un problème. On part de votre site actuel et on rédige les textes avec vous. Pour les visuels, on trouve une solution ensemble.</p>
+      </details>
+      <details class="group rounded-2xl border border-line bg-white p-5 [&_summary]:cursor-pointer">
+        <summary class="flex items-center justify-between gap-4 font-semibold list-none">Sur quels réseaux publiez-vous ?<span class="faq-plus text-brand-dark text-xl transition-transform">+</span></summary>
+        <p class="mt-3 text-muted">Facebook, Instagram et LinkedIn, selon là où sont vos clients.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+  <div class="grid gap-10 lg:grid-cols-2 items-start">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Recevez votre démo gratuite</h2>
+      <p class="mt-4 text-lg text-muted">Dites-nous juste l'adresse de votre site actuel. On vous renvoie une démo de votre nouveau site, sans engagement.</p>
+      <ul class="mt-6 space-y-3 text-muted">
+        <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> Réponse sous 24&nbsp;h ouvrées</li>
+        <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> Aucune carte bancaire demandée</li>
+        <li class="flex gap-2.5"><span class="text-brand-dark font-bold">✓</span> Vous décidez après avoir vu le résultat</li>
+      </ul>
+    </div>
+
+    <form id="demo-form" action="https://formsubmit.co/ajax/contact@mahefatech.com" method="POST" class="rounded-3xl border border-line p-6 md:p-8 bg-white">
+      <!-- Honeypot anti-spam -->
+      <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="Nouvelle demande de démo — page Offres">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label for="nom" class="block text-sm font-semibold">Nom</label>
+          <input id="nom" name="nom" type="text" required autocomplete="name" class="mt-1.5 w-full rounded-xl border border-line px-4 py-3 focus:border-brand focus:ring-0">
+        </div>
+        <div>
+          <label for="entreprise" class="block text-sm font-semibold">Entreprise</label>
+          <input id="entreprise" name="entreprise" type="text" required autocomplete="organization" class="mt-1.5 w-full rounded-xl border border-line px-4 py-3 focus:border-brand focus:ring-0">
+        </div>
+      </div>
+      <div class="mt-4">
+        <label for="site" class="block text-sm font-semibold">URL de votre site actuel</label>
+        <input id="site" name="site_actuel" type="url" placeholder="https://..." class="mt-1.5 w-full rounded-xl border border-line px-4 py-3 focus:border-brand focus:ring-0">
+      </div>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+        <div>
+          <label for="email" class="block text-sm font-semibold">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-xl border border-line px-4 py-3 focus:border-brand focus:ring-0">
+        </div>
+        <div>
+          <label for="pays" class="block text-sm font-semibold">Pays</label>
+          <select id="pays" name="pays" required class="mt-1.5 w-full rounded-xl border border-line px-4 py-3 focus:border-brand focus:ring-0 bg-white">
+            <option value="">Sélectionnez…</option>
+            <option>France</option>
+            <option>Belgique</option>
+            <option>Canada (Québec)</option>
+            <option>Autre</option>
+          </select>
+        </div>
+      </div>
+      <div class="mt-4">
+        <label for="message" class="block text-sm font-semibold">Message <span class="font-normal text-muted">(facultatif)</span></label>
+        <textarea id="message" name="message" rows="4" class="mt-1.5 w-full rounded-xl border border-line px-4 py-3 focus:border-brand focus:ring-0"></textarea>
+      </div>
+      <button type="submit" id="demo-submit" class="mt-6 w-full rounded-full bg-brand px-6 py-4 text-base font-semibold text-white hover:bg-brand-dark transition-colors disabled:opacity-70">Recevoir ma démo gratuite</button>
+      <p class="mt-3 text-center text-xs text-muted">Vos données ne sont ni vendues ni partagées.</p>
+
+      <div id="demo-success" class="mt-4 hidden rounded-xl border border-brand bg-brand-soft px-4 py-3 text-sm font-semibold text-brand-darker">✓ Demande envoyée ! On vous répond sous 24&nbsp;h ouvrées.</div>
+      <div id="demo-error" class="mt-4 hidden rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">✗ Une erreur est survenue. Réessayez ou écrivez à contact@mahefatech.com.</div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="border-t border-line">
+  <div class="max-w-6xl mx-auto px-5 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted">
+    <div class="flex items-center gap-2.5 font-extrabold text-ink">
+      <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-brand">
+        <svg viewBox="0 0 32 32" class="h-4 w-4" aria-hidden="true"><path d="M8 23V10l4 6 4-6 4 6 4-6v13" fill="none" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Mahefa Tech
+    </div>
+    <nav class="flex items-center gap-6" aria-label="Pied de page">
+      <a href="/" class="hover:text-ink">Accueil</a>
+      <a href="/mentions-legales/" class="hover:text-ink">Mentions légales</a>
+      <a href="/politique-confidentialite/" class="hover:text-ink">Confidentialité</a>
+    </nav>
+    <div>© <span id="year">2026</span> Mahefa Tech</div>
+  </div>
+</footer>
+
+<script>
+  // ----- Sélecteur de devise -----
+  const PRICES = {
+    eur: {
+      'site-setup': '200 €',
+      'site-monthly': '30 €<span class="text-base font-semibold text-muted">/mois</span>',
+      'presence-setup': '0 € avec engagement 12 mois',
+      'presence-setup-note': 'sinon 200 €',
+      'presence-monthly': '99 €<span class="text-base font-semibold text-muted">/mois</span>',
+      'croissance-monthly': 'Sur devis'
+    },
+    cad: {
+      'site-setup': 'Sur demande',
+      'site-monthly': 'Sur demande',
+      'presence-setup': '300 $',
+      'presence-setup-note': 'mise en place',
+      'presence-monthly': '150 $<span class="text-base font-semibold text-muted">/mois</span>',
+      'croissance-monthly': 'Sur devis'
+    }
+  };
+  function setCurrency(cur) {
+    const map = PRICES[cur];
+    for (const key in map) {
+      const el = document.querySelector('[data-price="' + key + '"]');
+      if (el) el.innerHTML = map[key];
+    }
+    document.querySelectorAll('.cur-btn').forEach(function (b) {
+      const active = b.dataset.cur === cur;
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
+      b.classList.toggle('bg-brand', active);
+      b.classList.toggle('text-white', active);
+      b.classList.toggle('text-muted', !active);
+    });
+  }
+  document.querySelectorAll('.cur-btn').forEach(function (b) {
+    b.addEventListener('click', function () { setCurrency(b.dataset.cur); });
+  });
+  setCurrency('eur');
+
+  // ----- Année du footer -----
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ----- Envoi du formulaire (FormSubmit AJAX → contact@mahefatech.com) -----
+  (function () {
+    const form = document.getElementById('demo-form');
+    const btn = document.getElementById('demo-submit');
+    const okBox = document.getElementById('demo-success');
+    const errBox = document.getElementById('demo-error');
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      okBox.classList.add('hidden');
+      errBox.classList.add('hidden');
+      btn.disabled = true;
+      const label = btn.textContent;
+      btn.textContent = 'Envoi…';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!res.ok) throw new Error('bad status');
+        okBox.classList.remove('hidden');
+        form.reset();
+        setCurrency('eur');
+        if (typeof gtag === 'function') gtag('event', 'generate_lead', { event_category: 'offres', event_label: 'demo' });
+      } catch (err) {
+        errBox.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = label;
+      }
+    });
+  })();
+</script>
+</body>
+</html>
