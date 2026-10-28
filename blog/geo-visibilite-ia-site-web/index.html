@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Mesure d'audience chargée uniquement après consentement (RGPD) -->
+<script src="/assets/consent.js" defer></script>
+<title>GEO : pourquoi les IA ne citent jamais votre site | Mahefa Tech</title>
+<meta name="description" content="Robots bloqués, absence de l'index Bing, réponses noyées : les 3 causes réelles de l'invisibilité dans ChatGPT et Perplexity, et comment les vérifier.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Mahefa Tech">
+<link rel="canonical" href="https://mahefatech.com/blog/geo-visibilite-ia-site-web/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mahefatech.com/blog/geo-visibilite-ia-site-web/">
+<meta property="og:title" content="GEO : pourquoi les IA ne citent jamais votre site">
+<meta property="og:description" content="Robots bloqués, absence de l'index Bing, réponses noyées : les 3 causes réelles de l'invisibilité dans ChatGPT et Perplexity, et comment les vérifier.">
+<meta property="og:image" content="https://mahefatech.com/assets/img/og-image.jpg">
+<meta property="og:locale" content="fr_FR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "GEO : pourquoi les IA ne citent jamais votre site",
+      "description": "Robots bloqués, absence de l'index Bing, réponses noyées : les 3 causes réelles de l'invisibilité dans ChatGPT et Perplexity, et comment les vérifier.",
+      "datePublished": "2026-10-28",
+      "dateModified": "2026-10-28",
+      "inLanguage": "fr",
+      "mainEntityOfPage": "https://mahefatech.com/blog/geo-visibilite-ia-site-web/",
+      "image": "https://mahefatech.com/assets/img/og-image.jpg",
+      "author": {"@type": "Organization", "name": "Mahefa Tech", "url": "https://mahefatech.com/"},
+      "publisher": {"@type": "Organization", "name": "Mahefa Tech"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://mahefatech.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mahefatech.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "GEO : pourquoi les IA ne citent jamais votre site", "item": "https://mahefatech.com/blog/geo-visibilite-ia-site-web/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+{"@type": "Question", "name": "Comment savoir si mon site est bloqué pour les IA ?", "acceptedAnswer": {"@type": "Answer", "text": "Ouvrez votresite.com/robots.txt et cherchez GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot et Google-Extended : un Disallow: / sur l'un d'eux vous rend invisible pour ce moteur. Vérifiez ensuite votre pare-feu ou votre CDN, qui peut bloquer ces robots même si le robots.txt les autorise, puis cherchez leurs visites dans vos journaux de serveur sur les 30 derniers jours."}},
+{"@type": "Question", "name": "Le fichier llms.txt sert-il vraiment à quelque chose ?", "acceptedAnswer": {"@type": "Answer", "text": "Son effet n'est pas démontré : aucun éditeur d'IA majeur ne s'est engagé à le lire, c'est une proposition de standard et non une norme adoptée. Il coûte quinze minutes à écrire et ne présente aucun risque, ce qui en fait une expérience raisonnable — mais personne ne peut honnêtement vous promettre un résultat."}},
+{"@type": "Question", "name": "Faut-il payer un outil de suivi GEO ?", "acceptedAnswer": {"@type": "Answer", "text": "Pas au début. Tant que votre site compte peu de pages, une liste de 10 à 15 questions rejouées chaque mois dans ChatGPT et Perplexity, Bing Webmaster Tools et vos sources de trafic suffisent. Un outil payant devient utile quand le relevé manuel prend trop de temps, c'est-à-dire quand vous avez déjà une visibilité à suivre."}}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="none" stroke="#A8EDCF" stroke-width="0.5" opacity="0.35"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="132" y1="111" x2="142" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+      <line x1="228" y1="111" x2="218" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">MAHEFA <span style="color:var(--em)">TECH</span></span>
+      <span class="nav-logo-sub">Digital Expert</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Accueil</a></li>
+    <li class="nav-drop">
+      <a href="/#services">Services</a>
+      <div class="nav-drop-menu"><div class="ndm-box">
+        <a href="/services/automatisation-no-code/">Automatisation & Agents IA</a>
+        <a href="/services/go-high-level/">Go High Level & CRM</a>
+        <a href="/services/developpement-wordpress/">Développement WordPress</a>
+        <a href="/services/email-marketing/">Marketing &amp; Campagnes</a>
+        <a href="/services/integration-pixel-perfect/">Intégration Pixel-Perfect</a>
+        <a href="/services/chef-de-projet/">Chef de Projet</a>
+        <a href="/services/assistant-technique/">Assistant Technique &amp; Annotation IA</a>
+        <a href="/services/developpement-fullstack/">Développement Full Stack</a>
+      </div></div>
+    </li>
+    <li><a href="/#about">À propos</a></li>
+    <li><a href="/#testimonials">Témoignages</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/formation/">Formation</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/#contact" class="nav-cta">Parlons-en ↗</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="breadcrumb"><a href="/">Accueil</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span style="color:var(--em);">Automatisation &amp; IA</span></div>
+  <div class="article-meta"><span class="cat">Automatisation &amp; IA</span><span>28 octobre 2026</span><span>7 min de lecture</span></div>
+  <h1 class="article-title">GEO : pourquoi les IA ne citent jamais votre site</h1>
+</section>
+
+<article class="article-body">
+  <p>Si ChatGPT, Perplexity ou Gemini ne citent jamais votre site, la cause est rarement votre contenu. Dans l'ordre de fréquence, c'est : vos pages interdisent l'accès aux robots des IA, souvent à votre insu ; votre site est absent de l'index de Bing, qui alimente Copilot ; ou vos contenus ne sont pas extractibles, parce qu'ils noient la réponse dans trois paragraphes d'introduction. Les trois se vérifient en moins d'une heure, sans aucun outil payant.</p>
+
+  <p>Le GEO — l'optimisation pour les moteurs génératifs — est en train de devenir l'argumentaire préféré des agences, avec des plateformes de suivi à 30, 80 ou 100 € par mois. Ces outils <em>mesurent</em> votre visibilité ; ils ne la créent pas. Avant de payer pour voir un zéro s'afficher chaque semaine, voici ce que je vérifie chez mes clients, et ce que j'ai trouvé sur mon propre site.</p>
+
+  <h2>1. Vos pages sont-elles seulement autorisées ?</h2>
+
+  <p>C'est le point le plus souvent oublié, et le plus décisif : si le robot d'exploration d'une IA ne peut pas lire vos pages, aucun travail éditorial ne vous rendra citable. Ouvrez <code>votresite.com/robots.txt</code> et cherchez ces noms :</p>
+
+  <table>
+    <thead><tr><th>Robot</th><th>À qui il sert</th></tr></thead>
+    <tbody>
+      <tr><td><code>GPTBot</code>, <code>OAI-SearchBot</code>, <code>ChatGPT-User</code></td><td>OpenAI : entraînement, index de recherche, consultation en direct</td></tr>
+      <tr><td><code>PerplexityBot</code></td><td>Perplexity</td></tr>
+      <tr><td><code>ClaudeBot</code></td><td>Claude</td></tr>
+      <tr><td><code>Google-Extended</code></td><td>Les réponses génératives de Google</td></tr>
+      <tr><td><code>bingbot</code></td><td>Bing, donc Copilot</td></tr>
+    </tbody>
+  </table>
+
+  <p>Si l'un d'eux apparaît avec un <code>Disallow: /</code>, vous êtes invisible pour ce moteur, point final. Et ce n'est pas toujours une décision consciente : beaucoup d'extensions SEO ont ajouté ces blocages par défaut en 2024-2025, quand la question des contenus aspirés par les IA faisait débat. La décision a été prise pour vous, souvent sans que personne ne la relise depuis.</p>
+
+  <p>Le piège suivant est plus sournois : <strong>un robots.txt accueillant ne garantit rien si votre pare-feu bloque en amont</strong>. Chez un client dont le site publie du contenu quotidiennement depuis des années, j'ai trouvé exactement cette situation : une protection anti-robots activée au niveau du CDN bloquait les robots des IA avant même qu'ils n'atteignent le site. Des milliers d'articles d'expertise, parfaitement référencés sur Google, totalement absents des réponses des IA. Personne dans l'équipe n'avait pris cette décision : elle était venue avec une case cochée par défaut.</p>
+
+  <p>Comment vérifier : dans les journaux de votre serveur ou dans le tableau de bord de votre CDN, cherchez les visites de <code>GPTBot</code> et <code>PerplexityBot</code> sur les 30 derniers jours. Zéro visite sur un site qui publie régulièrement n'est pas un hasard, c'est un blocage.</p>
+
+  <h2>2. Êtes-vous dans l'index de Bing ?</h2>
+
+  <p>Copilot s'appuie sur Bing. Si Bing ne connaît pas votre site, Copilot ne vous citera jamais, quelle que soit votre position sur Google. Le test prend dix secondes : tapez <code>site:votresite.com</code> dans Bing. Si la réponse est « aucun résultat », vous n'êtes pas indexé.</p>
+
+  <p>J'ai fait ce test sur mon propre site début octobre, trois mois après sa mise en ligne : aucun résultat. Google avait indexé toutes mes pages, Bing n'en connaissait aucune. C'est un angle mort classique, parce que tout le monde surveille la Search Console de Google et personne n'ouvre son équivalent chez Microsoft. La correction est gratuite : créer un compte Bing Webmaster Tools et importer la propriété depuis Google Search Console, en quelques clics.</p>
+
+  <h2>3. Vos réponses sont-elles extractibles ?</h2>
+
+  <p>Un moteur génératif ne cite pas une page, il cite un <strong>passage</strong> : quelques phrases qui répondent seules, sans le reste de l'article. Si votre réponse arrive au quatrième paragraphe, après le contexte, l'historique de l'entreprise et une métaphore, elle ne sera pas reprise.</p>
+
+  <p>Ce qui fonctionne, et que j'applique sur chaque article de ce blog :</p>
+
+  <ul>
+    <li><strong>Répondre dans les deux premières phrases</strong>, avant toute mise en contexte. Le premier paragraphe doit pouvoir être cité tel quel.</li>
+    <li><strong>Formuler les titres comme des questions</strong> ou comme des affirmations précises — « Un snapshot copie-t-il les contacts ? » plutôt que « Notre approche ».</li>
+    <li><strong>Une idée par paragraphe</strong>, sans dépendance au paragraphe précédent. Les « comme nous l'avons vu plus haut » sont des passages inutilisables.</li>
+    <li><strong>Des tableaux et des listes</strong> pour les comparaisons et les procédures : ce sont les formats les plus facilement repris.</li>
+    <li><strong>Une FAQ en fin d'article</strong>, avec des questions réellement posées par vos clients, et des réponses complètes en trois à cinq lignes.</li>
+  </ul>
+
+  <p>Ajoutez-y les données structurées : un balisage <code>FAQPage</code> sur votre FAQ et un balisage <code>Organization</code> cohérent sur tout le site. Ce n'est pas du GEO magique, c'est simplement le moyen le plus fiable de dire aux machines qui vous êtes et ce que vous affirmez.</p>
+
+  <h2>4. Votre marque est-elle cohérente d'un endroit à l'autre ?</h2>
+
+  <p>Les modèles ne retiennent pas des pages, ils retiennent des entités. Une entreprise dont le nom, la description et la spécialité varient entre son site, ses profils professionnels, ses fiches d'annuaire et ses interventions dans des articles tiers est une entité floue — donc rarement citée avec assurance.</p>
+
+  <p>La conséquence pratique est peu romantique : écrire la même phrase de présentation partout, employer les mêmes termes pour décrire ce que vous faites, et obtenir des mentions sur des sites tiers que les moteurs considèrent déjà fiables. Les citations dans les réponses IA viennent largement de ce que <em>les autres</em> écrivent sur vous.</p>
+
+  <h2>5. Faut-il publier un fichier llms.txt ?</h2>
+
+  <p>Soyons honnête, parce que peu de guides le sont : <strong>l'effet du fichier <code>llms.txt</code> n'est pas démontré</strong>. Aucun éditeur d'IA majeur ne s'est engagé publiquement à le lire. C'est une proposition de standard, pas une norme adoptée.</p>
+
+  <p>Cela dit, il s'agit d'un fichier texte listant vos pages importantes avec une phrase de description chacune. Le rédiger prend une quinzaine de minutes, il ne peut rien casser, et il force un exercice utile : résumer clairement ce que fait chaque page. J'en ai publié un sur ce site en octobre. Je ne vous promets aucun résultat, et méfiez-vous de quiconque vous en promet.</p>
+
+  <h2>6. Mesurer sans rien dépenser</h2>
+
+  <p>Avant de souscrire à une plateforme de suivi, voici le dispositif gratuit que je recommande, et qui suffit largement en dessous d'une vingtaine de pages :</p>
+
+  <ul>
+    <li><strong>Une liste de 10 à 15 questions</strong> que poserait un client réel — pas vos mots-clés, ses mots à lui. À rejouer une fois par mois dans ChatGPT et Perplexity, en notant qui est cité à votre place. Ces concurrents cités vous disent exactement quel contenu il vous manque.</li>
+    <li><strong>Bing Webmaster Tools</strong>, gratuit, dont le rapport de performance IA donne des données officielles côté Microsoft.</li>
+    <li><strong>Vos statistiques de fréquentation</strong> : les visites venant de <code>chatgpt.com</code> ou <code>perplexity.ai</code> apparaissent dans les sources de trafic. C'est la seule preuve qui compte vraiment, parce qu'elle se traduit en visiteurs.</li>
+  </ul>
+
+  <p>Passez à un outil payant le jour où ce relevé manuel devient trop lourd — pas avant. Sur un site jeune, un tableau de bord à 80 € par mois ne fera qu'afficher un zéro avec beaucoup de graphiques.</p>
+
+  <h2>Ce que le GEO ne fera pas pour vous</h2>
+
+  <p>Aucune méthode ne garantit une citation : les réponses des IA varient d'une session à l'autre, d'un utilisateur à l'autre, et les éditeurs ne publient pas leurs critères. Méfiez-vous des promesses chiffrées et des pondérations précises présentées comme des faits — ce sont des modèles commerciaux, pas des documentations.</p>
+
+  <p>Ce qui reste vrai, en revanche : un site techniquement accessible, correctement indexé, qui répond à de vraies questions avec des réponses nettes, est citable. Un site qui bloque les robots par défaut ne l'est pas, quel que soit le budget investi ensuite. L'ordre des priorités est celui-là, et pas l'inverse.</p>
+
+  <p>Si vous voulez savoir où vous en êtes, les vérifications des sections 1 et 2 vous prendront une heure. C'est aussi ce que je fais dans le cadre d'un <a href="/services/assistant-technique/">accompagnement technique</a>, souvent en même temps que les correctifs qu'il implique côté serveur ou <a href="/services/developpement-wordpress/">WordPress</a>. Dans la même famille de problèmes « tout est bien configuré et pourtant ça ne marche pas », vous pouvez lire <a href="/blog/emails-en-spam-malgre-spf-dkim/">pourquoi vos emails partent en spam malgré SPF et DKIM</a> et <a href="/blog/mise-en-conformite-rgpd-site-wordpress/">les cinq corrections RGPD que tout site doit avoir</a>.</p>
+
+  <h2>FAQ</h2>
+
+  <h3>Comment savoir si mon site est bloqué pour les IA ?</h3>
+  <p>Ouvrez <code>votresite.com/robots.txt</code> et cherchez GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot et Google-Extended : un <code>Disallow: /</code> sur l'un d'eux vous rend invisible pour ce moteur. Vérifiez ensuite votre pare-feu ou votre CDN, qui peut bloquer ces robots même si le robots.txt les autorise, puis cherchez leurs visites dans vos journaux de serveur sur les 30 derniers jours.</p>
+
+  <h3>Le fichier llms.txt sert-il vraiment à quelque chose ?</h3>
+  <p>Son effet n'est pas démontré : aucun éditeur d'IA majeur ne s'est engagé à le lire, c'est une proposition de standard et non une norme adoptée. Il coûte quinze minutes à écrire et ne présente aucun risque, ce qui en fait une expérience raisonnable — mais personne ne peut honnêtement vous promettre un résultat.</p>
+
+  <h3>Faut-il payer un outil de suivi GEO ?</h3>
+  <p>Pas au début. Tant que votre site compte peu de pages, une liste de 10 à 15 questions rejouées chaque mois dans ChatGPT et Perplexity, Bing Webmaster Tools et vos sources de trafic suffisent. Un outil payant devient utile quand le relevé manuel prend trop de temps, c'est-à-dire quand vous avez déjà une visibilité à suivre.</p>
+
+  <div class="article-cta">
+    <div class="t">Vous voulez savoir si les IA peuvent lire votre site ?</div>
+    <p>Robots d'exploration, pare-feu, index Bing, structure des pages : je fais le tour et je vous dis ce qui bloque, concrètement. Le premier rendez-vous est gratuit — on étudie votre besoin ensemble.</p>
+    <a href="/?service=assistant#contact" class="btn-p">Démarrons votre projet ↗</a>
+  </div>
+
+  <div class="author-box">
+    <picture><source srcset="/assets/img/signature-logo.png" type="image/webp"><img src="/assets/img/signature-logo.png" alt="Mahefa Tech"></picture>
+    <div>
+      <div class="n">Mahefa Tech</div>
+      <p>Freelance expert No-Code, WordPress et Go High Level — 7 ans d'expérience, 100+ projets livrés pour des clients en France, au Canada et en Espagne.</p>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-logo">
+    <svg width="28" height="26" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="foot-logo-name">MAHEFA <span>TECH</span></span>
+  </div>
+  <div class="foot-legal">
+    <a href="/mentions-legales/" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+    <a href="/politique-confidentialite/" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+    <button type="button" onclick="mtOpenConsent()" data-fr="Cookies" data-en="Cookies">Cookies</button>
+  </div>
+  <span class="foot-copy">© 2026 Mahefa Tech</span>
+  <span class="foot-avail"><span class="dot-blink"></span><span>Disponible · Remote</span></span>
+</footer>
+
+<script src="/assets/main.js"></script>
+</body>
+</html>

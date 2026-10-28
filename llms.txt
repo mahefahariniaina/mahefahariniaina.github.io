@@ -15,6 +15,7 @@
 
 ## Blog
 
+- [GEO : pourquoi les IA ne citent jamais votre site](https://mahefatech.com/blog/geo-visibilite-ia-site-web/)
 - [Les 7 automatisations que toute petite entreprise devrait avoir](https://mahefatech.com/blog/automatisations-petite-entreprise/)
 - [Snapshot GoHighLevel : le guide pratique pour agences](https://mahefatech.com/blog/snapshot-gohighlevel/)
 - [Nettoyer un site WordPress piraté : le guide complet](https://mahefatech.com/blog/nettoyer-site-wordpress-pirate/)
@@ -29,6 +30,7 @@
 ## Autres pages
 
 - [Accueil](https://mahefatech.com/) : présentation, réalisations, témoignages, formulaire de contact.
+- [Offres packagées](https://mahefatech.com/offres/) : offres prêtes à l'emploi « Site IA » et « Présence en ligne ».
 - [Formation](https://mahefatech.com/formation/) : liste d'attente des formations No-Code et GoHighLevel.
 - [Index du blog](https://mahefatech.com/blog/)
 - [Mentions légales](https://mahefatech.com/mentions-legales/)
