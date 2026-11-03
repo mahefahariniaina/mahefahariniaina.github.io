@@ -15,6 +15,7 @@
 
 ## Blog
 
+- [Sauvegarde WordPress : la vôtre ne vous sauvera pas](https://mahefatech.com/blog/sauvegarde-site-wordpress/)
 - [GEO : pourquoi les IA ne citent jamais votre site](https://mahefatech.com/blog/geo-visibilite-ia-site-web/)
 - [Les 7 automatisations que toute petite entreprise devrait avoir](https://mahefatech.com/blog/automatisations-petite-entreprise/)
 - [Snapshot GoHighLevel : le guide pratique pour agences](https://mahefatech.com/blog/snapshot-gohighlevel/)

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Mesure d'audience chargée uniquement après consentement (RGPD) -->
+<script src="/assets/consent.js" defer></script>
+<title>Sauvegarde WordPress : la vôtre ne vous sauvera pas | Mahefa Tech</title>
+<meta name="description" content="Base de données oubliée, tâche planifiée morte, sauvegarde qui contient le piratage : les vraies causes d'échec, et le test qui prouve que la vôtre marche.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Mahefa Tech">
+<link rel="canonical" href="https://mahefatech.com/blog/sauvegarde-site-wordpress/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mahefatech.com/blog/sauvegarde-site-wordpress/">
+<meta property="og:title" content="Sauvegarde WordPress : la vôtre ne vous sauvera pas">
+<meta property="og:description" content="Base de données oubliée, tâche planifiée morte, sauvegarde qui contient le piratage : les vraies causes d'échec, et le test qui prouve que la vôtre marche.">
+<meta property="og:image" content="https://mahefatech.com/assets/img/og-image.jpg">
+<meta property="og:locale" content="fr_FR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Sauvegarde WordPress : la vôtre ne vous sauvera pas",
+      "description": "Base de données oubliée, tâche planifiée morte, sauvegarde qui contient le piratage : les vraies causes d'échec, et le test qui prouve que la vôtre marche.",
+      "datePublished": "2026-11-03",
+      "dateModified": "2026-11-03",
+      "inLanguage": "fr",
+      "mainEntityOfPage": "https://mahefatech.com/blog/sauvegarde-site-wordpress/",
+      "image": "https://mahefatech.com/assets/img/og-image.jpg",
+      "author": {"@type": "Organization", "name": "Mahefa Tech", "url": "https://mahefatech.com/"},
+      "publisher": {"@type": "Organization", "name": "Mahefa Tech"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://mahefatech.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mahefatech.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Sauvegarde WordPress : la vôtre ne vous sauvera pas", "item": "https://mahefatech.com/blog/sauvegarde-site-wordpress/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+{"@type": "Question", "name": "Les sauvegardes de mon hébergeur suffisent-elles ?", "acceptedAnswer": {"@type": "Answer", "text": "Elles constituent un bon premier niveau, mais pas une protection complète : elles vivent sur la même infrastructure que votre site et dépendent d'un seul prestataire. Si le compte est suspendu, si l'hébergeur subit un incident ou si vous devez partir en urgence, vous perdez l'accès aux copies. Ajoutez toujours une sauvegarde indépendante, stockée ailleurs et sous votre contrôle."}},
+{"@type": "Question", "name": "À quelle fréquence tester une restauration ?", "acceptedAnswer": {"@type": "Answer", "text": "Deux fois par an pour un site classique, et systématiquement après un changement important : nouvel hébergeur, nouvelle extension de sauvegarde, refonte. Le test consiste à restaurer la sauvegarde sur un environnement séparé, à vérifier que le site, l'administration, les contenus récents et les formulaires fonctionnent, puis à noter le temps que l'opération a pris."}},
+{"@type": "Question", "name": "Que faire si le site est piraté et que la sauvegarde contient l'infection ?", "acceptedAnswer": {"@type": "Answer", "text": "Il faut remonter à une sauvegarde antérieure à la compromission, ce qui suppose d'avoir conservé un historique de plusieurs semaines. Si aucune copie saine n'existe, la restauration ne suffit pas : il faut nettoyer le site, supprimer les portes dérobées et corriger la faille d'origine, sans quoi l'infection reviendra quelques jours plus tard."}}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="none" stroke="#A8EDCF" stroke-width="0.5" opacity="0.35"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="132" y1="111" x2="142" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+      <line x1="228" y1="111" x2="218" y2="111" stroke="#A8EDCF" stroke-width="1" opacity="0.5"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">MAHEFA <span style="color:var(--em)">TECH</span></span>
+      <span class="nav-logo-sub">Digital Expert</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Accueil</a></li>
+    <li class="nav-drop">
+      <a href="/#services">Services</a>
+      <div class="nav-drop-menu"><div class="ndm-box">
+        <a href="/services/automatisation-no-code/">Automatisation & Agents IA</a>
+        <a href="/services/go-high-level/">Go High Level & CRM</a>
+        <a href="/services/developpement-wordpress/">Développement WordPress</a>
+        <a href="/services/email-marketing/">Marketing &amp; Campagnes</a>
+        <a href="/services/integration-pixel-perfect/">Intégration Pixel-Perfect</a>
+        <a href="/services/chef-de-projet/">Chef de Projet</a>
+        <a href="/services/assistant-technique/">Assistant Technique &amp; Annotation IA</a>
+        <a href="/services/developpement-fullstack/">Développement Full Stack</a>
+      </div></div>
+    </li>
+    <li><a href="/#about">À propos</a></li>
+    <li><a href="/#testimonials">Témoignages</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/formation/">Formation</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/#contact" class="nav-cta">Parlons-en ↗</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="breadcrumb"><a href="/">Accueil</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span style="color:var(--em);">WordPress</span></div>
+  <div class="article-meta"><span class="cat">WordPress</span><span>3 novembre 2026</span><span>7 min de lecture</span></div>
+  <h1 class="article-title">Sauvegarde de site WordPress : la vôtre ne vous sauvera pas</h1>
+</section>
+
+<article class="article-body">
+  <p>Une sauvegarde de site WordPress ne vaut que par la restauration qu'elle permet. Pour qu'elle vous sauve réellement, elle doit remplir trois conditions : être <strong>complète</strong> (les fichiers <em>et</em> la base de données), être stockée <strong>ailleurs</strong> que sur le serveur du site, et avoir été <strong>restaurée au moins une fois</strong> pour vérifier qu'elle fonctionne. Si l'une des trois manque, vous n'avez pas une sauvegarde : vous avez l'impression d'en avoir une.</p>
+
+  <p>La plupart des guides expliquent comment installer une extension de sauvegarde. Celui-ci parle de l'étape suivante, celle que presque personne ne fait : vérifier que le filet de sécurité existe vraiment. Parce que le jour où on en a besoin, il est trop tard pour le découvrir.</p>
+
+  <h2>Le cas d'école : trois sauvegardes, aucune ne fonctionnait</h2>
+
+  <p>En janvier 2017, un ingénieur de GitLab supprime par erreur le répertoire de données de la base sur le serveur principal au lieu du serveur secondaire. Environ 300 Go disparaissent. L'entreprise dispose alors de plusieurs dispositifs de secours. Aucun ne fonctionne : les exports de base de données ne s'exécutaient plus depuis des mois à cause d'une version d'outil incompatible, les instantanés de disque n'avaient jamais été activés, la réplication était cassée — et les emails d'alerte qui auraient dû signaler tout cela étaient rejetés par les serveurs de messagerie. Bilan : environ six heures de données perdues, et un rapport public remarquablement honnête.</p>
+
+  <p>Si une entreprise dont le métier est l'hébergement de code peut se retrouver dans cette situation, un site WordPress avec une extension installée il y a trois ans et jamais revérifiée n'a aucune raison d'être mieux loti. Ce qui est frappant dans cette histoire, ce n'est pas la panne : c'est que personne ne savait que les sauvegardes ne marchaient plus.</p>
+
+  <h2>Les cinq façons dont une sauvegarde échoue en silence</h2>
+
+  <p>Voici ce que je trouve le plus souvent en reprenant des sites existants.</p>
+
+  <table>
+    <thead><tr><th>Le problème</th><th>Ce qui se passe le jour J</th></tr></thead>
+    <tbody>
+      <tr><td>Seuls les fichiers sont sauvegardés, pas la base</td><td>Le site revient, mais sans articles, sans pages, sans commandes</td></tr>
+      <tr><td>La sauvegarde est stockée sur le même serveur</td><td>Serveur compromis ou perdu : la copie disparaît avec l'original</td></tr>
+      <tr><td>La tâche planifiée ne s'exécute plus</td><td>La dernière sauvegarde date de huit mois, et personne ne l'a vu</td></tr>
+      <tr><td>L'espace de stockage est saturé ou l'accès a expiré</td><td>Les sauvegardes échouent chaque nuit, en silence</td></tr>
+      <tr><td>Les emails d'alerte ne parviennent plus</td><td>Toutes les erreurs sont bien signalées… dans un dossier spam</td></tr>
+    </tbody>
+  </table>
+
+  <p>Le troisième point mérite une explication, parce qu'il est propre à WordPress : les tâches planifiées y dépendent des visites sur le site. Sur un site à faible trafic, elles peuvent ne jamais se déclencher à l'heure prévue, voire pas du tout. L'extension affiche une planification impeccable dans son écran de réglages, et ne sauvegarde rien.</p>
+
+  <p>Le cinquième renvoie à un sujet que j'ai déjà traité : si votre domaine n'est pas correctement authentifié, les notifications automatiques de votre site finissent en indésirables. C'est exactement ce qui s'est passé chez GitLab, et c'est le genre de défaut dont on ne mesure les conséquences que des mois plus tard — voir <a href="/blog/emails-en-spam-malgre-spf-dkim/">pourquoi vos emails partent en spam malgré SPF et DKIM</a>.</p>
+
+  <h2>La sauvegarde qui contient déjà le problème</h2>
+
+  <p>Il existe un cas particulièrement cruel : la sauvegarde fonctionne parfaitement, mais elle contient l'infection. Quand un site est compromis, l'attaquant installe souvent des portes dérobées discrètes et attend. Pendant des semaines, le site paraît normal — et chaque sauvegarde nocturne enregistre fidèlement les fichiers malveillants.</p>
+
+  <p>Au moment où le piratage devient visible, restaurer « la sauvegarde d'avant » ne règle rien si la rétention ne remonte pas assez loin : vous réinstallez le même problème. C'est pour cette raison qu'une restauration ne dispense jamais de chercher la porte d'entrée, comme je l'explique dans <a href="/blog/nettoyer-site-wordpress-pirate/">le guide de nettoyage d'un site WordPress piraté</a>.</p>
+
+  <p>Conséquence pratique : gardez un historique, pas seulement la dernière copie. Une rétention de trente jours, avec quelques copies mensuelles conservées plus longtemps, coûte peu et change tout le jour où vous devez remonter à avant l'infection.</p>
+
+  <h2>La règle 3-2-1, traduite pour un site web</h2>
+
+  <p>La règle classique en sauvegarde informatique tient en trois chiffres : <strong>3 copies</strong> de vos données, sur <strong>2 supports différents</strong>, dont <strong>1 hors site</strong>. Pour un site WordPress, cela donne concrètement :</p>
+
+  <ul>
+    <li>Le site en production, qui est la copie de travail.</li>
+    <li>Une sauvegarde automatique chez l'hébergeur, pratique et rapide à restaurer, mais qui vit sur la même infrastructure.</li>
+    <li>Une sauvegarde indépendante envoyée ailleurs : espace de stockage distant, serveur tiers, ou une copie téléchargée régulièrement.</li>
+  </ul>
+
+  <p>Beaucoup de sites s'arrêtent à la deuxième ligne. Les sauvegardes de l'hébergeur sont utiles, mais elles dépendent d'un seul acteur : si le compte est suspendu, si l'hébergeur a un incident, ou si vous changez de prestataire en urgence, elles ne vous appartiennent pas vraiment.</p>
+
+  <h2>Le test de restauration : la seule preuve qui compte</h2>
+
+  <p>C'est l'exercice qui transforme une intention en garantie. Il consiste à restaurer réellement la sauvegarde, ailleurs que sur le site de production, et à vérifier le résultat. Comptez une à deux heures la première fois.</p>
+
+  <ol>
+    <li><strong>Créez un environnement séparé</strong> : un site de préproduction chez votre hébergeur, ou une installation locale sur votre ordinateur.</li>
+    <li><strong>Restaurez la sauvegarde la plus récente</strong>, fichiers et base de données, sans toucher au site en ligne.</li>
+    <li><strong>Vérifiez point par point</strong> : la page d'accueil s'affiche, vous pouvez vous connecter à l'administration, les articles et pages récents sont là, les images s'affichent, les formulaires s'envoient, et pour une boutique, les commandes récentes apparaissent.</li>
+    <li><strong>Notez le temps qu'il vous a fallu.</strong> C'est votre délai réel de remise en ligne. Si c'est une demi-journée, vous le saurez avant d'être en situation de crise, pas pendant.</li>
+    <li><strong>Écrivez la procédure</strong>, même en dix lignes : où sont les sauvegardes, avec quels accès, dans quel ordre restaurer. Un incident arrive rarement quand on est disponible et reposé.</li>
+  </ol>
+
+  <p>Refaites ce test deux fois par an, et après chaque changement majeur : nouvel hébergeur, nouvelle extension de sauvegarde, refonte du site. C'est peu de travail au regard de ce que ça garantit.</p>
+
+  <h2>À quelle fréquence sauvegarder ?</h2>
+
+  <p>La bonne fréquence se déduit d'une seule question : <em>combien de temps de travail acceptez-vous de perdre ?</em></p>
+
+  <table>
+    <thead><tr><th>Type de site</th><th>Fréquence raisonnable</th><th>Ce que vous perdez au pire</th></tr></thead>
+    <tbody>
+      <tr><td>Site vitrine, modifié rarement</td><td>Hebdomadaire, plus une copie avant chaque intervention</td><td>Quelques retouches</td></tr>
+      <tr><td>Blog publiant régulièrement</td><td>Quotidienne</td><td>Une journée de publication</td></tr>
+      <tr><td>Boutique en ligne</td><td>Quotidienne au minimum, base de données plus souvent</td><td>Des commandes réelles — à éviter absolument</td></tr>
+    </tbody>
+  </table>
+
+  <p>Pour une boutique, la base de données change en permanence : commandes, clients, stocks. Une sauvegarde quotidienne des fichiers suffit généralement, mais la base mérite un rythme plus soutenu, car ce sont des ventes qui disparaissent.</p>
+
+  <h2>Les trois réflexes à prendre cette semaine</h2>
+
+  <ul>
+    <li><strong>Vérifiez la date de votre dernière sauvegarde réussie</strong>, pas la planification affichée. Si elle remonte à plus d'une semaine sur un site actif, vous avez trouvé votre urgence.</li>
+    <li><strong>Vérifiez où elle est stockée.</strong> Si la réponse est « sur le serveur », ajoutez une destination externe aujourd'hui.</li>
+    <li><strong>Programmez un test de restauration.</strong> Mettez-le dans votre agenda, sinon il n'arrivera jamais.</li>
+  </ul>
+
+  <p>Si vous préférez déléguer ce travail, c'est typiquement ce que couvre un <a href="/services/assistant-technique/">accompagnement technique régulier</a> : sauvegardes vérifiées, restauration testée, mises à jour surveillées. Et si votre site a besoin d'être repris en main plus largement, cela fait partie de mes missions <a href="/services/developpement-wordpress/">WordPress</a>.</p>
+
+  <h2>FAQ</h2>
+
+  <h3>Les sauvegardes de mon hébergeur suffisent-elles ?</h3>
+  <p>Elles constituent un bon premier niveau, mais pas une protection complète : elles vivent sur la même infrastructure que votre site et dépendent d'un seul prestataire. Si le compte est suspendu, si l'hébergeur subit un incident ou si vous devez partir en urgence, vous perdez l'accès aux copies. Ajoutez toujours une sauvegarde indépendante, stockée ailleurs et sous votre contrôle.</p>
+
+  <h3>À quelle fréquence tester une restauration ?</h3>
+  <p>Deux fois par an pour un site classique, et systématiquement après un changement important : nouvel hébergeur, nouvelle extension de sauvegarde, refonte. Le test consiste à restaurer la sauvegarde sur un environnement séparé, à vérifier que le site, l'administration, les contenus récents et les formulaires fonctionnent, puis à noter le temps que l'opération a pris.</p>
+
+  <h3>Que faire si le site est piraté et que la sauvegarde contient l'infection ?</h3>
+  <p>Il faut remonter à une sauvegarde antérieure à la compromission, ce qui suppose d'avoir conservé un historique de plusieurs semaines. Si aucune copie saine n'existe, la restauration ne suffit pas : il faut nettoyer le site, supprimer les portes dérobées et corriger la faille d'origine, sans quoi l'infection reviendra quelques jours plus tard.</p>
+
+  <div class="article-cta">
+    <div class="t">Vous ne savez pas si vos sauvegardes fonctionnent ?</div>
+    <p>Je vérifie ce qui est réellement sauvegardé, je teste une restauration et je vous laisse une procédure écrite. Le premier rendez-vous est gratuit — on étudie votre besoin ensemble.</p>
+    <a href="/?service=wordpress#contact" class="btn-p">Démarrons votre projet ↗</a>
+  </div>
+
+  <div class="author-box">
+    <picture><source srcset="/assets/img/signature-logo.png" type="image/webp"><img src="/assets/img/signature-logo.png" alt="Mahefa Tech"></picture>
+    <div>
+      <div class="n">Mahefa Tech</div>
+      <p>Freelance expert No-Code, WordPress et Go High Level — 7 ans d'expérience, 100+ projets livrés pour des clients en France, au Canada et en Espagne.</p>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-logo">
+    <svg width="28" height="26" viewBox="132 50 96 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="180,58 228,85 228,138 180,165 132,138 132,85" fill="#0A2218" stroke="#00C49A" stroke-width="1.5"/>
+      <path d="M150,138 L150,85 L165,108 L180,92 L195,108 L210,85 L210,138" fill="none" stroke="#F5F0E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="foot-logo-name">MAHEFA <span>TECH</span></span>
+  </div>
+  <div class="foot-legal">
+    <a href="/mentions-legales/" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+    <a href="/politique-confidentialite/" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+    <button type="button" onclick="mtOpenConsent()" data-fr="Cookies" data-en="Cookies">Cookies</button>
+  </div>
+  <span class="foot-copy">© 2026 Mahefa Tech</span>
+  <span class="foot-avail"><span class="dot-blink"></span><span>Disponible · Remote</span></span>
+</footer>
+
+<script src="/assets/main.js"></script>
+</body>
+</html>
