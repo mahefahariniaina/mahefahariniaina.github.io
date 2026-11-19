@@ -39,40 +39,67 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://mahefatech.com/#person",
+      "@id": "https://mahefatech.com/#organization",
       "name": "Mahefa Tech",
-      "jobTitle": "Expert Freelance No-Code, WordPress et Automatisation",
-      "description": "Automatisation no-code, agents IA, WordPress et Go High Level. 7 ans d'expérience, 100+ projets pour la France, le Canada et l'Espagne. 1er RDV gratuit.",
-      "url": "https://mahefatech.com",
+      "url": "https://mahefatech.com/",
       "email": "contact@mahefatech.com",
-      "knowsLanguage": ["fr", "en"],
-      "knowsAbout": ["Automatisation No-Code", "WordPress", "Go High Level", "HubSpot", "Zoho CRM", "Zapier", "Make", "n8n", "WooCommerce", "Elementor", "Webflow", "Agents IA", "SEO", "Kajabi", "ActiveCampaign"],
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://mahefatech.com/#logo",
+        "url": "https://mahefatech.com/assets/apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      },
+      "image": {"@id": "https://mahefatech.com/#logo"},
+      "description": "Freelance No-Code, WordPress et Go High Level : automatisation, agents IA, CRM et sites web pour entrepreneurs et agences. 7 ans d'expérience, 100+ projets livrés en remote. 1er RDV gratuit.",
+      "founder": {"@id": "https://mahefatech.com/#person"},
       "areaServed": [
         {"@type": "Country", "name": "France"},
+        {"@type": "Country", "name": "Belgique"},
+        {"@type": "Country", "name": "Suisse"},
         {"@type": "Country", "name": "Canada"},
         {"@type": "Country", "name": "Espagne"}
       ],
-      "sameAs": [
-        "https://mahefatech.com"
-      ]
+      "knowsLanguage": ["fr", "en"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://mahefatech.com/#person",
+      "name": "Mahefa",
+      "url": "https://mahefatech.com/",
+      "jobTitle": "Expert Freelance No-Code, WordPress et Automatisation",
+      "description": "Fondateur de Mahefa Tech. 7 ans d'expérience en automatisation no-code, Go High Level, HubSpot, WordPress et agents IA ; plus de 100 projets livrés en remote pour des entreprises et des agences.",
+      "worksFor": {"@id": "https://mahefatech.com/#organization"},
+      "knowsLanguage": ["fr", "en"],
+      "knowsAbout": ["Automatisation No-Code", "WordPress", "Go High Level", "HubSpot", "Zoho CRM", "Zapier", "Make", "n8n", "WooCommerce", "Elementor", "Webflow", "Agents IA", "SEO", "Kajabi", "ActiveCampaign"]
     },
     {
       "@type": "WebSite",
       "@id": "https://mahefatech.com/#website",
-      "url": "https://mahefatech.com",
+      "url": "https://mahefatech.com/",
       "name": "Mahefa Tech — Expert No-Code & Automatisation",
       "description": "Portfolio de Mahefa Tech, expert freelance en automatisation no-code, développement WordPress et intelligence artificielle.",
-      "inLanguage": ["fr", "en"],
-      "publisher": {"@id": "https://mahefatech.com/#person"}
+      "inLanguage": "fr",
+      "publisher": {"@id": "https://mahefatech.com/#organization"}
     },
     {
-      "@type": "ProfessionalService",
+      "@type": "WebPage",
+      "@id": "https://mahefatech.com/#webpage",
+      "url": "https://mahefatech.com/",
+      "name": "Freelance No-Code, WordPress & GoHighLevel | Mahefa Tech",
+      "inLanguage": "fr",
+      "isPartOf": {"@id": "https://mahefatech.com/#website"},
+      "about": {"@id": "https://mahefatech.com/#organization"},
+      "dateModified": "2026-11-19"
+    },
+    {
+      "@type": "Service",
       "@id": "https://mahefatech.com/#service",
-      "name": "Mahefa Tech",
-      "url": "https://mahefatech.com",
-      "founder": {"@id": "https://mahefatech.com/#person"},
+      "name": "Services freelance no-code, WordPress et automatisation",
+      "url": "https://mahefatech.com/",
+      "provider": {"@id": "https://mahefatech.com/#organization"},
       "description": "Services d'automatisation no-code, développement WordPress et agents IA pour entrepreneurs et agences web.",
-      "areaServed": ["France", "Canada", "Espagne", "Remote"],
+      "areaServed": ["France", "Belgique", "Suisse", "Canada", "Espagne"],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Services freelance no-code et WordPress",
@@ -153,7 +180,7 @@
           "name": "Dans quels pays intervenez-vous ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Je travaille en remote avec des entreprises et des agences en France, au Canada, en Espagne et à l'international. Je m'adapte aux fuseaux horaires et communique en français et en anglais."
+            "text": "Je travaille en remote avec des entreprises et des agences en France, en Belgique, en Suisse, au Canada, en Espagne et à l'international. Je m'adapte aux fuseaux horaires et communique en français et en anglais."
           }
         },
         {
@@ -821,7 +848,7 @@
         <span style="color:var(--em);font-size:18px;flex-shrink:0;transition:transform .3s;" class="faq-arrow">+</span>
       </button>
       <div class="faq-body" style="display:none;padding:0 24px 22px;">
-        <p style="font-size:13px;font-weight:300;color:rgba(245,240,232,.65);line-height:1.8;" data-fr="Je travaille en remote avec des entreprises et des agences en France, au Canada, en Espagne et à l'international. Je m'adapte aux fuseaux horaires et communique en français et en anglais." data-en="I work remotely with companies and agencies in France, Canada, Spain and internationally. I adapt to time zones and communicate in French and English.">Je travaille en remote avec des entreprises et des agences en France, au Canada, en Espagne et à l'international. Je m'adapte aux fuseaux horaires et communique en français et en anglais.</p>
+        <p style="font-size:13px;font-weight:300;color:rgba(245,240,232,.65);line-height:1.8;" data-fr="Je travaille en remote avec des entreprises et des agences en France, en Belgique, en Suisse, au Canada, en Espagne et à l'international. Je m'adapte aux fuseaux horaires et communique en français et en anglais." data-en="I work remotely with companies and agencies in France, Belgium, Switzerland, Canada, Spain and internationally. I adapt to time zones and communicate in French and English.">Je travaille en remote avec des entreprises et des agences en France, en Belgique, en Suisse, au Canada, en Espagne et à l'international. Je m'adapte aux fuseaux horaires et communique en français et en anglais.</p>
       </div>
     </div>
 

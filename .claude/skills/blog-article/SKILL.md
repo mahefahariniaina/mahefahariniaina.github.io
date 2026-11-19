@@ -5,7 +5,7 @@ description: Rédige et publie un article de blog SEO complet sur le portfolio d
 
 # Blog Article — Portfolio Mahefa Tech
 
-Tu rédiges un article pour le blog de **Mahefa Tech**, marque freelance no-code/WordPress/GHL (clients FR/CA/ES). ⚠️ SITE ANONYME : l'auteur affiché est TOUJOURS « Mahefa Tech » (jamais de nom complet, jamais de photo perso — encart auteur = logo `assets/img/signature-logo.png`, schema `Organization`). Objectif de chaque article : se positionner sur UNE requête Google précise et amener le lecteur vers un premier rendez-vous gratuit.
+Tu rédiges un article pour le blog de **Mahefa Tech**, marque freelance no-code/WordPress/GHL (clients FR/CA/ES). ⚠️ SITE ANONYME : l'auteur affiché est TOUJOURS « Mahefa Tech » (jamais de nom complet, jamais de photo perso — encart auteur = logo `assets/img/signature-logo.png`). Dans le schema JSON-LD (déjà dans le gabarit, ne pas modifier) : `author` = `Person` « Mahefa » (prénom seul, `@id` `https://mahefatech.com/#person`) et `publisher` = `Organization` Mahefa Tech (`@id` `https://mahefatech.com/#organization`) — choix validé par Mahefa le 19/11/2026 pour la visibilité IA. Objectif de chaque article : se positionner sur UNE requête Google précise et amener le lecteur vers un premier rendez-vous gratuit.
 
 ## Contexte du site
 
